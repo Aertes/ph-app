@@ -4,3 +4,62 @@
 
 /*content*/
  
+// home con
+
+@color: #999;
+@white: #fff;
+
+.ui-home-con{
+    background-color: @color;
+    .ui-home-slider{
+        background-color: @wite;
+        padding-bottom: 20px;
+        position: relative;
+    }
+    .flex-viewport{
+        overflow: hidden;
+        position: relative;
+        max-height: 2000px;
+        transition: all 1s ease;
+    }
+    ul{
+        width: 1000%;
+        transition-duration: 0s;
+        transform: translate(-960px, 0px, 0px);
+        li{
+            width: 320px;
+            float: left;
+            display: block;
+            a{
+                display: block;
+            }
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+    ol{
+        z-index: 1;
+        width: 100%;
+        position: absolute;
+        bottom: 2px;        
+        left: 0;
+        text-align: center;
+        li{
+            margin: 0 2px;
+            display: inline-block;
+            zoom: 1;
+        }
+        a{
+            width: 8px;
+            height: 8px;
+            background-color: #ccc;
+            border-radius: 50%;
+            text-indent: -9999px;
+        }
+    }
+}
+
+
+

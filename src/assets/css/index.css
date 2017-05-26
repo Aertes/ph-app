@@ -1,3 +1,54 @@
 @charset 'utf-8';
-/*@import 'base.css';*/
+@import 'base.css';
 /*content*/
+.ui-home-con {
+  background-color: #999;
+}
+.ui-home-con .ui-home-slider {
+  background-color: #fff;
+  padding-bottom: 20px;
+  position: relative;
+}
+.ui-home-con .flex-viewport {
+  overflow: hidden;
+  position: relative;
+  max-height: 2000px;
+  transition: all 1s ease;
+}
+.ui-home-con ul {
+  width: 1000%;
+  transition-duration: 0s;
+  transform: translate(-960px, 0px, 0px);
+}
+.ui-home-con ul li {
+  width: 320px;
+  float: left;
+  display: block;
+}
+.ui-home-con ul li a {
+  display: block;
+}
+.ui-home-con ul li img {
+  width: 100%;
+  display: block;
+}
+.ui-home-con ol {
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  text-align: center;
+}
+.ui-home-con ol li {
+  margin: 0 2px;
+  display: inline-block;
+  zoom: 1;
+}
+.ui-home-con ol a {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+  text-indent: -9999px;
+}
