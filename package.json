@@ -1,0 +1,26 @@
+{
+  "name": "philips-app",
+  "version": "1.0.0",
+  "description": "A PHILIPS-App project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --port 8081",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Aertes/philips-app.git"
+  },
+  "keywords": [
+    "jquery",
+    "philips",
+    "webapp"
+  ],
+  "author": "Aertes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aertes/philips-app/issues"
+  },
+  "homepage": "https://github.com/Aertes/philips-app#readme"
+}
