@@ -16,7 +16,6 @@
 }
 .ui-home-con .e-scroll-ctr {
   width: 100%;
-  height: 175px;
   overflow: scroll;
 }
 .ui-home-con .e-scroll-ctr ul {
@@ -25,6 +24,13 @@
 .ui-home-con .e-scroll-ctr ul li {
   width: 92px;
   float: left;
+  margin-right: 30px;
+}
+.ui-home-con .e-scroll-ctr ul a {
+  display: block;
+}
+.ui-home-con .e-scroll-ctr ul a img {
+  width: 100%;
 }
 .ui-home-con .e-scroll-ctr ul .price,
 .ui-home-con .e-scroll-ctr ul .name {
@@ -48,51 +54,48 @@
   padding-bottom: 25px;
   position: relative;
 }
-.ui-home-con .flex-viewport {
-  overflow: hidden;
+.ui-home-con .ui-home-slider .flex-viewport {
   position: relative;
-  max-height: 2000px;
-  transition: all 1s ease;
+  overflow: hidden;
+  height: 224px;
 }
-.ui-home-con ul {
-  width: 1000%;
-  transition-duration: 0s;
-  transform: translate(-960px, 0px, 0px);
+.ui-home-con .ui-home-slider .flex-viewport .ui-silder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
 }
-.ui-home-con ul li {
-  width: 320px;
-  float: left;
-  display: block;
+.ui-home-con .ui-home-slider .flex-viewport li {
+  height: 224px;
 }
-.ui-home-con ul li a {
-  display: block;
-}
-.ui-home-con ul li img {
-  width: 100%;
-  display: block;
-}
-.ui-home-con ol {
-  z-index: 1;
+.ui-home-con .ui-home-slider ol {
   width: 100%;
   position: absolute;
-  bottom: 2px;
+  bottom: 6px;
   left: 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
-.ui-home-con ol li {
-  margin: 0 1px;
+.ui-home-con .ui-home-slider ol li {
+  float: left;
+  margin: 0 2px;
+}
+.ui-home-con .ui-home-slider ol li a {
   display: inline-block;
-  zoom: 1;
-}
-.ui-home-con ol a {
-  display: block;
-  content: '';
   width: 8px;
   height: 8px;
-  background-color: #ccc;
+  background-color: #999;
   border-radius: 50%;
-  cursor: pointer;
-  text-indent: -999px;
+  zoom: 1;
+  text-indent: -9999px;
+}
+.ui-home-con .ui-home-slider ol li .on {
+  background-color: #0d679f;
+}
+.ui-home-con .ui-home-slider img,
+.ui-home-con .ui-home-slider a {
+  width: 100%;
+  display: block;
 }
 .ui-home-con .ui-home-new-rec {
   padding: 12px;
@@ -113,14 +116,12 @@
 .ui-home-con .ui-home-star-pro .swiper-container {
   width: 100%;
   height: 235px;
+  overflow: scroll;
 }
 .ui-home-con .ui-home-star-pro .swiper-container ul {
-  padding-left: 41px;
-  padding-right: 41px;
-  transform: translate3d(-238px, 0px, 0px);
-  transition-duration: 0s;
   width: 714px;
   height: 235px;
+  overflow: hidden;
 }
 .ui-home-con .ui-home-star-pro .swiper-container li {
   width: 224px;
@@ -132,6 +133,73 @@
 }
 .ui-home-con .ui-home-star-pro .swiper-container li img {
   width: 224px;
+}
+.ui-home-con .ui-home-accurate-search {
+  padding: 0 13px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.ui-home-con .ui-home-accurate-search h4 {
+  padding-top: 11px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.ui-home-con .ui-home-accurate-search .price-con {
+  width: 100%;
+  height: 1px;
+  padding: 0 6%;
+  margin: 20px 0 20px;
+  position: relative;
+  background-color: #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-home-con .ui-home-accurate-search .price-con .price-control {
+  width: 88%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 6%;
+  z-index: 1;
+  background-color: #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-home-con .ui-home-accurate-search .price-con .price-control .bar {
+  position: absolute;
+  width: 153px;
+  top: -1px;
+  height: 3px;
+  background-color: #0d679f;
+}
+.ui-home-con .ui-home-accurate-search .price-con .price-control .leftGrip,
+.ui-home-con .ui-home-accurate-search .price-con .price-control .rightGrip {
+  position: absolute;
+  top: -9px;
+  left: 0;
+  text-align: center;
+}
+.ui-home-con .ui-home-accurate-search .price-con .price-control .rightGrip {
+  left: 114px;
+}
+.ui-home-con .ui-home-accurate-search .price-con .price-control .leftpointer .rightpointer {
+  width: 6px;
+  height: 6px;
+  border: 6px solid #cbdae8;
+  background-color: #0d679f;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.ui-home-con .ui-home-accurate-search .price-con ul {
+  position: absolute;
+  width: 88%;
+  top: -4px;
+  left: 6%;
+  z-index: 0;
 }
 .ui-home-con .ui-home-hot-pro {
   padding: 0 13px;
