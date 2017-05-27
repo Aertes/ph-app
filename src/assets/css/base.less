@@ -279,6 +279,7 @@ table {
 		}
 		ul{
 			background-color: #375e91;
+			display: none;
 			a{
 				display: block;
 				height: 36px;
@@ -288,6 +289,9 @@ table {
 				border-bottom: 1px solid #466a99;
 				color: @white;
 				font-size: @font;
+				&.current{
+					background-color: #0f4679;
+				}
 			}
 			.icon-arrow-white{
 				.icon();

@@ -110,6 +110,9 @@ input {
   line-height: 1;
   font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "微软雅黑", "黑体";
 }
+input[placeholder],[placeholder],*[placeholder]{
+  color: rgba(255, 255, 255, 0.4);
+}
 ol,
 ul {
   list-style: none;
@@ -339,6 +342,7 @@ table {
 }
 .ui-menu .category ul {
   background-color: #375e91;
+  display: none;
 }
 .ui-menu .category ul a {
   display: block;
@@ -349,6 +353,9 @@ table {
   border-bottom: 1px solid #466a99;
   color: #fff;
   font-size: 14px;
+}
+.ui-menu .category ul a.current {
+  background-color: #0f4679;
 }
 .ui-menu .category ul .icon-arrow-white {
   display: inline-block;

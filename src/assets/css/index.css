@@ -57,16 +57,32 @@
 .ui-home-con .ui-home-slider .flex-viewport {
   position: relative;
   overflow: hidden;
-  height: 224px;
+  width: 100%;
+  height: 170px;
 }
 .ui-home-con .ui-home-slider .flex-viewport .ui-silder {
   position: absolute;
   top: 0;
   left: 0;
   overflow: visible;
+  height: 170px;
+  width: 100%;
 }
 .ui-home-con .ui-home-slider .flex-viewport li {
-  height: 224px;
+  width: 100%;
+  height: 170px;
+}
+.ui-home-con .ui-home-slider .flex-viewport li:nth-child(1) {
+  background: url('../images/banner1.jpg') 0 0 no-repeat;
+  background-size: cover;
+}
+.ui-home-con .ui-home-slider .flex-viewport li:nth-child(2) {
+  background: url('../images/banner2.jpg') 0 0 no-repeat;
+  background-size: cover;
+}
+.ui-home-con .ui-home-slider .flex-viewport li:nth-child(3) {
+  background: url('../images/banner3.jpg') 0 0 no-repeat;
+  background-size: cover;
 }
 .ui-home-con .ui-home-slider ol {
   width: 100%;
@@ -92,9 +108,9 @@
 .ui-home-con .ui-home-slider ol li .on {
   background-color: #0d679f;
 }
-.ui-home-con .ui-home-slider img,
 .ui-home-con .ui-home-slider a {
   width: 100%;
+  height: 170px;
   display: block;
 }
 .ui-home-con .ui-home-new-rec {
@@ -175,15 +191,20 @@
   height: 3px;
   background-color: #0d679f;
 }
+.ui-home-con .ui-home-accurate-search .price-con .price-control .bar .leftGrip {
+  left: 18px;
+}
+.ui-home-con .ui-home-accurate-search .price-con .price-control .bar .rightGrip {
+  left: 114px;
+}
 .ui-home-con .ui-home-accurate-search .price-con .price-control .leftGrip,
 .ui-home-con .ui-home-accurate-search .price-con .price-control .rightGrip {
+  width: 18px;
+  height: 18px;
   position: absolute;
   top: -9px;
   left: 0;
   text-align: center;
-}
-.ui-home-con .ui-home-accurate-search .price-con .price-control .rightGrip {
-  left: 114px;
 }
 .ui-home-con .ui-home-accurate-search .price-con .price-control .leftpointer .rightpointer {
   width: 6px;
@@ -200,6 +221,72 @@
   top: -4px;
   left: 6%;
   z-index: 0;
+}
+.ui-home-con .ui-home-accurate-search .price-con ul li {
+  width: 25%;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-home-con .ui-home-accurate-search .price-con ul li em {
+  display: block;
+  height: 4px;
+  border-left: 1px solid #ccc;
+}
+.ui-home-con .ui-home-accurate-search .price-con ul li p:last-child em {
+  border-left: none;
+  border-right: 1px solid #ccc;
+}
+.ui-home-con .ui-home-accurate-search .price-con ul li span {
+  display: block;
+  padding-top: 8px;
+  font-size: 12px;
+  color: #999;
+  text-indent: -0.5em;
+}
+.ui-home-con .ui-home-accurate-search .price-con ul li:last-child p:first-child {
+  float: left;
+}
+.ui-home-con .ui-home-accurate-search .price-con ul li:last-child p:last-child {
+  float: right;
+}
+.ui-home-con .ui-home-accurate-search .ui-home-type-slt {
+  padding-bottom: 13px;
+}
+.ui-home-con .ui-home-accurate-search .ui-home-type-slt ul {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.ui-home-con .ui-home-accurate-search .ui-home-type-slt ul li {
+  font-size: 12px;
+  padding: 0 2px 8px;
+  box-sizing: border-box;
+}
+.ui-home-con .ui-home-accurate-search .ui-home-type-slt ul p {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 5px;
+  background-color: #f0f1f2;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-home-con .ui-home-accurate-search .ui-home-type-slt .ui-btn {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #0d679f;
+  box-sizing: border-box;
+  border: none;
 }
 .ui-home-con .ui-home-hot-pro {
   padding: 0 13px;
@@ -235,10 +322,19 @@
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
+.ui-home-con .ui-home-hot-pro li .first {
+  background-color: #ff1d1d;
+}
+.ui-home-con .ui-home-hot-pro li .second {
+  background-color: #e06d1d;
+}
 .ui-home-con .ui-home-hot-pro li .img {
   display: table-cell;
   width: 92px;
   vertical-align: middle;
+}
+.ui-home-con .ui-home-hot-pro li .img img {
+  width: 100%;
 }
 .ui-home-con .ui-home-hot-pro li .text {
   padding-left: 8px;
