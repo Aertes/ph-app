@@ -1,5 +1,5 @@
 @charset 'utf-8';
-.ui-password-find {
+.ui-register-con {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -7,26 +7,26 @@
   margin-bottom: 100px;
   padding-bottom: 0;
 }
-.ui-password-find h3 {
+.ui-register-con h3 {
   font-size: 18px;
   color: #333;
   text-align: center;
   font-weight: normal;
   padding: 20px 0 16px 0;
 }
-.ui-password-find .ui-form-list {
+.ui-register-con .ui-form-list {
   background-color: #fff;
 }
-.ui-password-find .ui-form-list li {
+.ui-register-con .ui-form-list li {
   padding-bottom: 17px;
 }
-.ui-password-find .inform-longlabel {
+.ui-register-con .inform-longlabel {
   display: block;
   padding-bottom: 5px;
   color: #b9bbc7;
   font-size: 14px;
 }
-.ui-password-find .ui-slt {
+.ui-register-con .ui-slt {
   width: 100%;
   height: 40px;
   line-height: 40px;
@@ -42,14 +42,14 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.ui-password-find .ui-slt p {
+.ui-register-con .ui-slt p {
   height: 47px;
   padding: 0 10px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.ui-password-find .ui-slt select {
+.ui-register-con .ui-slt select {
   width: 100%;
   height: 32px;
   position: absolute;
@@ -58,7 +58,7 @@
   z-index: 3;
   opacity: 0;
 }
-.ui-password-find .ui-slt:after {
+.ui-register-con .ui-slt:after {
   content: '';
   position: absolute;
   top: 16px;
@@ -68,14 +68,14 @@
   background: url('../images/icons-base.png') -80px -90px no-repeat;
   background-size: 200px 300px;
 }
-.ui-password-find .questionDIV li,
-.ui-password-find .emailDIV li,
-.ui-password-find .mobilelDIV li {
+.ui-register-con .questionDIV li,
+.ui-register-con .emailDIV li,
+.ui-register-con .mobilelDIV li {
   padding-bottom: 17px;
 }
-.ui-password-find .questionDIV .ui-input,
-.ui-password-find .emailDIV .ui-input,
-.ui-password-find .mobilelDIV .ui-input {
+.ui-register-con .questionDIV .ui-input,
+.ui-register-con .emailDIV .ui-input,
+.ui-register-con .mobilelDIV .ui-input {
   background-color: #fff;
   width: 100%;
   height: 40px;
@@ -89,42 +89,42 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.ui-password-find .questionDIV .hint,
-.ui-password-find .emailDIV .hint,
-.ui-password-find .mobilelDIV .hint {
+.ui-register-con .questionDIV .hint,
+.ui-register-con .emailDIV .hint,
+.ui-register-con .mobilelDIV .hint {
   display: block;
   padding-top: 5px;
   color: #e98300;
   font-size: 14px;
   display: none;
 }
-.ui-password-find .questionDIV .hint i,
-.ui-password-find .emailDIV .hint i,
-.ui-password-find .mobilelDIV .hint i {
+.ui-register-con .questionDIV .hint i,
+.ui-register-con .emailDIV .hint i,
+.ui-register-con .mobilelDIV .hint i {
   margin-right: 3px;
 }
-.ui-password-find .questionDIV .ui-login-val,
-.ui-password-find .emailDIV .ui-login-val,
-.ui-password-find .mobilelDIV .ui-login-val {
+.ui-register-con .questionDIV .ui-login-val,
+.ui-register-con .emailDIV .ui-login-val,
+.ui-register-con .mobilelDIV .ui-login-val {
   position: relative;
 }
-.ui-password-find .questionDIV .ui-login-val p,
-.ui-password-find .emailDIV .ui-login-val p,
-.ui-password-find .mobilelDIV .ui-login-val p {
+.ui-register-con .questionDIV .ui-login-val p,
+.ui-register-con .emailDIV .ui-login-val p,
+.ui-register-con .mobilelDIV .ui-login-val p {
   padding-right: 64px;
 }
-.ui-password-find .questionDIV .ui-login-val img,
-.ui-password-find .emailDIV .ui-login-val img,
-.ui-password-find .mobilelDIV .ui-login-val img {
+.ui-register-con .questionDIV .ui-login-val img,
+.ui-register-con .emailDIV .ui-login-val img,
+.ui-register-con .mobilelDIV .ui-login-val img {
   width: 60px;
   height: 40px;
   position: absolute;
   top: 0;
   right: 0;
 }
-.ui-password-find .questionDIV .ui-btn,
-.ui-password-find .emailDIV .ui-btn,
-.ui-password-find .mobilelDIV .ui-btn {
+.ui-register-con .questionDIV .ui-btn,
+.ui-register-con .emailDIV .ui-btn,
+.ui-register-con .mobilelDIV .ui-btn {
   background-color: #f0f1f2;
   width: 100%;
   height: 40px;
@@ -137,16 +137,16 @@
   box-shadow: none;
   border: none;
 }
-.ui-password-find .questionDIV .info,
-.ui-password-find .emailDIV .info,
-.ui-password-find .mobilelDIV .info {
+.ui-register-con .questionDIV .info,
+.ui-register-con .emailDIV .info,
+.ui-register-con .mobilelDIV .info {
   display: flex;
   justify-content: space-between;
   padding-top: 23px;
 }
-.ui-password-find .questionDIV button,
-.ui-password-find .emailDIV button,
-.ui-password-find .mobilelDIV button {
+.ui-register-con .questionDIV button,
+.ui-register-con .emailDIV button,
+.ui-register-con .mobilelDIV button {
   color: #fff;
   background-color: #0d679f;
   border: none;
@@ -159,47 +159,47 @@
   box-sizing: border-box;
   border-radius: 3px;
 }
-.ui-password-find .questionDIV .ui-cancel,
-.ui-password-find .emailDIV .ui-cancel,
-.ui-password-find .mobilelDIV .ui-cancel {
+.ui-register-con .questionDIV .ui-cancel,
+.ui-register-con .emailDIV .ui-cancel,
+.ui-register-con .mobilelDIV .ui-cancel {
   background-color: #fff;
   border: 1px solid #cccedb;
   color: #000;
 }
-.ui-password-find .questionDIV .tip,
-.ui-password-find .emailDIV .tip,
-.ui-password-find .mobilelDIV .tip {
+.ui-register-con .questionDIV .tip,
+.ui-register-con .emailDIV .tip,
+.ui-register-con .mobilelDIV .tip {
   display: block;
   font-size: 14px;
   padding-top: 9px;
 }
-.ui-password-find .questionDIV .ui-password-btn,
-.ui-password-find .emailDIV .ui-password-btn,
-.ui-password-find .mobilelDIV .ui-password-btn {
+.ui-register-con .questionDIV .ui-password-btn,
+.ui-register-con .emailDIV .ui-password-btn,
+.ui-register-con .mobilelDIV .ui-password-btn {
   margin-top: 23px;
 }
-.ui-password-find .questionDIV .ui-password-btn .ui-buttom,
-.ui-password-find .emailDIV .ui-password-btn .ui-buttom,
-.ui-password-find .mobilelDIV .ui-password-btn .ui-buttom {
+.ui-register-con .questionDIV .ui-password-btn .ui-buttom,
+.ui-register-con .emailDIV .ui-password-btn .ui-buttom,
+.ui-register-con .mobilelDIV .ui-password-btn .ui-buttom {
   display: flex;
   justify-content: space-between;
 }
-.ui-password-find .questionDIV .ui-password-btn .ui-top,
-.ui-password-find .emailDIV .ui-password-btn .ui-top,
-.ui-password-find .mobilelDIV .ui-password-btn .ui-top {
+.ui-register-con .questionDIV .ui-password-btn .ui-top,
+.ui-register-con .emailDIV .ui-password-btn .ui-top,
+.ui-register-con .mobilelDIV .ui-password-btn .ui-top {
   display: flex;
   justify-content: space-between;
   display: none;
 }
-.ui-password-find .questionDIV .ui-password-btn .cancel,
-.ui-password-find .emailDIV .ui-password-btn .cancel,
-.ui-password-find .mobilelDIV .ui-password-btn .cancel {
+.ui-register-con .questionDIV .ui-password-btn .cancel,
+.ui-register-con .emailDIV .ui-password-btn .cancel,
+.ui-register-con .mobilelDIV .ui-password-btn .cancel {
   background-color: #fff;
   color: #000;
   border: 1px solid #cccedb;
 }
-.ui-password-find .questionDIV .num,
-.ui-password-find .emailDIV .num,
-.ui-password-find .mobilelDIV .num {
+.ui-register-con .questionDIV .num,
+.ui-register-con .emailDIV .num,
+.ui-register-con .mobilelDIV .num {
   display: none;
 }
