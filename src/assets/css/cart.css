@@ -1,0 +1,172 @@
+@charset 'utf-8';
+.ui-cart-bg {
+  background-color: #f0f1f2;
+}
+.ui-cart-bg .ui-cart-con {
+  background-color: #fff;
+}
+.ui-cart-bg .ui-cart-con h3 {
+  font-size: 18px;
+  padding: 15px 0 12px 0;
+  text-align: center;
+  font-weight: normal;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+}
+.ui-cart-bg .ui-cart-con li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 13px;
+  border-bottom: 1px solid #e5e5e5;
+  display: table;
+}
+.ui-cart-bg .ui-cart-con li div {
+  display: table-cell;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-product {
+  margin-right: 5px;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-product img {
+  width: 80px;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title {
+  width: 100%;
+  vertical-align: top;
+  position: relative;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title p {
+  font-size: 13px;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .name {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 100px;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .price {
+  margin-top: 3px;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .now-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  color: #0d679f;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .btn {
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  color: #999;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .btn span {
+  padding: 5px 10px;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum {
+  padding: 13px 0 0 0;
+  display: left;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum ul {
+  float: left;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum li {
+  height: 25px;
+  line-height: 25px;
+  float: left;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum li:nth-child(odd) {
+  width: 25px;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum li:nth-child(even) {
+  width: 37px;
+  margin: 0;
+  border-left: none;
+  border-right: 0;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum .num {
+  color: #999;
+  font-size: 16px;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum .minus {
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: #999;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum .add {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: #999;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-title .ui-qty-itemnum .add:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 2px;
+  background-color: #999;
+  transform: rotate(90deg);
+}
+.ui-cart-bg .ui-cart-con .ui-cart-total {
+  padding: 11px 13px;
+  border-bottom: 1px solid #e5e5e5;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-total p {
+  color: #0d679f;
+  font-size: 16px;
+  display: inline-block;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-settle {
+  padding: 25px 13px;
+  background-color: #f5f6f7;
+}
+.ui-cart-bg .ui-cart-con .ui-cart-settle button {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  background-color: #0d679f;
+  box-shadow: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-cart-bg .ui-home-new-rec {
+  background-color: #fff;
+  margin-top: 10px;
+  padding-bottom: 55px;
+  border-bottom: 0;
+  padding: 0 0 12px 13px;
+}
+.ui-cart-bg .ui-home-new-rec h3 {
+  font-size: 16px;
+  text-align: center;
+  padding: 30px 0 20px 0;
+  font-weight: normal;
+}
+.ui-cart-bg .ui-home-new-rec .e-scroll-ctr {
+  width: 1005px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+}
