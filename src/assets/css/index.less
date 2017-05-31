@@ -61,71 +61,35 @@
     .ui-home-slider{
         background-color: @white;
         padding-bottom: 25px;
+        max-width: 640px;
         position: relative;
         .flex-viewport{
             position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 170px;
-            .ui-silder{
-                position: absolute;
-                top: 0;
-                left: 0;
-                overflow: visible;
-                height: 170px;
+            z-index: 0;
+            img{
                 width: 100%;
-            }
-            li{
-                width: 100%;
-                height: 170px;
-                &:nth-child(1){
-                    background: url('../images/banner1.jpg') 0 0 no-repeat;
-                    background-size: cover;
-                }
-                &:nth-child(2){
-                    background: url('../images/banner2.jpg') 0 0 no-repeat;
-                    background-size: cover;
-                }
-                &:nth-child(3){
-                    background: url('../images/banner3.jpg') 0 0 no-repeat;
-                    background-size: cover;
-                }
+                vertical-align: top;
+                background: url('../images/loading.gif') center center no-repeat;
             }
         }
-        
-        ol{
-            width: 100%;
+        .flicking_con{
             position: absolute;
-            bottom: 6px;
-            left: 0;
-            display: flex;
-            justify-content: center;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
             li{
                 float: left;
-                margin: 0 2px;
-                a{
-                    display: inline-block;
-                    width: 8px;
-                    height: 8px;
-                    background-color: #999;
-                    border-radius: 50%;
-                    zoom: 1;
-                    text-indent: -9999px;
-                }
-                .on{
-                    background-color: #0d679f;
-                }
-                
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #ccc;
+                margin: 0 3px;
+                text-indent: -9999px;
+            }
+            .on{
+                background-color: #0d679f;
             }
         }
-        a{
-            width: 100%;
-            height: 170px;
-            display: block;
-        }
-
-        
-        
     }
 
     .ui-home-new-rec{

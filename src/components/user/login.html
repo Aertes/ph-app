@@ -148,35 +148,34 @@
     <!--concent-->
     <section>
         <div class="ui-login">
-            <div class="ui-login-con">
+            <form id="form" class="ui-login-con">
                 <h3>用户登录</h3>
                 <div class="ui-form-list">
                     <ul>
-                        <li class='error'>
-                            <input type="text" class='ui-input' placeholder="电子邮件地址/登录名">
-                            <p class="hint">请输入用户名</p>
+                        <li>
+                            <input id="userName" type="text" class='ui-input' placeholder="电子邮件地址/登录名">
+                            <p id="loginNameError" class="hint"></p>
                         </li>
-                        <li class='error'>
-                            <input type="password" class='ui-input' placeholder="密码">
-                            <p class="hint">请输入密码</p>
+                        <li>
+                            <input id="userPass" type="password" class='ui-input' placeholder="密码">
+                            <p id="loginPassError" class="hint"></p>
                         </li>
-                        <li class='error'>
+                        <li>
                             <div class="ui-login-val">
                                 <p>
                                     <input type="text" class='ui-input' placeholder="效验码">
                                 </p>
                                 <img src="../../assets/images/securityImage" alt="">
-                                <p class="hint">
-                                    <i class="fa fa-times"></i>
-                                    请输入效验码
+                                <p id="loginCodeError" class="hint">
+                                    <!--<i class="fa fa-times"></i>-->
                                 </p>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <input type="button" class="ui-btn" value="登 录">
+                <input id="btnSure" type="button" class="ui-btn" value="登 录">
                 <p class="ui-login-forgetp"><a href="./forgetPassword.html">忘记密码</a></p>
-            </div>
+            </form>
             <div class="ui-login-account">
                 <p>还没有飞利浦账户？</p>
                 <a href="./register.html"><input type="button" value="创建用户"></a>
@@ -233,6 +232,7 @@
     </footer>
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../../libs/jquery/validate-1.14.0.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
     <script src="../../assets/js/user.js"></script>
 </body>

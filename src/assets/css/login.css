@@ -18,7 +18,7 @@
   padding-bottom: 17px;
 }
 .ui-login .ui-login-con .ui-form-list .ui-input {
-  background-color: #e6f0f6;
+  background-color: #fff;
   width: 100%;
   height: 40px;
   padding: 0 10px;
@@ -30,9 +30,6 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-.ui-login .ui-login-con .ui-form-list .hint {
-  display: none;
 }
 .ui-login .ui-login-con .ui-form-list p {
   display: block;
@@ -86,6 +83,7 @@
   text-align: center;
 }
 .ui-login .ui-login-account input {
+  background-color: #fff;
   width: 100%;
   height: 40px;
   padding: 0 10px;

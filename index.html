@@ -17,7 +17,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>首页</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/PHILIPSICON.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./src/assets/images/PHILIPSICON.ico">
     <link rel="stylesheet" href="./src/assets/css/base.css">
     <link rel="stylesheet" href="./src/assets/css/index.css">
 </head>
@@ -149,19 +149,17 @@
     <section>
         <div class="ui-home-con">
             <!--slides-->
-            <div class="ui-home-slider">
+            <div id="bar" class="ui-home-slider">
                 <div class="flex-viewport clearfix">
                     <ul class="ui-silder">
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
+                        <li><a href=""><img src="./src/assets/images/banner1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="./src/assets/images/banner2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="./src/assets/images/banner3.jpg" alt=""></a></li>
                     </ul>
                 </div>
-                <ol class="flicking_con">
-                    <li><a href="">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                </ol>
+                <div class="flicking_con">
+                    <ul></ul>
+                </div>
             </div>
             <!--new-rec-->
             <div class="ui-home-new-rec">
@@ -410,8 +408,7 @@
     </footer>
 
     <script src="./libs/jquery/jquery-1.11.3.min.js"></script>
-    <script src="./libs/jquery/jquery.event.drag-1.5.min.js"></script>
-    <script src="./libs/jquery/jquery.touchSlider.js"></script>
+    <script src="./libs/jquery/TouchSlide.1.1.js"></script>
     <script src="./src/assets/js/comment.js"></script>
     <script src="./src/assets/js/index.js"></script>
 </body>
