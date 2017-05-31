@@ -110,9 +110,6 @@ input {
   line-height: 1;
   font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "微软雅黑", "黑体";
 }
-input[placeholder],[placeholder],*[placeholder]{
-  color: rgba(255, 255, 255, 0.4);
-}
 ol,
 ul {
   list-style: none;
@@ -158,6 +155,10 @@ table {
 }
 .fr {
   float: right;
+}
+.focus {
+  background-color: #fff;
+  border-color: #0d679f;
 }
 /*comment*/
 /*header*/

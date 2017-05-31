@@ -14,7 +14,7 @@
 .ui-login .ui-login-con .ui-form-list {
   background-color: #fff;
 }
-.ui-login .ui-login-con .ui-form-list .error {
+.ui-login .ui-login-con .ui-form-list li {
   padding-bottom: 17px;
 }
 .ui-login .ui-login-con .ui-form-list .ui-input {
@@ -30,6 +30,9 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+.ui-login .ui-login-con .ui-form-list .hint {
+  display: none;
 }
 .ui-login .ui-login-con .ui-form-list p {
   display: block;
