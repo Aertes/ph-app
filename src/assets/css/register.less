@@ -1,5 +1,11 @@
 @charset 'utf-8';
 
+.icon(){
+	display: inline-block;
+	background: url('../images/icons-base.png') no-repeat;
+	background-size: 200px 300px;
+}
+
 .ui-register-con{
     @white: #fff;
     @font14: 14px;
@@ -26,7 +32,7 @@
     
     .box();
     padding: 0 13px 20px;
-    margin-bottom: 100px;
+    margin-bottom: 52px;
     padding-bottom: 0;
     h3{
         font-size: 18px;
@@ -37,65 +43,6 @@
     }
     .ui-form-list{
         background-color: @white;
-        li{
-            padding-bottom: 17px;
-        }
-    }
-    .inform-longlabel{
-        display: block;
-        padding-bottom: 5px;
-        color: #b9bbc7;
-        font-size: @font14;
-    }
-    .ui-slt{
-        width: 100%;
-        height: 40px;
-        line-height: 40px;
-        position: relative;
-        font-size: @font14;
-        color: #333;
-        border: 1px solid #cccedb;
-        background-color: @white;
-        -webkit-border-radius: 1px;
-        -moz-border-radius: 1px;
-        border-radius: 1px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        p{
-            height: 47px;
-            padding: 0 10px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-        select{
-            width: 100%;
-            height: 32px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 3;
-            opacity: 0;
-        }
-        &:after{
-            content: '';
-            position: absolute;
-            top: 16px;
-            right: 9px;
-            width: 10px;
-            height: 6px;
-            background: url('../images/icons-base.png') -80px -90px no-repeat;
-            background-size: 200px 300px;
-        }
-    }
-
-    .questionDIV,
-    .emailDIV,
-    .mobilelDIV{
-        ul{
-            // display: none;
-        }        
         li{
             padding-bottom: 17px;
         }
@@ -125,64 +72,54 @@
                 right: 0;
             }
         }
+        .mgs{
+            width: 66%;
+        }
         .ui-btn{
-            background-color: #f0f1f2;
-            width: 100%;
+            width: 30%;
             height: 40px;
-            padding: 0 15px;
-            font-size: @font14 + 2;
+            float: right;
+            font-size: @font14;
+            background-color: #0d679f;
             border-radius: 3px;
-            .box();
             box-shadow: none;
             border: none;
-        }
-        .info{
-            display: flex;
-            justify-content: space-between;
-            padding-top: 23px;
-        }
-        button{
             color: @white;
-            background-color: #0d679f;
-            border: none;
-            height: 37px;
-            width: 40%;
-            text-align: center;
-            font-size: @font14;
-            .box();
-            border-radius: 3px;
         }
-        .ui-cancel{
-            background-color: @white;
-            border: 1px solid #cccedb;
-            color: #000;
-        }
-        .tip{
-            display: block;
-            font-size: @font14;
-            padding-top: 9px;
-        }
-        .ui-password-btn{
-            margin-top: 23px;
-            .ui-buttom{
-                display: flex;
-                justify-content: space-between;
-                // display: none;
+        .ui-register-radio{
+            padding-top: 11px;
+            span{
+                float: left;
+                color: #888b9c;
+                font-size: @font14;
             }
-            .ui-top{
-                display: flex;
-                justify-content: space-between;
-                display: none;
+            .icon-slt-square{
+                width: 15px;
+                height: 15px;
+                .icon();
+                background-position: -160px -90px;
+                margin-bottom: -3px;
+                margin-right: 6px;
             }
-            .cancel{
-                background-color: @white;
-                color: #000;
-                border: 1px solid #cccedb;
+            a{
+                float: right;
+                color: #0d679f;
+                text-decoration: underline;
+                font-size: @font14;
             }
         }
-        .num{
-            display: none;
-        }
+    }
+    .ui-reg{
+        margin: 18px 0 9px 0;
+        font-size: @font14 + 2;
+        height: 42px;
+        line-height: 42px;
+        width: 100%;
+        color: @white;
+        background-color: #0d679f;
+        border-radius: 3px;
+        box-shadow: none;
+        border: none;
     }
 }
 
