@@ -16,11 +16,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>首页</title>
+    <title>订单确认</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/PHILIPSICON.ico">
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../../libs/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/login.css">
+    <link rel="stylesheet" href="../../assets/css/order.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                 </a></h1>
                 <ul>
                     <li class='cart'>
-                        <a href="../cart/cart.html">
+                        <a href="./cart.html">
                             <i class="icon-cart">
                                 <span class="num">10</span>
                             </i>
@@ -147,41 +147,38 @@
 
     <!--concent-->
     <section>
-        <div class="ui-login">
-            <div class="ui-login-con">
-                <h3>用户登录</h3>
-                <div class="ui-form-list">
+        <form id="orderForm" >
+            <div class="ui-checkout-con">
+                <h3 class="title">订单确认</h3>
+                <div class="ui-checkout-address">
+                    <h4 class="subtitle">
+                        <span>确认收货地址</span>
+                        <a href="#">添加地址</a>
+                    </h4>
                     <ul>
-                        <li class='error'>
-                            <input type="text" class='ui-input' placeholder="电子邮件地址/登录名">
-                            <p class="hint">请输入用户名</p>
-                        </li>
-                        <li class='error'>
-                            <input type="password" class='ui-input' placeholder="密码">
-                            <p class="hint">请输入密码</p>
-                        </li>
-                        <li class='error'>
-                            <div class="ui-login-val">
-                                <p>
-                                    <input type="text" class='ui-input' placeholder="效验码">
-                                </p>
-                                <img src="../../assets/images/securityImage" alt="">
-                                <p class="hint">
-                                    <i class="fa fa-times"></i>
-                                    请输入效验码
-                                </p>
+                        <li>
+                            <div>
+                                <i class="icon-large-circle"></i>
+                                <p id="detailaddress">北京北京市东城区卡瑞特让他</p>
+                                <p id="name_phone">ddfg收  15625635648</p>
                             </div>
+                            <p class="occ-update">编辑</p>
+                        </li>
+                        <li>
+                            <div></div>
+                            <p class="occ-update">编辑</p>
+                        </li>
+                        <li>
+                            <div></div>
+                            <p class="occ-update">编辑</p>
                         </li>
                     </ul>
+                    <div class="more">
+                        <i class=""></i>
+                    </div>
                 </div>
-                <input type="button" class="ui-btn" value="登 录">
-                <p class="ui-login-forgetp"><a href="./forgetPassword.html">忘记密码</a></p>
             </div>
-            <div class="ui-login-account">
-                <p>还没有飞利浦账户？</p>
-                <a href="./register.html"><input type="button" value="创建用户"></a>
-            </div>
-        </div>
+        </form>
     </section>
 
     <!--footer-->
@@ -234,7 +231,6 @@
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
-    <script src="../../assets/js/user.js"></script>
 </body>
 
 </html>
