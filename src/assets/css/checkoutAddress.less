@@ -1,0 +1,159 @@
+@charset 'utf-8';
+
+@white: #fff;
+@font14: 14px;
+@color: #0d679f;
+
+.icon(){
+	display: inline-block;
+	background: url('../images/icons-base.png') no-repeat;
+	background-size: 200px 300px;
+}
+
+.box(){
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.input(){
+    background-color: @white;
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    font-size: @font14;
+    border: 1px solid #cccedb;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: none;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+.ui-my-address-con{
+    padding: 10px 13px 25px;
+    background-color: #f0f1f2;
+    h3{
+        padding-bottom: 16px;
+        text-align: center;
+        font-size: @font14 + 4;
+        font-weight: normal;
+    }
+    .ui-form-list{
+        ul>li{
+            padding-bottom: 17px;
+            label{
+                display: block;
+                padding-bottom: 5px;
+                color: #b9bbc7;
+            }
+            &:nth-child(2){
+                padding-bottom: 0;
+            }
+            .e-slt-control{
+                position: relative;
+                margin-bottom: 17px;
+                i{
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    transform: translateY(-50%);
+                }
+                .fa-angle-down:before{
+                    font-size: @font14 + 3;
+                    color: #8c90a5;
+                }
+            }
+            .ui-slt{
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                position: relative;
+                font-size: 14px;
+                color: #333;
+                border: 1px solid #cccedb;
+                background-color: #fff;
+                -webkit-border-radius: 1px;
+                -moz-border-radius: 1px;
+                border-radius: 1px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                padding: 0 10px;
+            }
+            .ui-input{
+                background-color: @white;
+            }
+            &:first-child .ui-input{
+                background-color: #e6f0f6;
+            }
+        }
+        .ui-input{
+            .input();
+        }
+        .hint{
+            padding-top: 3px;
+            color: #e98300;
+            i{
+                margin-bottom: -1px;
+                margin-right: 4px;
+                width: 10px;
+                height: 10px;
+                .icon();
+                background-position: -40px -90px;
+                margin-right: 0;
+
+            }
+        }
+    }
+
+    .ui-com-terms-slt{
+        padding: 10px 0 4px;
+        color: #888b9c;
+        .icon-slt-square{
+            .icon();
+            width: 15px;
+            height: 15px;
+            background-position: -120px -90px;
+            margin-bottom: -2px;
+            margin-right: 8px;
+        }
+        .active{
+            background-position: -160px -90px;
+        }
+
+    }
+
+    .ui-btn-row{
+        padding-top: 18px;
+        ul{
+            display: flex;
+            justify-content: space-between;
+            li{
+                width: 50%;
+                &:first-child{
+                    padding-right: 10%;
+                    input{
+                        background-color: @color;
+                        color: @white;
+                    }
+                }
+                &:last-child{
+                    padding-left: 10%;
+                }
+            }
+            .ui-btn{
+                .input();
+                border-radius: 3px;
+            }
+        }
+    }
+}
+

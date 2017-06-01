@@ -16,11 +16,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>首页</title>
+    <title>收货地址</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/PHILIPSICON.ico">
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../../libs/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/register.css">
+    <link rel="stylesheet" href="../../assets/css/checkoutAddress.css">
 </head>
 
 <body>
@@ -34,14 +34,14 @@
                 </a></h1>
                 <ul>
                     <li class='cart'>
-                        <a href="../cart/cart.html">
+                        <a href="./cart.html">
                             <i class="icon-cart">
                                 <span class="num">10</span>
                             </i>
                         </a>
                     </li>
                     <li class='user'>
-                        <a href="./login.html">
+                        <a href="../user/login.html">
                             <i class="icon-user"></i>
                         </a>
                     </li>
@@ -147,52 +147,126 @@
 
     <!--concent-->
     <section>
-        <div class="ui-register-con">
-            <h3>免费注册</h3>
-            <div class="ui-form-list">
-                <ul>
-                    <li>
-                        <input type="number" class="ui-input" placeholder="手机号码">
-                        <p class="hint">请输入手机号码</p>
-                    </li>
-                    <li>
-                        <input type="email" class="ui-input" placeholder="电子邮件地址">
-                        <p class="hint">请输入邮箱</p>
-                    </li>
-                    <li>
-                        <input type="password" class="ui-input" placeholder="密码">
-                        <p class="hint">请输入密码</p>
-                    </li>
-                    <li>
-                        <input type="text" class="ui-input" placeholder="确认密码">
-                        <p class="hint">请输入确认密码</p>
-                    </li>
-                    <li>
-                        <div class="ui-login-val">
-                            <p><input type="text" class="ui-input" placeholder="校验码"></p>
-                            <img src="../../assets/images/securityImage" alt="">
-                        </div>
-                        <p class="hint">请输入验证码</p>
-                    </li>
-                    <li>
-                        <input type="text" class="ui-input mgs" placeholder="短信验证码">
-                        <button type="button" class="ui-btn">获取验证码</button>
-                        <p class="hint">请输入短信验证码！</p>
-                    </li>
-                    <li class="ui-register-radio">
-                        <span>
-                            <i class="icon-slt-square"></i>
-                            接受服务协议
-                        </span>
-                        <a>商城服务协议</a>
-                    </li>
-                    <li>
-                        <p class="hint"><i class="fa fa-times"></i>同意商城服务协议后才能成为注册会员！</p>
-                    </li>
-                </ul>
+        <form id="addressform">
+            <div class="ui-my-address-con">
+                <h3 class="title">添加地址</h3>
+                <div class="ui-form-list">
+                    <ul>
+                        <li class="error">
+                            <input type="text" class="ui-input" value="" id="name" placeholder="名字" maxlength="25">
+                            <p class="hint" style="display: block;">
+                                <i class="icon-form-error"></i>
+                                <span>收件人姓名不能为空</span>
+                            </p>
+                        </li>
+                        <li>
+                            <label>收货区域</label>
+                            <div class=" e-slt-control">
+                                <select class="ui-slt" id="provience">
+								    <option value="110000">北京</option>
+                                    <option value="120000">天津</option>
+                                    <option value="130000">河北省</option>
+                                    <option value="140000">山西省</option>
+                                    <option value="150000">内蒙古自治区</option>
+                                    <option value="210000">辽宁省</option>
+                                    <option value="220000">吉林省</option>
+                                    <option value="230000">黑龙江省</option>
+                                    <option value="310000">上海</option>
+                                    <option value="320000">江苏省</option>
+                                    <option value="330000">浙江省</option>
+                                    <option value="340000">安徽省</option>
+                                    <option value="350000">福建省</option>
+                                    <option value="360000">江西省</option>
+                                    <option value="370000">山东省</option>
+                                    <option value="410000">河南省</option>
+                                    <option value="420000">湖北省</option>
+                                    <option value="430000">湖南省</option>
+                                    <option value="440000">广东省</option>
+                                    <option value="450000">广西壮族自治区</option>
+                                    <option value="460000">海南省</option>
+                                    <option value="500000">重庆</option>
+                                    <option value="510000">四川省</option>
+                                    <option value="520000">贵州省</option>
+                                    <option value="530000">云南省</option>
+                                    <option value="540000">西藏自治区</option>
+                                    <option value="610000">陕西省</option>
+                                    <option value="620000">甘肃省</option>
+                                    <option value="630000">青海省</option>
+                                    <option value="640000">宁夏回族自治区</option>
+                                    <option value="650000">新疆维吾尔自治区</option>
+                                </select>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            <div class=" e-slt-control">
+                                <select  class="ui-slt"  id="city">
+                                    <option value="110100">北京市</option>
+                                </select>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            <div class="e-slt-control">
+                                <select  class="ui-slt"  id="area">
+                                    <option value="110101">东城区</option>
+                                    <option value="110102">西城区</option>
+                                    <option value="110103">崇文区</option>
+                                    <option value="110104">宣武区</option>
+                                    <option value="110105">朝阳区</option>
+                                    <option value="110106">丰台区</option>
+                                    <option value="110107">石景山区</option>
+                                    <option value="110108">海淀区</option>
+                                    <option value="110109">门头沟区</option>
+                                    <option value="110111">房山区</option>
+                                    <option value="110112">通州区</option>
+                                    <option value="110113">顺义区</option>
+                                    <option value="110114">昌平区</option>
+                                    <option value="110115">大兴区</option>
+                                    <option value="110116">怀柔区</option>
+                                    <option value="110117">平谷区</option>
+                                    <option value="110228">密云县</option>
+                                    <option value="110229">延庆县</option>
+                                    <option value="110230">其它区</option>
+                                </select>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="text" class="ui-input" value="" placeholder="收货地址" id="address">
+                            <p class="hint" style="display: none;"><i class="icon-form-error"></i>
+                                <span>收货地址位数不能小于5</span>
+                            </p>
+                        </li>
+                        <li>
+                            <input type="text" class="ui-input" value="" id="postcode" maxlength="6" placeholder="邮政编码">
+                            <p class="hint" style="display: block;"><i class="icon-form-error"></i>
+                                <span>邮编不符合规定格式</span>
+                            </p>
+                        </li>
+                        <li>
+                            <input type="text" class="ui-input" value="" placeholder="手机号码(手机号码和固定电话,两者必填一项)" id="mobile">
+                            <p class="hint">
+                                <!--<i class="icon-form-error"></i>-->
+                                <span></span>
+                            </p>
+                        </li>
+                        <li>
+                            <input type="text" class="ui-input" value="" placeholder="固定电话" id="telphone">
+                            <p class="hint">
+                                <!--<i class="icon-form-error"></i>-->
+                                <span></span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <p class="ui-com-terms-slt e-com-terms-slt">
+                    <i class="icon-slt-square active" id="isDefault"></i>设为系统默认地址
+                </p>
+                <div class="ui-btn-row">
+                    <ul class="clearfix">
+                        <li><input type="button" class="ui-btn large" value="确定" id="surebtn"></li>
+                        <li><input type="button" class="ui-btn border-gray large" value="取消" id="cancelbtn"></li>
+                    </ul>
+                </div>
             </div>
-            <button class="ui-reg">注册</button>
-        </div>
+        </form>
     </section>
 
     <!--footer-->
@@ -244,11 +318,7 @@
     </footer>
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
-    <script src="../../../libs/jquery/jquery-validate.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
-    <script src="../../assets/js/user.js"></script>
-
-    
 </body>
 
 </html>

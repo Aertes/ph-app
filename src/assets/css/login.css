@@ -30,6 +30,9 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 .ui-login .ui-login-con .ui-form-list p {
   display: block;
@@ -95,6 +98,9 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   background-color: #e6f0f6;
   font-size: 16px;
 }

@@ -153,7 +153,7 @@
                 <div class="ui-form-list">
                     <ul>
                         <li>
-                            <input id="userName" type="text" class='ui-input' placeholder="电子邮件地址/登录名">
+                            <input id="userName" type="text" name="email" data-tip='请输入您的邮箱' data-valid='isNonEmpty || isEmail' data-error='email不能为空||邮箱格式不正确' class='ui-input required' placeholder="电子邮件地址/登录名">
                             <p id="loginNameError" class="hint"></p>
                         </li>
                         <li>
@@ -232,7 +232,7 @@
     </footer>
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
-    <script src="../../../libs/jquery/validate-1.14.0.min.js"></script>
+    <script src="../../../libs/jquery/jquery-validate.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
     <script src="../../assets/js/user.js"></script>
 </body>
