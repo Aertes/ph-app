@@ -104,11 +104,14 @@ section {
 }
 html {
   overflow-y: scroll;
+  font-size: 14px;
 }
 body,
 input {
-  line-height: 1;
   font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "微软雅黑", "黑体";
+}
+::-webkit-input-placeholder {
+  opacity: .5;
 }
 ol,
 ul {

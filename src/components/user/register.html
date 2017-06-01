@@ -146,42 +146,43 @@
     </header>
 
     <!--concent-->
+    <input type="hidden" name="typeXinAnYi" id="typeXinAnYi">
     <section>
         <div class="ui-register-con">
             <h3>免费注册</h3>
             <div class="ui-form-list">
                 <ul>
                     <li>
-                        <input type="number" class="ui-input" placeholder="手机号码">
-                        <p class="hint">请输入手机号码</p>
+                        <input type="number" id="loginName" class="ui-input" placeholder="手机号码">
+                        <p id="loginNameError" class="hint">请输入手机号码</p>
                     </li>
                     <li>
-                        <input type="email" class="ui-input" placeholder="电子邮件地址">
-                        <p class="hint">请输入邮箱</p>
+                        <input type="email" id="loginEmail" class="ui-input" placeholder="电子邮件地址">
+                        <p id="loginEmailError" class="hint">请输入邮箱</p>
                     </li>
                     <li>
-                        <input type="password" class="ui-input" placeholder="密码">
+                        <input type="password" id="password" class="ui-input" placeholder="密码">
                         <p class="hint">请输入密码</p>
                     </li>
                     <li>
-                        <input type="text" class="ui-input" placeholder="确认密码">
+                        <input type="text" id="repassword" class="ui-input" placeholder="确认密码">
                         <p class="hint">请输入确认密码</p>
                     </li>
                     <li>
                         <div class="ui-login-val">
-                            <p><input type="text" class="ui-input" placeholder="校验码"></p>
-                            <img src="../../assets/images/securityImage" alt="">
+                            <p><input type="text" id="randomCode"  class="ui-input" placeholder="校验码"></p>
+                            <img id="securityImg" src="../../assets/images/securityImage">
                         </div>
-                        <p class="hint">请输入验证码</p>
+                        <p id="randomCodeError" class="hint">请输入验证码</p>
                     </li>
                     <li>
-                        <input type="text" class="ui-input mgs" placeholder="短信验证码">
-                        <button type="button" class="ui-btn">获取验证码</button>
-                        <p class="hint">请输入短信验证码！</p>
+                        <input type="text" id="verifySndCode" class="ui-input mgs" placeholder="短信验证码">
+                        <input type="button" id="btn" class="ui-btn" value="获取验证码">
+                        <p id="verifyCodeError" class="hint">请输入短信验证码！</p>
                     </li>
                     <li class="ui-register-radio">
                         <span>
-                            <i class="icon-slt-square"></i>
+                            <i id="acceptChck" class="icon-slt-square active"></i>
                             接受服务协议
                         </span>
                         <a>商城服务协议</a>
@@ -191,7 +192,7 @@
                     </li>
                 </ul>
             </div>
-            <button class="ui-reg">注册</button>
+            <input type="button" class="ui-btn ui-btn-large to-register" value="注册">
         </div>
     </section>
 
@@ -246,7 +247,7 @@
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../../libs/jquery/jquery-validate.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
-    <script src="../../assets/js/user.js"></script>
+    <script src="../../assets/js/register.js"></script>
 
     
 </body>

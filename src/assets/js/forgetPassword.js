@@ -402,5 +402,24 @@ function showQuestions(a) {
             $("#question_" + b).val(c.question).attr("questionid", c.id)
         }
     })
+};
+
+// 60s
+var wait = 59;
+function time(o){
+    if(wait == 0){
+        o.removeAttribute('disabled');
+        o.value = '获取验证码';
+        wait = 59;
+    }else{
+        o.setAttribute('disabled', true);
+        o.value = wait + '秒后重新获取';
+        wait --;
+        setTimeout(function() {
+            time(o);
+        }, 1000);
+    }
 }
-;
+document.getElementById("verifyCodeId").onclick=function(){
+    time(this);
+}

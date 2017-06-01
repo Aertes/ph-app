@@ -149,7 +149,7 @@
     <section class="ui-cart-bg">
         <div class="ui-cart-con">
             <h3>我的购物车</h3>
-            <ul>
+            <ul class="ul">
                 <li>
                     <div class="ui-cart-product">
                         <img src="../../assets/images/cart1.jpg">
@@ -164,9 +164,9 @@
                         </p>
                         <div class="ui-qty-itemnum">
                             <ul class="clearfix">
-                                <li><i class="minus"></i></li>
-                                <li class="num">2</li>
-                                <li><i class="add"></i></li>
+                                <li class="ui-minus"><i class="minus"></i></li>
+                                <li class="num"><input type="num" value="1"></li>
+                                <li class="ui-add"><i class="add"></i></li>
                             </ul>
                         </div>
                     </div>
@@ -185,9 +185,9 @@
                         </p>
                         <div class="ui-qty-itemnum">
                             <ul class="clearfix">
-                                <li><i class="minus"></i></li>
-                                <li class="num">2</li>
-                                <li><i class="add"></i></li>
+                                <li class="ui-minus"><i class="minus"></i></li>
+                                <li class="num"><input type="num" value="2"></li>
+                                <li class="ui-add"><i class="add"></i></li>
                             </ul>
                         </div>
                     </div>
@@ -195,10 +195,10 @@
             </ul>
             <div class="ui-cart-total">
                 <p>合计</p>
-                <p>￥11013</p>
+                <p id="priceTotal">￥11013</p>
             </div>
             <div class="ui-cart-settle">
-                <a href="./order.html"><button type="submit">结算</button></a>
+                <button type="ui-btn">结算</button>
             </div>
         </div>
         <div class="ui-home-new-rec">
@@ -261,6 +261,8 @@
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
+    <script src="../../assets/js/cart.js"></script>
+
 </body>
 
 </html>
