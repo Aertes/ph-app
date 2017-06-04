@@ -38,7 +38,6 @@
   -webkit-appearance: none;
 }
 .ui-register-con .ui-form-list .hint {
-  display: block;
   padding-top: 5px;
   color: #e98300;
   font-size: 14px;
@@ -46,6 +45,9 @@
 }
 .ui-register-con .ui-form-list .hint i {
   margin-right: 3px;
+}
+.ui-register-con .ui-form-list .notice {
+  padding: 10px 0;
 }
 .ui-register-con .ui-form-list .ui-login-val {
   position: relative;
@@ -88,9 +90,12 @@
   display: inline-block;
   background: url('../images/icons-base.png') no-repeat;
   background-size: 200px 300px;
-  background-position: -160px -90px;
+  background-position: -120px -90px;
   margin-bottom: -3px;
   margin-right: 6px;
+}
+.ui-register-con .ui-form-list .ui-register-radio .active {
+  background-position: -160px -90px;
 }
 .ui-register-con .ui-form-list .ui-register-radio a {
   float: right;

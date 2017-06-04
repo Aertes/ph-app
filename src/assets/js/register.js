@@ -7,7 +7,7 @@ var validateMobileUrl = pagebase + "/m/vaildMobile";
 var sendRegSmsCodeUrl = pagebase + "/m/mobileRegisterSendSmsCode";
 var vaildActiveSmsCodeUrl = pagebase + "/m/vaildActiveSmsCode";
 var isMobileTrue = false;
-var waitValue = 120;
+var waitValue = 59;
 var wait = waitValue;
 var falg = true;
 function isInputEmpty(a) {
@@ -209,12 +209,18 @@ $(document).ready(function() {
         }
         setValid(this, true, "")
     });
+
+    $('.e-register-radio').on('click', function(){
+        console.log(12);
+        $(this).children().toggleClass('active');
+    });
+
     var a = null;
     $(".to-register").on("click", function() {
         clearTimeout(a);
         a = setTimeout(function() {
-            $("#loginName,#loginEmail, #password, #repassword,#randomCode").trigger("focus");
-            $("#loginName,#loginEmail, #password, #repassword,#randomCode").trigger("blur");
+            $("#loginName,#loginEmail, #password, #repassword, #randomCode, #verifySndCode").trigger("focus");
+            $("#loginName,#loginEmail, #password, #repassword, #randomCode, #verifySndCode").trigger("blur");
             if ($("#acceptChck").hasClass("active")) {
                 setValid(this, true, "");
                 clearGeneralErrorInfo()
@@ -309,9 +315,13 @@ $(document).ready(function() {
     $(".to-register").dblclick(function() {
         clearTimeout(a)
     });
-    // ------------------------------------------------------------------
+
     $("#securityImgMobile").on("tap", function() {
         changeCode($(this))
+    });
+    
+    $("#verifyCodeId").on('click', function(){
+        timeCountDown($(this));
     })
 });
 function addError() {
@@ -373,8 +383,8 @@ function sendShortMessage() {
         }
     })
 }
-function timeCountDown() {
-    var a = $("#verifyCodeId");
+
+function timeCountDown(a) {
     if (wait == 0) {
         a.css({
             color: "#000"
@@ -388,36 +398,19 @@ function timeCountDown() {
             color: ""
         });
         a.attr("disabled", true);
-        a.val("(" + wait + ")秒后重新获取");
-        wait--;
+        a.val( wait + "秒后重新获取");
+        wait --;
         setTimeout(function() {
             timeCountDown(a)
         }, 1000)
     }
 }
+
 function setErrorDesc(a) {
     $("#verifyCodeError").html(a).css("display", "block");
     setValid("#verifyCodeError", false, a);
     $("#verifyCodeError").addClass("msg_error")
 };
 
-// 60s
-var wait = 59;
-function time(o){
-    if(wait == 0){
-        o.removeAttribute('disabled');
-        o.value = '获取验证码';
-        wait = 59;
-    }else{
-        o.setAttribute('disabled', true);
-        o.value = wait + '秒后重新获取';
-        wait --;
-        setTimeout(function() {
-            time(o);
-        }, 1000);
-    }
-}
-document.getElementById("btn").onclick=function(){
-    time(this);
-}
+
 

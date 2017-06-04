@@ -53,7 +53,6 @@
             .input();
         }
         .hint{
-            display: block;
             padding-top: 5px;
             color: #e98300;
             font-size: @font14;
@@ -61,6 +60,9 @@
             i{
                 margin-right: 3px;
             }
+        }
+        .notice{
+            padding: 10px 0;
         }
         .ui-login-val{
             position: relative;
@@ -101,9 +103,12 @@
                 width: 15px;
                 height: 15px;
                 .icon();
-                background-position: -160px -90px;
+                background-position: -120px -90px;
                 margin-bottom: -3px;
                 margin-right: 6px;
+            }
+            .active{
+                background-position: -160px -90px;
             }
             a{
                 float: right;

@@ -93,8 +93,9 @@ function userLogin() {
         mobileTem: $("#mobileNumberHidden").val(),
         mobileVerifyCode: $("#mobileVerificationCodeHidden").val()
     };
+    console.log(d);
     if (b.data("checked") && a.data("checked") && e.data("checked")) {
-        asyncXhr(loginUrl, d, {
+        $.ajax(loginUrl, d, {
             type: "POST",
             success: function(i) {
                 var g = i;
@@ -235,9 +236,11 @@ function timeCountDown() {
     }
 }
 function encryptedPassword(e) {
-    var b = new Date().format("yyyy MM dd");
+    var b = new Date().format("yyyyMMdd");
     console.log(b);
     var c = aesEncode(b).replace("==", "");
+    console.log(c);
+    
     var i = aesEncode(e).replace("==", "");
     var h = i.substr(0, i.length / 2);
     var g = i.substr(i.length / 2, i.length);

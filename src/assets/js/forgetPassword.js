@@ -4,7 +4,7 @@ var findBackEmailUrl = pagebase + "/account/losepassword";
 var updatePasswordUrl = pagebase + "/account/updatepassword";
 var updateResultUrl = pagebase + "/account/updatepasswordresult";
 var validateLoginNameUrl = pagebase + "/m/vaildUserName";
-var waitValue = 120;
+var waitValue = 59;
 var wait = waitValue;
 function isInputEmpty(a) {
     var b = $(a);
@@ -174,8 +174,12 @@ $(document).ready(function() {
         var boo = /^1[3|4|5|6|7|8|9][0-9]\d{8}$/.test(mobileNumber);
         if (!boo) {
             toSetErrorInfo("#mobileNumber", "请填写正确的手机号码！");
+        console.log(123);
+            
             return
         }
+        console.log(456);
+        
         if (securityCode == "") {
             $("#securityCode").parent().parent().parent().addClass("error");
             $("#securityCode").parent().parent().parent().find("errorInfo").html("请填写效验码!");
@@ -297,6 +301,9 @@ $(document).ready(function() {
                 comHintPop("密码重置失败,请重试！")
             }
         })
+    });
+    $("#verifyCodeId").click(function(){
+        timeCountDown($(this));
     })
 });
 function changeCode(a) {
@@ -305,7 +312,7 @@ function changeCode(a) {
 }
 function toSetErrorInfo(b, a) {
     $("" + b).parent().addClass("error");
-    $("" + b).parent().find("errorInfo").html(a)
+    $("" + b).parent().find("errorInfo").html(a);
 }
 function toClearErrorInfo(a) {
     $("" + a).parent().removeClass("error")
@@ -363,8 +370,7 @@ function sendShortMessage() {
         }
     })
 }
-function timeCountDown() {
-    var a = $("#verifyCodeId");
+function timeCountDown(a) {
     if (wait == 0) {
         a.css({
             color: "#000"
@@ -378,7 +384,7 @@ function timeCountDown() {
             color: ""
         });
         a.attr("disabled", true);
-        a.val("(" + wait + ")秒后重新获取");
+        a.val( wait + "秒后重新获取");
         wait--;
         setTimeout(function() {
             timeCountDown(a)
@@ -404,22 +410,4 @@ function showQuestions(a) {
     })
 };
 
-// 60s
-var wait = 59;
-function time(o){
-    if(wait == 0){
-        o.removeAttribute('disabled');
-        o.value = '获取验证码';
-        wait = 59;
-    }else{
-        o.setAttribute('disabled', true);
-        o.value = wait + '秒后重新获取';
-        wait --;
-        setTimeout(function() {
-            time(o);
-        }, 1000);
-    }
-}
-document.getElementById("verifyCodeId").onclick=function(){
-    time(this);
-}
+

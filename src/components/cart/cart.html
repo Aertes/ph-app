@@ -24,6 +24,8 @@
 </head>
 
 <body>
+    
+
     <!--header-->
     <header>
         <!--nav-->
@@ -147,46 +149,51 @@
 
     <!--concent-->
     <section class="ui-cart-bg">
-        <div class="ui-cart-con">
+        <div id="overlay">
+            <img src="../../assets/images/loading2.gif">
+        </div>
+
+        <div class="ui-cart-con" id="emptycartposition">
             <h3>我的购物车</h3>
-            <ul class="ul">
-                <li>
+            <ul class="ul" >
+                <!--id="ulposition"-->
+                <li class="liclone">
                     <div class="ui-cart-product">
                         <img src="../../assets/images/cart1.jpg">
                     </div>
-                    <div class="ui-cart-title">
+                    <div class="ui-cart-title ">
                         <p class="name">飞利浦 电吹风 BHC202/05</p>
-                        <p class="price"><span>￥329</span><span></span></p>
+                        <p class="price"><span class="mysaleprice">￥329</span><span class="past mylistprice"></span></p>
                         <p class="now-price">￥740.25</p>
                         <p class="btn">
-                            <span class="e-cart-delete">删除</span>
-                            <span>收藏</span>
+                            <span class="e-cart-delete"  myid="delete">删除</span>
+                            <span myid='collection' >收藏</span>
                         </p>
-                        <div class="ui-qty-itemnum">
+                        <div class="ui-qty-itemnum e-qty-itemnum">
                             <ul class="clearfix">
                                 <li class="ui-minus"><i class="minus"></i></li>
-                                <li class="num"><input type="num" value="1"></li>
+                                <li class="num">1</li>
                                 <li class="ui-add"><i class="add"></i></li>
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="liclone">
                     <div class="ui-cart-product">
                         <img src="../../assets/images/cart2.jpg">
                     </div>
                     <div class="ui-cart-title">
                         <p class="name">飞利浦 电吹风 BHC202/05</p>
-                        <p class="price"><span>￥329</span><span></span></p>
+                        <p class="price"><span class="mysaleprice">￥329</span><span class="past mylistprice"></span></p>
                         <p class="now-price">￥740.25</p>
                         <p class="btn">
-                            <span class="e-cart-delete">删除</span>
-                            <span>收藏</span>
+                            <span class="e-cart-delete" myid="delete">删除</span>
+                            <span myid="collection" >收藏</span>
                         </p>
-                        <div class="ui-qty-itemnum">
+                        <div class="ui-qty-itemnum e-qty-itemnum">
                             <ul class="clearfix">
                                 <li class="ui-minus"><i class="minus"></i></li>
-                                <li class="num"><input type="num" value="2"></li>
+                                <li class="num">2</li>
                                 <li class="ui-add"><i class="add"></i></li>
                             </ul>
                         </div>
@@ -195,16 +202,16 @@
             </ul>
             <div class="ui-cart-total">
                 <p>合计</p>
-                <p id="priceTotal">￥11013</p>
+                <p id="carttotalprice">￥11013</p>
             </div>
             <div class="ui-cart-settle">
-                <button type="ui-btn">结算</button>
+                <button id="submitBtn" type="ui-btn">结算</button>
             </div>
         </div>
         <div class="ui-home-new-rec">
             <h3 class="ui-home-subtitle">您可能感兴趣的宝贝</h3>
             <div class="e-scroll-ctr">
-                <ul class="clearfix">
+                <ul class="clearfix" id="recommandposition">
                     <li></li>
                 </ul>
             </div>
@@ -259,8 +266,30 @@
         </div>
     </footer>
 
+    <!--pop up-->
+    <div class="ui-com-pop e-com-pop ui-cart-pop">
+		<div class="ui-com-pop-con">
+			<span class="ui-pop-close e-pop-close"><i class="icon-pop-close"></i></span>
+			<h3 class="title">温馨提示</h3>
+			<p class="text">您确定要删除这个商品吗？</p>
+			<div class="ui-btn-row one">
+				<ul class="clearfix">
+					<li class="e-btn-pop-sure"><input type="button" class="ui-btn" value="确定"></li>
+					<li class="e-btn-pop-cancel cancle"><input type="button" class="ui-btn gray" value="取消"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+    <!--pop up mask-->
+    <div class="ui-pop-mask e-pop-mask"></div>
+
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/aes/aes.js"></script>
+    <script src="../../assets/js/aes/util.js"></script>
+    <script src="../../assets/js/aes/pdk.js"></script>
     <script src="../../assets/js/cart.js"></script>
 
 </body>
