@@ -33,22 +33,22 @@ function numControl() {
         f.on("click", function () {
             if (quantityChange(e, c + 1)) {
                 c++;
-                // d.removeClass("disabled");
+                d.removeClass("disabled");
                 $(this).parent().siblings("p.hint").hide();
                 b.text(c)
             } else {
-                // $(this).addClass("disabled");
+                $(this).addClass("disabled");
                 $(this).parent().siblings("p.hint").show()
             }
         });
         d.on("click", function () {
             if ((c - 1) > 0 && quantityChange(e, c - 1)) {
                 c--;
-                // d.removeClass("disabled");
+                d.removeClass("disabled");
                 $(this).parent().siblings("p.hint").hide();
                 b.text(c)
             } else {
-                // $(this).addClass("disabled");
+                $(this).addClass("disabled");
                 $(this).parent().siblings("p.hint").show()
             }
         })
@@ -345,4 +345,82 @@ function loadRecommandItems() {
     })
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(function(){
+
+//     // 合计
+//     carttotalprice();
+//     addMine();
+
+//     function carttotalprice(){
+//         var sum = 0;
+//         $('.now-price').each(function(){
+//             sum += parseFloat($(this).text());
+//             $('#carttotalprice').text('￥' + sum);
+//         })
+//     }
+
+//     function addMine(){
+//         // 加
+//         $('.ui-add').each(function(){
+//             $(this).on('click', function(){
+//                 var $multi;
+                
+//                 var vall = $(this).prev().children().val();
+//                 vall ++;
+//                 $(this).prev().children().val(vall);
+
+//                 $multi = (parseFloat(vall) * parseInt($(this).parent().parent().prev().prev().first('span').text())).toFixed(2);
+
+
+
+//                 $(this).parent().parent().prev().prev().text($multi);
+
+//                 carttotalprice();
+//             });
+
+//         });
+
+//         // 减
+//         $('.minus').each(function(){
+//             $(this).on('click', function(){
+//                 var $multi1 = 0;
+//                 var vall1 = $(this).next().children().val();
+//                 vall1 -- ;
+//                 if(vall1 <= 0){
+//                     vall1 = 1;
+//                 }
+//                 $(this).next().children().val(vall1);
+
+//                 $multi = parseFloat(vall1) * parseInt($(this).parent().parent().prev().prev().first('span').text());
+
+//                 $(this).parent().parent().prev().prev().text($multi);
+
+//                 carttotalprice();
+//             })
+//         })
+        
+//     }
+
+
+// })
 
