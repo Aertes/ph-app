@@ -25,15 +25,16 @@
     .e-scroll-ctr{
         width: 100%;
         overflow: scroll;
+        
         ul{
-            width: 610px;
+            display: flex;
+            align-items: flex-start;
             li{
-                width: 92px;
-                float: left;
                 margin-right: 30px;
             }
             a{
                 display: block;
+                width: 100px;
                 img{
                     width: 100%;
                 }
@@ -72,21 +73,29 @@
                 background: url('../images/loading.gif') center center no-repeat;
             }
         }
-        .flicking_con{
+        
+    }
+
+    .flexslider{
+        ol{
             position: absolute;
             bottom: 5px;
             left: 50%;
             transform: translateX(-50%);
             li{
                 float: left;
-                width: 8px;
-                height: 8px;
                 border-radius: 50%;
                 background-color: #ccc;
                 margin: 0 3px;
                 text-indent: -9999px;
+                a{
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                }
             }
-            .on{
+            .flex-active{
                 background-color: #0d679f;
             }
         }
@@ -109,34 +118,22 @@
             padding: 15px 13px 6px;
         }
         .swiper-container{
-                width: 100%;
-                height: 235px;
-                overflow: scroll;
-            ul{
-                // transform: translate3d(-238px, 0px, 0px);
-                // transition-duration: 0s;
-                width: 714px;
-                height: 235px;
-                overflow: hidden;
-            }
-            li{
-                width: 224px;
-                padding: 0 7px;
-                float: left;
-                a{
-                    display: block;
-                }
+            width: 100%;
+            height: 235px;
+            overflow: hidden;
+            .swiper-wrapper{
+                display: flex;
+                align-items: center;
                 img{
-                    width: 224px;
+                    height: 235px;
+                }
+                .swiper-slide{
+                    margin: 0 10px;
                 }
             }
         }
-
     }
     
-    .ui-home-boutique-pro{
-
-    }
 
     .ui-home-accurate-search{
         padding: 0 13px;
@@ -193,7 +190,7 @@
                     text-align: center;
                 }
                 
-                .leftpointer
+                .leftpointer,
                 .rightpointer{
                     width: 6px;
                     height: 6px;
@@ -264,6 +261,11 @@
                     -webkit-box-sizing: border-box;
                     -moz-box-sizing: border-box;
                     box-sizing: border-box;
+                    &.active{
+                        color: #0d679f;
+                        border: 1px solid #26669f;
+                        background-color: @white;
+                    }
                 }
             }
             .ui-btn{
@@ -358,5 +360,18 @@
 
 }
 
+
+// modlue
+
+#module{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: rgba(0,0,0,0.5);
+}
 
 

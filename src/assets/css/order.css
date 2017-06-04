@@ -44,9 +44,20 @@
   width: 100%;
   padding: 7px 0;
   border-bottom: 1px solid #e5e5e5;
+  display: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+.ui-checkout-con .ui-checkout-address ul > li:first-child {
+  display: table;
+}
+.ui-checkout-con .ui-checkout-address ul > li .all {
+  display: table;
+}
+.ui-checkout-con .ui-checkout-address ul > li.active {
+  background-position: -120px -150px;
+  display: table;
 }
 .ui-checkout-con .ui-checkout-address ul > li div {
   padding: 0 20px 0 40px;
@@ -57,6 +68,17 @@
 }
 .ui-checkout-con .ui-checkout-address ul > li div span {
   display: block;
+}
+.ui-checkout-con .ui-checkout-address ul > li div p {
+  display: table-cell;
+  width: 50px;
+  padding-right: 13px;
+  text-align: right;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.ui-checkout-con .ui-checkout-address ul > li .occ-update.active {
+  display: table;
 }
 .ui-checkout-con .ui-checkout-address ul > li i {
   height: 15px;
@@ -69,17 +91,6 @@
   background: url('../images/icons-base.png') no-repeat;
   background-size: 200px 300px;
   background-position: -80px -150px;
-}
-.ui-checkout-con .ui-checkout-address ul > li .active {
-  background-position: -120px -150px;
-}
-.ui-checkout-con .ui-checkout-address ul > li p {
-  display: table-cell;
-  width: 50px;
-  padding-right: 13px;
-  text-align: right;
-  vertical-align: middle;
-  font-size: 14px;
 }
 .ui-checkout-con .ui-checkout-address .more {
   padding: 7px 0;
@@ -164,6 +175,9 @@
   box-sizing: border-box;
   box-shadow: none;
   border: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 .ui-checkout-con .ui-checkout-payway {
   margin-bottom: 9px;

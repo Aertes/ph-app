@@ -210,13 +210,9 @@ $(document).ready(function() {
         setValid(this, true, "")
     });
 
-    $('.e-register-radio').on('click', function(){
-        console.log(12);
-        $(this).children().toggleClass('active');
-    });
-
     var a = null;
-    $(".to-register").on("click", function() {
+    $(".to-register").on("click", function(e) {
+        e.stopPropagation();
         clearTimeout(a);
         a = setTimeout(function() {
             $("#loginName,#loginEmail, #password, #repassword, #randomCode, #verifySndCode").trigger("focus");
@@ -313,6 +309,7 @@ $(document).ready(function() {
         }, 350)
     });
     $(".to-register").dblclick(function() {
+        e.stopPropagation();        
         clearTimeout(a)
     });
 

@@ -35,7 +35,7 @@
                     <li class='cart'>
                         <a href="./src/components/cart/cart.html">
                             <i class="icon-cart">
-                                <span class="num">10</span>
+                                <span id="cartnumber" class="num">10</span>
                             </i>
                         </a>
                     </li>
@@ -44,19 +44,19 @@
                             <i class="icon-user"></i>
                         </a>
                     </li>
-                    <li class='search'>
+                    <li class='search e-search-btn'>
                         <a href="javascript:;">
                             <i class="icon-search"></i>
                         </a>
                     </li>
-                    <li class='menu' id="menu">
+                    <li class='menu e-menu-btn' id="menu">
                         <a href="javascript:;">
                             <i class="icon-menu"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="ui-header-search">
+            <div class="ui-header-search e-header-search">
                 <form>
                     <input type="search" name="k" class="zoom-text" placeholder="您在寻找什么?">
                 </form>
@@ -71,9 +71,9 @@
         </div>
 
         <!--menu-->
-        <div class="ui-menu">
+        <div class="ui-menu e-menu-con">
             <!--category-->
-            <div class="category">
+            <div class="category e-menu-category">
                 <div class="item">
                     <h3>个人护理<i class="ui-add"></i></h3>
                     <ul>
@@ -147,19 +147,18 @@
 
     <!--concent-->
     <section>
+        <div id="overlay">
+            <img src="./src/assets/images/loading2.gif">
+        </div>
+
         <div class="ui-home-con">
             <!--slides-->
-            <div id="bar" class="ui-home-slider">
-                <div class="flex-viewport clearfix">
-                    <ul class="ui-silder">
-                        <li><a href=""><img src="./src/assets/images/banner1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="./src/assets/images/banner2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="./src/assets/images/banner3.jpg" alt=""></a></li>
-                    </ul>
-                </div>
-                <div class="flicking_con">
-                    <ul></ul>
-                </div>
+            <div id="bar" class="ui-home-slider flexslider e-home-slider">
+                <ul class="ui-silder slides">
+                    <li><a href=""><img src="./src/assets/images/banner1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./src/assets/images/banner2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./src/assets/images/banner3.jpg" alt=""></a></li>
+                </ul>
             </div>
             <!--new-rec-->
             <div class="ui-home-new-rec">
@@ -204,11 +203,11 @@
                     <span>为您送出飞利浦的心意</span>
                 </h3>
                 <div class="swiper-container">
-                    <ul>
-                        <li><a href=""><img src="./src/assets/images/star-product2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="./src/assets/images/star-product3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="./src/assets/images/star-product1.jpg" alt=""></a></li>
-                    </ul>
+                    <div class="swiper-wrapper">
+                        <div class='swiper-slide'><a href=""><img src="./src/assets/images/star-product2.jpg" alt=""></a></div>
+                        <div class='swiper-slide'><a href=""><img src="./src/assets/images/star-product3.jpg" alt=""></a></div>
+                        <div class='swiper-slide'><a href=""><img src="./src/assets/images/star-product1.jpg" alt=""></a></div>
+                    </div>
                 </div>
             </div>
             <!--boutique-pro-->
@@ -253,12 +252,12 @@
                     <h4>热卖商品价位选择</h4>
                     <div class="price-con">
                         <div class="price-control">
-                            <div class="nstSlider">
-                                <div class="bar"></div>
-                                <div class="leftGrip">
+                            <div class="nstSlider e-nstSlider" data-range_min="0" data-range_max="5000" data-cur_min="0" data-cur_max="3000">
+                                <div class="bar nst-animating"></div>
+                                <div class="leftGrip  nst-animating">
                                     <div class="leftpointer"></div>
                                 </div>
-                                <div class="rightGrip">
+                                <div class="rightGrip  nst-animating">
                                     <div class="rightpointer"></div>
                                 </div>
                             </div>
@@ -280,7 +279,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="ui-home-type-slt">
+                <div class="ui-home-type-slt e-home-type-slt">
                     <h4>热卖商品类型选择</h4>
                     <ul class="clearfix">
                         <li><p>系列剃须刀</p></li>
@@ -363,7 +362,7 @@
     <footer>
         <div class="ui-footer">
             <!--ASQ-->
-            <div class="ui-footer-question">
+            <div class="ui-footer-question e-footer-question">
                 <h3>在线帮助 <i class="ui-add"></i></h3>
                 <ul>
                     <li><a href="">常见问题</a></li>
@@ -407,10 +406,27 @@
         </div>
     </footer>
 
+    <div id="module" class="ui-png-mask e-png-mask"></div>
+
     <script src="./libs/jquery/jquery-1.11.3.min.js"></script>
-    <script src="./libs/jquery/TouchSlide.1.1.js"></script>
-    <script src="./src/assets/js/comment.js"></script>
+    <script src="./libs/jquery/jquery.flexslider-min.js"></script>
+    <script src="./libs/jquery/jquery.nstSlider.min.js"></script>
+    <script src="./libs/jquery/swiper-3.4.2.jquery.min.js"></script>
+    <script src="./src/assets/js/main.js"></script>
     <script src="./src/assets/js/index.js"></script>
+    <script src="./src/assets/js/comment.js"></script>
+    <script>
+            // 全局设置loading效果
+            $(document).ajaxStart(function(){
+                $('#overlay').show();
+            });
+            $(document).ajaxStop(function(){
+                setTimeout(function() {
+                    $('#overlay').hide();
+                    console.log(123);
+                }, 3000);
+            });
+    </script>
 </body>
 
 </html>

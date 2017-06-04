@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    <div id="overlay">
+        <img src="../../assets/images/loading2.gif">
+    </div>
     <!--header-->
     <header>
         <!--nav-->
@@ -34,9 +37,9 @@
                 </a></h1>
                 <ul>
                     <li class='cart'>
-                        <a href="./cart.html">
+                        <a href="../cart/cart.html">
                             <i class="icon-cart">
-                                <span class="num">10</span>
+                                <span id="cartnumber" class="num">10</span>
                             </i>
                         </a>
                     </li>
@@ -45,19 +48,19 @@
                             <i class="icon-user"></i>
                         </a>
                     </li>
-                    <li class='search'>
+                    <li class='search e-search-btn'>
                         <a href="javascript:;">
                             <i class="icon-search"></i>
                         </a>
                     </li>
-                    <li class='menu' id="menu">
+                    <li class='menu e-menu-btn' id="menu">
                         <a href="javascript:;">
                             <i class="icon-menu"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="ui-header-search">
+            <div class="ui-header-search e-header-search">
                 <form>
                     <input type="search" name="k" class="zoom-text" placeholder="您在寻找什么?">
                 </form>
@@ -72,9 +75,9 @@
         </div>
 
         <!--menu-->
-        <div class="ui-menu">
+        <div class="ui-menu e-menu-con">
             <!--category-->
-            <div class="category">
+            <div class="category e-menu-category">
                 <div class="item">
                     <h3>个人护理<i class="ui-add"></i></h3>
                     <ul>
@@ -109,6 +112,7 @@
                         <li><a href=""> 健康护理<i class='icon-arrow-white'></i></a></li>
                     </ul>
                 </div>
+                
                 <div class="item">
                     <h3>附件<i class="ui-add"></i></h3>
                     <ul>
@@ -147,16 +151,20 @@
 
     <!--concent-->
     <section>
-        <form id="orderForm" >
+        <form id="orderForm" name="orderForm">
+            <input type="hidden" name="isBuyNow" id="isBuyNow" value="">
+            <input type="hidden" name="targetUrl" id="targetUrl" value="">
+            <input type="hidden" id="contactId" name="contactId" value="256786">
+            <input type="hidden" id="memberId">
             <div class="ui-checkout-con">
                 <h3 class="title">订单确认</h3>
                 <!--address-->
-                <div class="ui-checkout-address">
+                <div class="ui-checkout-address e-checkout-address">
                     <h4 class="subtitle">
                         <span>确认收货地址</span>
                         <a href="#">添加地址</a>
                     </h4>
-                    <ul>
+                    <ul id="addressposition">
                         <li>
                             <div>
                                 <i class="icon-large-circle active"></i>
@@ -190,7 +198,7 @@
                 <div class="ui-checkout-coupon">
                     <h4 class="subtitle">使用优惠券</h4>
                     <ul class="clearfix">
-                        <li><input type="text" placeholder="请输入您的优惠券码"  class="ui-input"></li>
+                        <li><input type="text" placeholder="请输入您的优惠券码" id="coupons" name = "coupons" class="ui-input"></li>
                         <li class="use-btn"><input type="button" value="使用"  class="ui-btn"></li>
                     </ul>
                 </div>
@@ -300,7 +308,7 @@
     <footer>
         <div class="ui-footer">
             <!--ASQ-->
-            <div class="ui-footer-question">
+            <div class="ui-footer-question e-footer-question">
                 <h3>在线帮助 <i class="ui-add"></i></h3>
                 <ul>
                     <li><a href="">常见问题</a></li>
@@ -345,7 +353,10 @@
     </footer>
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/order.js"></script>
     <script src="../../assets/js/comment.js"></script>
+
 </body>
 
 </html>

@@ -198,6 +198,9 @@ table {
 				width: 17px;
 				height: 17px;
 				background-position: -120px 0;
+				&.active{
+					background-position: -160px 0;
+				}
 			}
 		}
 		
@@ -445,4 +448,24 @@ table {
 		}
 
 	}
+}
+
+
+// loading
+#overlay{
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: @white;
+    display: none;
+    img{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
 }

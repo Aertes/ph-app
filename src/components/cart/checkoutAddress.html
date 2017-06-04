@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    <div id="overlay">
+        <img src="../../assets/images/loading2.gif">
+    </div>
     <!--header-->
     <header>
         <!--nav-->
@@ -34,9 +37,9 @@
                 </a></h1>
                 <ul>
                     <li class='cart'>
-                        <a href="./cart.html">
+                        <a href="javascript:;">
                             <i class="icon-cart">
-                                <span class="num">10</span>
+                                <span id="cartnumber" class="num">10</span>
                             </i>
                         </a>
                     </li>
@@ -45,19 +48,19 @@
                             <i class="icon-user"></i>
                         </a>
                     </li>
-                    <li class='search'>
+                    <li class='search e-search-btn'>
                         <a href="javascript:;">
                             <i class="icon-search"></i>
                         </a>
                     </li>
-                    <li class='menu' id="menu">
+                    <li class='menu e-menu-btn' id="menu">
                         <a href="javascript:;">
                             <i class="icon-menu"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="ui-header-search">
+            <div class="ui-header-search e-header-search">
                 <form>
                     <input type="search" name="k" class="zoom-text" placeholder="您在寻找什么?">
                 </form>
@@ -72,9 +75,9 @@
         </div>
 
         <!--menu-->
-        <div class="ui-menu">
+        <div class="ui-menu e-menu-con">
             <!--category-->
-            <div class="category">
+            <div class="category e-menu-category">
                 <div class="item">
                     <h3>个人护理<i class="ui-add"></i></h3>
                     <ul>
@@ -109,6 +112,7 @@
                         <li><a href=""> 健康护理<i class='icon-arrow-white'></i></a></li>
                     </ul>
                 </div>
+                
                 <div class="item">
                     <h3>附件<i class="ui-add"></i></h3>
                     <ul>
@@ -147,6 +151,9 @@
 
     <!--concent-->
     <section>
+        <div id="overlay">
+            <img src="../../assets/images/loading2.gif">
+        </div>
         <form id="addressform">
             <div class="ui-my-address-con">
                 <h3 class="title">添加地址</h3>
@@ -273,7 +280,7 @@
     <footer>
         <div class="ui-footer">
             <!--ASQ-->
-            <div class="ui-footer-question">
+            <div class="ui-footer-question e-footer-question">
                 <h3>在线帮助 <i class="ui-add"></i></h3>
                 <ul>
                     <li><a href="">常见问题</a></li>
@@ -319,6 +326,10 @@
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/aes/aes.js"></script>
+    <script src="../../assets/js/aes/util.js"></script>
+    <script src="../../assets/js/aes/pdk.js"></script>
 </body>
 
 </html>

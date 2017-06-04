@@ -718,41 +718,4 @@ function Base64() {
 
 
 
-//头尾的点击事件 
-
-$(function(){
-    $('#menu').on('click', function(){
-		$('.ui-menu').slideToggle(300);
-    })
-
-	$('.item h3').on('click', function(){
-		$(this).next("ul").slideToggle(300).siblings("ul").slideUp(500);
-		$(this).find('i').toggleClass('on');
-	})
-
-	$('.ui-footer-question h3').on('click', function(){
-		$(this).next("ul").slideToggle(300).siblings("ul").slideUp(500);
-		$(this).find('i').toggleClass('on');
-	})
-
-	$('.search').on('click',function(){
-		$('.ui-header-nav').hide().next().show();
-	})
-
-	$('.close-btn').on('click', function(){
-		$('.ui-header-search').hide().siblings().show();
-	})
-	
-    // 全局设置loading效果
-    $(document).ajaxStart(function(){
-        $('#overlay').show();
-    });
-    $(document).ajaxStop(function(){
-        setTimeout(function() {
-            $('#overlay').hide();
-        }, 3000);
-    });
-
-})
-
 
