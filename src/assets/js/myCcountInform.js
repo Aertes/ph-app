@@ -4,7 +4,7 @@ var bindMobileUrl = pagebase + "";
 var sendBindEmailUrl = pagebase + "";
 var checkEmailUrl = pagebase + "";
 var refreshUrl = pagebase + "";
-var waitValue = 120;
+var waitValue = 60;
 var wait = waitValue;
 function refresh() {
     location.href = refreshUrl
@@ -365,7 +365,7 @@ function timeCountDown() {
             color: ""
         });
         a.attr("disabled", true);
-        a.val("(" + wait + ")秒后重新获取");
+        a.val( wait + "秒后重新获取");
         wait--;
         setTimeout(function() {
             timeCountDown(a)
