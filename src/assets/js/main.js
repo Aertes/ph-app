@@ -143,6 +143,8 @@ function scrollWidthCtr(a) {
         $(this).children("ul").width(c * b + "px")
     })
 }
+
+// 弹窗（模态框）
 function comHintPop(f, d, e, i) {
     var a = $(".e-pop-mask")
       , c = $(".e-com-pop");

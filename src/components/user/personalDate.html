@@ -16,11 +16,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>收货地址</title>
+    <title>编辑个人档案</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/PHILIPSICON.ico">
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../../libs/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/checkoutAddress.css">
+    <link rel="stylesheet" href="../../assets/css/personalDate.css">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                 </a></h1>
                 <ul>
                     <li class='cart'>
-                        <a href="javascript:;">
+                        <a href="../cart/cart.html">
                             <i class="icon-cart">
                                 <span id="cartnumber" class="num">10</span>
                             </i>
@@ -151,129 +151,123 @@
 
     <!--concent-->
     <section>
-        <div id="overlay">
-            <img src="../../assets/images/loading2.gif">
-        </div>
-        <form id="addressform">
-            <div class="ui-my-address-con">
-                <h3 class="title">添加地址</h3>
-                <div class="ui-form-list">
-                    <ul>
-                        <li class="error">
-                            <input type="text" class="ui-input" value="" id="name" placeholder="名字" maxlength="25">
-                            <p class="hint" style="display: block;">
-                                <i class="icon-form-error"></i>
-                                <span>收件人姓名不能为空</span>
-                            </p>
-                        </li>
-                        <li>
-                            <label>收货区域</label>
-                            <div class=" e-slt-control">
-                                <select class="ui-slt" id="provience">
-								    <option value="110000">北京</option>
-                                    <option value="120000">天津</option>
-                                    <option value="130000">河北省</option>
-                                    <option value="140000">山西省</option>
-                                    <option value="150000">内蒙古自治区</option>
-                                    <option value="210000">辽宁省</option>
-                                    <option value="220000">吉林省</option>
-                                    <option value="230000">黑龙江省</option>
-                                    <option value="310000">上海</option>
-                                    <option value="320000">江苏省</option>
-                                    <option value="330000">浙江省</option>
-                                    <option value="340000">安徽省</option>
-                                    <option value="350000">福建省</option>
-                                    <option value="360000">江西省</option>
-                                    <option value="370000">山东省</option>
-                                    <option value="410000">河南省</option>
-                                    <option value="420000">湖北省</option>
-                                    <option value="430000">湖南省</option>
-                                    <option value="440000">广东省</option>
-                                    <option value="450000">广西壮族自治区</option>
-                                    <option value="460000">海南省</option>
-                                    <option value="500000">重庆</option>
-                                    <option value="510000">四川省</option>
-                                    <option value="520000">贵州省</option>
-                                    <option value="530000">云南省</option>
-                                    <option value="540000">西藏自治区</option>
-                                    <option value="610000">陕西省</option>
-                                    <option value="620000">甘肃省</option>
-                                    <option value="630000">青海省</option>
-                                    <option value="640000">宁夏回族自治区</option>
-                                    <option value="650000">新疆维吾尔自治区</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                            </div>
-                            <div class=" e-slt-control">
-                                <select  class="ui-slt"  id="city">
-                                    <option value="110100">北京市</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                            </div>
-                            <div class="e-slt-control">
-                                <select  class="ui-slt"  id="area">
-                                    <option value="110101">东城区</option>
-                                    <option value="110102">西城区</option>
-                                    <option value="110103">崇文区</option>
-                                    <option value="110104">宣武区</option>
-                                    <option value="110105">朝阳区</option>
-                                    <option value="110106">丰台区</option>
-                                    <option value="110107">石景山区</option>
-                                    <option value="110108">海淀区</option>
-                                    <option value="110109">门头沟区</option>
-                                    <option value="110111">房山区</option>
-                                    <option value="110112">通州区</option>
-                                    <option value="110113">顺义区</option>
-                                    <option value="110114">昌平区</option>
-                                    <option value="110115">大兴区</option>
-                                    <option value="110116">怀柔区</option>
-                                    <option value="110117">平谷区</option>
-                                    <option value="110228">密云县</option>
-                                    <option value="110229">延庆县</option>
-                                    <option value="110230">其它区</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <input type="text" class="ui-input" value="" placeholder="收货地址" id="address">
-                            <p class="hint" style="display: none;"><i class="icon-form-error"></i>
-                                <span>收货地址位数不能小于5</span>
-                            </p>
-                        </li>
-                        <li>
-                            <input type="text" class="ui-input" value="" id="postcode" maxlength="6" placeholder="邮政编码">
-                            <p class="hint" style="display: block;"><i class="icon-form-error"></i>
-                                <span>邮编不符合规定格式</span>
-                            </p>
-                        </li>
-                        <li>
-                            <input type="text" class="ui-input" value="" placeholder="手机号码(手机号码和固定电话,两者必填一项)" id="mobile">
-                            <p class="hint">
-                                <!--<i class="icon-form-error"></i>-->
-                                <span></span>
-                            </p>
-                        </li>
-                        <li>
-                            <input type="text" class="ui-input" value="" placeholder="固定电话" id="telphone">
-                            <p class="hint">
-                                <!--<i class="icon-form-error"></i>-->
-                                <span></span>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <p class="ui-com-terms-slt e-com-terms-slt">
-                    <i class="icon-slt-square active" id="isDefault"></i>设为系统默认地址
-                </p>
-                <div class="ui-btn-row">
-                    <ul class="clearfix">
-                        <li><input type="button" class="ui-btn large" value="确定" id="surebtn"></li>
-                        <li><input type="button" class="ui-btn border-gray large" value="取消" id="cancelbtn"></li>
-                    </ul>
-                </div>
-            </div>
-        </form>
+        <form id="personDataForm" action="/account/personal-data" method="post">
+			<input type="hidden" id="mobileNumberHidden">
+			<input type="hidden" id="mobileVerificationCodeHidden">
+			<div class="ui-my-order-pend ui-personal-data">
+				<h3><a href="./info.html"><i class="icon-back"></i></a>个人资料</h3>
+				<div class="ui-form-list">
+					<ul>
+						<li>
+							<input type="text" class="ui-input" value="Aertes" name="nickname" placeholder="昵称" id="nickname">
+							<p class="hint"><i class="icon-form-error"></i></p>
+							<input type="hidden" value="Aertes" id="oldNickMame">
+						</li>
+						<li>
+							<ul class="ui-personal-name clearfix">
+								<li>
+									<input type="text" class="ui-input" value="" name="short3" placeholder="姓" id="lastName">
+									<p class="hint"><i class="icon-form-error"></i>请输入您的姓</p>
+									<input type="hidden" value="" id="oldLastMame">
+								</li>
+								<li>
+									<input type="text" class="ui-input" value="" name="short4" placeholder="名" id="firstName">
+									<p class="hint"><i class="icon-form-error"></i>请输入您的名</p>
+									<input type="hidden" value="" id="oldFirstMame">
+								</li>
+							</ul>
+						</li>
+						<li>
+							<label>mrxu1010@outlook.com</label>
+							<input type="button" id="editEmailbutton" class="ui-btn gray" value="更换邮箱">
+						</li>
+						<li>
+							<ul class="ui-personal-name clearfix ui-personal-sex e-personal-sex">
+								<li class="active">
+									<p>
+										<input type="button" value="男士">
+										<input hidden="hidden" type="radio" name="sex" value="0" checked="checked">
+										<i class="icon-checked"></i>
+									</p>
+								</li>
+								<li>
+									<p>
+										<input type="button" value="女士">
+										<input hidden="hidden" type="radio" name="sex" value="1">
+										<i class="icon-checked"></i>
+									</p>
+								</li>
+							</ul>
+							<p class="hint"><i class="icon-form-error"></i>请选择性别</p>
+						</li>
+						<li>
+							<div class="ui-slt e-slt-control">
+								<p>北京</p>
+								<input type="hidden" value="110000" id="currentProvince">
+									<select id="provience" name="provinceId">
+									    <option value="110000" selected="selected">北京</option>
+									</select>
+							</div>
+						</li>
+						<li>
+							<div class="ui-slt e-slt-control">
+                       		  <p>北京市</p>
+                       		  <input type="hidden" value="110100" id="currentCity">
+									<select id="city" name="cityId">
+								        <option value="110100" selected="selected">北京市</option>
+                                    </select>
+							</div>
+						</li>
+						<li>
+							<div class="ui-slt e-slt-control">
+                       		  <p>东城区</p>
+                       		  <input type="hidden" value="110101" id="currentDistrict">
+									<select id="country" name="areaId">
+									    <option value="110101" selected="selected">东城区</option>
+									</select> 
+							</div>
+						</li>
+						<li>
+							<label>13100642590</label>
+							<input type="button" id="editMobilebutton" class="ui-btn gray" value="更换手机">
+						</li>
+						<li>
+							<input type="text" class="ui-input" value="" placeholder="固定电话" id="short2" name="short2">
+							<p class="hint"><i class="icon-form-error"></i></p>
+						</li>
+						<li>
+							<ul class="ui-personal-birth clearfix">
+								<li>生日</li>
+								<li>
+									<ul class="ui-personal-birth-date">
+										<li>
+											<div class="ui-slt">
+                                                <input type="button" value="1989" id="data-year" class="ui-btn" readonly="">
+											</div>
+										</li>
+										<li>
+											<div class="ui-slt">
+												<input type="button" value="01" id="data-month" class="ui-btn" readonly="">
+											</div>
+										</li>
+										<li>
+											<div class="ui-slt">
+												<input type="button" value="01" id="data-day" class="ui-btn" readonly="">
+											</div>
+										</li>
+										<input type="text" hidden="hidden" value="" id="idbirthday" name="birthday">
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					
+				</div>
+				<p class="ui-person-data-btn">
+					<input type="button" value="确定" class="ui-btn" id="updateInfo">
+				</p>
+			</div>
+		</form>
     </section>
 
     <!--footer-->
@@ -324,14 +318,42 @@
         </div>
     </footer>
 
-    <div id="module" class="ui-png-mask e-png-mask"></div>
+    <!-- 模态框 -->
+    <div class="ui-com-pop e-com-pop">
+		<div class="ui-com-pop-con">
+			<span class="ui-pop-close e-pop-close"><i class="icon-pop-close"></i></span>
+			<h3 class="title">温馨提示</h3>
+			<p class="text">
+                <div id="" class="ui-checkout-baby">
+                    <div>
+                        <div class="babybirth clearfix">
+                            <span class="birthday">邮箱：</span>
+                            <div class="birthday">
+                                <input type="text" id="emailAddress" name="" class="ui-input" placeholder="请填写邮箱">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 id="checkEmailError"></h5>
+            </p>
+			<div class="ui-btn-row">
+				<ul class="clearfix">
+					<li class="e-btn-pop-sure"><input type="button" class="ui-btn" value="确定"></li>
+					<li class="e-btn-pop-cancel cancle"><input type="button" class="ui-btn gray" value="取消"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+    <div class="ui-pop-mask e-pop-mask"></div>
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
-    <script src="../../assets/js/comment.js"></script>
+    <script src="../../../libs/jquery/jquery.date-plug.js"></script>
     <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/aes/aes.js"></script>
-    <script src="../../assets/js/aes/util.js"></script>
-    <script src="../../assets/js/aes/pdk.js"></script>
+    <script src="../../assets/js/comment.js"></script>
+    <script src="../../assets/js/address/address.js"></script>
+    <script src="../../assets/js/myCcountInform.js"></script>
+
 </body>
 
 </html>

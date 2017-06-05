@@ -49,3 +49,64 @@
     border: none;
     .btnAppearance();
 }
+
+.ui-my-account{
+    h3{
+        padding: 15px 13px 12px;
+        .box();
+        font-size: @font14 + 4;
+        font-weight: normal;
+        text-align: center;
+        border-bottom: 1px solid @c3;
+    }
+    .ui-my-account-list{
+        background-color: #f0f1f2;
+        padding: 10px 0 114px;
+        ul{
+            border-top: 1px solid @c3;
+        }
+        h4{
+            padding: 13px;
+            .box();
+            font-weight: normal;
+            font-size: @font14 + 2;
+            position: relative;
+            border-bottom: 1px solid @c3;
+            background-color: @white;
+            &.active i{
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+            }
+            i{
+                position: absolute;
+                top: 20px;
+                right: 13px;
+                transform: rotate(-90deg);
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                transition: all ease .2s;
+                -webkit-transition: all ease .2s;
+                -moz-transition: all ease .2s;
+            }
+            .icon-arrow-left{
+                width: 10px;
+                height: 6px;
+                .icon();
+                background-position: -80px -90px;
+            }
+        }
+        .ui-my-account-listitem{
+            display: none;
+            ul>li>a{
+                padding: 12px 26px;
+                font-size: @font14;
+                background-color: #f8f8f8;
+                border-bottom: 1px solid @c3;
+                display: block;
+                color: #333;
+            }
+        }
+    }
+}
+

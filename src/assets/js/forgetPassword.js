@@ -1,9 +1,9 @@
 var pagebase = "";
-var findBackAccountUrl = pagebase + "/account/losepasswordresult";
-var findBackEmailUrl = pagebase + "/account/losepassword";
-var updatePasswordUrl = pagebase + "/account/updatepassword";
-var updateResultUrl = pagebase + "/account/updatepasswordresult";
-var validateLoginNameUrl = pagebase + "/m/vaildUserName";
+var findBackAccountUrl = pagebase + "";
+var findBackEmailUrl = pagebase + "";
+var updatePasswordUrl = pagebase + "";
+var updateResultUrl = pagebase + "";
+var validateLoginNameUrl = pagebase + "";
 var waitValue = 59;
 var wait = waitValue;
 function isInputEmpty(a) {
@@ -109,7 +109,7 @@ $(document).ready(function() {
         console.log(errormsg);
         if (errormsg != null) {
             $("#old-password").parent("li").addClass("error");
-            $("#old-password").parent("li").find("errorinfo").text(errormsg);
+            $("#old-password").parent("li").find("span").text(errormsg);
             return
         }
         var errormsg = generalValidate("新密码", $("#new-password").val(), {
@@ -119,7 +119,7 @@ $(document).ready(function() {
         });
         if (errormsg != null) {
             $("#new-password").parent("li").addClass("error");
-            $("#new-password").parent("li").find("errorinfo").text(errormsg);
+            $("#new-password").parent("li").find("span").text(errormsg);
             return
         }
         var newpassword = $("#new-password").val();
@@ -127,7 +127,7 @@ $(document).ready(function() {
         if (newpassword != renewpassword) {
             var errormsg = "两次密码输入不一样!";
             $("#renew-password").parent("li").addClass("error");
-            $("#renew-password").parent("li").find("errorinfo").text(errormsg);
+            $("#renew-password").parent("li").find("span").text(errormsg);
             return
         }
         var json = {
@@ -182,7 +182,7 @@ $(document).ready(function() {
         
         if (securityCode == "") {
             $("#securityCode").parent().parent().parent().addClass("error");
-            $("#securityCode").parent().parent().parent().find("errorInfo").html("请填写效验码!");
+            $("#securityCode").parent().parent().parent().find("span").html("请填写效验码!");
             return
         }
         boo = newPassword.length >= 6 && newPassword.length <= 20;
@@ -312,7 +312,7 @@ function changeCode(a) {
 }
 function toSetErrorInfo(b, a) {
     $("" + b).parent().addClass("error");
-    $("" + b).parent().find("errorInfo").html(a);
+    $("" + b).parent().find("span").html(a);
 }
 function toClearErrorInfo(a) {
     $("" + a).parent().removeClass("error")

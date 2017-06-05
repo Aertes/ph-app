@@ -151,40 +151,47 @@
 
     <!--concent-->
     <section>
-        <div class="ui-login">
-            <form id="form" class="ui-login-con">
-                <h3>用户登录</h3>
-                <div class="ui-form-list">
-                    <ul>
-                        <li>
-                            <input id="loginName" type="text"  class='ui-input required' placeholder="电子邮件地址/登录名">
-                            <p id="loginNameError"  data-error='请输入用户名' class="hint"></p>
-                        </li>
-                        <li>
-                            <input id="loginPwd" type="password" class='ui-input' placeholder="密码" oncopy="return false" onpaste="return false" ondragstart="return false" onselectstart="return false">
-                            <p id="loginPassError" class="hint"></p>
-                        </li>
-                        <li>
-                            <div class="ui-login-val">
-                                <p>
-                                    <input type="text" id="validateCode" class='ui-input' placeholder="效验码">
-                                </p>
-                                <img id="securityImg" src="../../assets/images/securityImage" alt="">
-                                <p id="validateCodeError" class="hint">
-                                    <i class="fa fa-times"></i>
-                                    请输入效验码
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <input id="btnSure" type="button" class="ui-btn ui-btn-large login-member needsclick" value="登 录">
-                <p class="ui-login-forgetp"><a href="./forgetPassword.html">忘记密码</a></p>
-            </form>
-            <div class="ui-login-account">
-                <p>还没有飞利浦账户？</p>
-                <a href="./register.html"><input type="button" class="ui-btn-large create-member" value="创建用户"></a>
-            </div>
+        <div class="ui-my-account">
+            <h3>用户登录</h3>
+            <div class="ui-my-account-list e-my-account-list">
+				<ul>
+					<li>
+						<h4>账户设置<i class="icon-arrow-left"></i></h4>
+						<div class="ui-my-account-listitem" >
+							<ul>
+								<li class="active"><a href="./personalDate.html">编辑个人档案</a></li>
+								<li class="active"><a href="#">修改登录密码</a></li>
+								<li class="active"><a href="#">设置密码保护</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h4>我的订单<i class="icon-arrow-left"></i></h4>
+						<div class="ui-my-account-listitem" >
+							<ul>
+								<li class="active"><a href="#">待处理订单</a></li>
+								<li class="active"><a href="#">历史订单</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h4>收货地址<i class="icon-arrow-left"></i></h4>
+						<div class="ui-my-account-listitem" >
+							<ul>
+								<li class="active"><a href="#">管理收货地址簿</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h4>我的收藏<i class="icon-arrow-left"></i></h4>
+						<div class="ui-my-account-listitem" >
+							<ul>
+								<li class="active"><a href="#">我的收藏</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
         </div>
     </section>
 
@@ -236,9 +243,10 @@
         </div>
     </footer>
 
+    <div id="module" class="ui-png-mask e-png-mask"></div>
+
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/login.js"></script>
     <script src="../../assets/js/comment.js"></script>
 </body>
 

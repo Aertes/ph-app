@@ -106,7 +106,7 @@ function asyncXhr(b, c, a) {
                     if (a.successHandler) {
                         hitch(a, "successHandler")(d, e)
                     } else {
-                        alert($(f).attr("name"))
+                        // alert($(f).attr("name"));
                     }
                 }
             }
@@ -716,6 +716,13 @@ function Base64() {
 //     return imgbase + a
 // };
 
-
+$('html').ajaxStart(function(){
+    $('#overlay').show();
+})
+$('html').ajaxStop(function(){
+    setTimeout(function () {
+        $('#overlay').hide();
+    }, 2000)
+})
 
 

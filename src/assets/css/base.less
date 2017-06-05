@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 html{
 	overflow-y: scroll;
 	font-size: 14px;
+	position: relative;
 }
 body, input {
 	// line-height: 1.2;
@@ -94,6 +95,7 @@ table {
 .box-sizing(){
 	box-sizing: border-box;
 }
+
 
 .icon(){
 	display: inline-block;
@@ -468,4 +470,28 @@ table {
         top: 0;
         transform: translateX(-50%);
     }
+}
+
+// modlue
+
+#module{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: rgba(0,0,0,0.5);
+}
+
+.ui-pop-mask{
+	display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 111;
+    background: rgba(0,0,0,0.5);
 }

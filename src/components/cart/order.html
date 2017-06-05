@@ -154,7 +154,7 @@
         <form id="orderForm" name="orderForm">
             <input type="hidden" name="isBuyNow" id="isBuyNow" value="">
             <input type="hidden" name="targetUrl" id="targetUrl" value="">
-            <input type="hidden" id="contactId" name="contactId" value="256786">
+            <input type="hidden" id="contactId" name="contactId" value="">
             <input type="hidden" id="memberId">
             <div class="ui-checkout-con">
                 <h3 class="title">订单确认</h3>
@@ -190,9 +190,9 @@
                             <p class="occ-update">编辑</p>
                         </li>
                     </ul>
-                    <div class="more">
-                        <i class="icon-ck-arrow-down active-down"></i>
-                    </div>
+                    <p class="more" id="addressmore">
+                        <i class="icon-ck-arrow-down"></i>
+                    </p>
                 </div>
                 <!--favorable-->
                 <div class="ui-checkout-coupon">
@@ -352,10 +352,13 @@
         </div>
     </footer>
 
+    <div id="module" class="ui-png-mask e-png-mask"></div>
+
+
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../assets/js/comment.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/order.js"></script>
-    <script src="../../assets/js/comment.js"></script>
 
 </body>
 

@@ -44,7 +44,6 @@
   width: 100%;
   padding: 7px 0;
   border-bottom: 1px solid #e5e5e5;
-  display: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -57,10 +56,10 @@
 }
 .ui-checkout-con .ui-checkout-address ul > li.active {
   background-position: -120px -150px;
-  display: table;
+  display: table-cell;
 }
 .ui-checkout-con .ui-checkout-address ul > li div {
-  padding: 0 20px 0 40px;
+  padding: 0 13px 0 40px;
   display: table-cell;
   vertical-align: middle;
   position: relative;
@@ -69,18 +68,15 @@
 .ui-checkout-con .ui-checkout-address ul > li div span {
   display: block;
 }
-.ui-checkout-con .ui-checkout-address ul > li div p {
-  display: table-cell;
+.ui-checkout-con .ui-checkout-address ul > li .occ-update {
+  display: none;
   width: 50px;
   padding-right: 13px;
   text-align: right;
   vertical-align: middle;
   font-size: 14px;
 }
-.ui-checkout-con .ui-checkout-address ul > li .occ-update.active {
-  display: table;
-}
-.ui-checkout-con .ui-checkout-address ul > li i {
+.ui-checkout-con .ui-checkout-address ul > li .icon-large-circle {
   height: 15px;
   width: 15px;
   position: absolute;
@@ -91,6 +87,9 @@
   background: url('../images/icons-base.png') no-repeat;
   background-size: 200px 300px;
   background-position: -80px -150px;
+}
+.ui-checkout-con .ui-checkout-address ul > li .icon-large-circle.active {
+  background-position: -120px -150px;
 }
 .ui-checkout-con .ui-checkout-address .more {
   padding: 7px 0;
@@ -107,7 +106,7 @@
   background-size: 200px 300px;
   background-position: 0 -120px;
 }
-.ui-checkout-con .ui-checkout-address .more .active-down {
+.ui-checkout-con .ui-checkout-address .more .icon-ck-arrow-down.active {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   transform: rotate(180deg);

@@ -15,3 +15,66 @@
   -moz-appearance: none;
   -webkit-appearance: none;
 }
+.ui-my-account h3 {
+  padding: 15px 13px 12px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  border-bottom: 1px solid #e3e3e3;
+}
+.ui-my-account .ui-my-account-list {
+  background-color: #f0f1f2;
+  padding: 10px 0 114px;
+}
+.ui-my-account .ui-my-account-list ul {
+  border-top: 1px solid #e3e3e3;
+}
+.ui-my-account .ui-my-account-list h4 {
+  padding: 13px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 16px;
+  position: relative;
+  border-bottom: 1px solid #e3e3e3;
+  background-color: #fff;
+}
+.ui-my-account .ui-my-account-list h4.active i {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+}
+.ui-my-account .ui-my-account-list h4 i {
+  position: absolute;
+  top: 20px;
+  right: 13px;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  transition: all ease .2s;
+  -webkit-transition: all ease .2s;
+  -moz-transition: all ease .2s;
+}
+.ui-my-account .ui-my-account-list h4 .icon-arrow-left {
+  width: 10px;
+  height: 6px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: -80px -90px;
+}
+.ui-my-account .ui-my-account-list .ui-my-account-listitem {
+  display: none;
+}
+.ui-my-account .ui-my-account-list .ui-my-account-listitem ul > li > a {
+  padding: 12px 26px;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e3e3e3;
+  display: block;
+  color: #333;
+}

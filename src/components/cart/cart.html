@@ -151,7 +151,6 @@
 
     <!--concent-->
     <section class="ui-cart-bg">
-
         
         <div class="ui-cart-con" id="emptycartposition">
             <h3>我的购物车</h3>
@@ -213,6 +212,16 @@
             <div class="ui-cart-settle">
                 <a href="../cart/order.html"><button id="submitBtn" type="ui-btn">结算</button></a>
             </div>
+
+            <!--空的购物车-->
+            <div class="ui-cart-empty">
+				<img src="../../assets/images/cart-empty.png">
+				<p>您还未添加任何商品！</p>
+                <div class="ui-cart-settle ui-cart-empty-btn">
+					<input type="button" value="去看看" class="ui-btn">
+				</div>
+			</div>
+
         </div>
         <div class="ui-home-new-rec">
             <h3 class="ui-home-subtitle">您可能感兴趣的宝贝</h3>
@@ -222,6 +231,9 @@
                 </ul>
             </div>
         </div>
+
+
+
     </section>
 
     <!--footer-->
@@ -289,6 +301,8 @@
 
     <!--pop up mask-->
     <div class="ui-pop-mask e-pop-mask"></div>
+
+    <div id="module" class="ui-png-mask e-png-mask"></div>
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/js/comment.js"></script>
