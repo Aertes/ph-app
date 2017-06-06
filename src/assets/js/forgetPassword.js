@@ -410,4 +410,18 @@ function showQuestions(a) {
     })
 };
 
+function ajaxsynpost(c, b) {
+    var a;
+    $.ajax({
+        url: c,
+        type: "post",
+        async: false,
+        data: b,
+        dataType: "json",
+        success: function(d) {
+            a = d
+        }
+    });
+    return a
+}
 

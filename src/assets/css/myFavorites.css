@@ -1,0 +1,213 @@
+@charset 'utf-8';
+.ui-my-order-pend {
+  background-color: #eee;
+}
+.ui-my-order-pend h3 {
+  background: #fff;
+  font-size: 18px;
+  text-align: center;
+  font-weight: normal;
+  position: relative;
+  padding: 15px 13px;
+}
+.ui-my-order-pend h3 .icon-back {
+  width: 9px;
+  height: 16px;
+  position: absolute;
+  top: 3px;
+  left: 13px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: 0 -150px;
+}
+.ui-my-order-pend h3 a {
+  display: block;
+  position: absolute;
+  top: 17px;
+  right: 13px;
+  width: 47px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+  color: #fff;
+  background-color: #a9bcc8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.ui-my-order-pend h3 a:first-child {
+  left: 13px;
+  background-color: #fff;
+}
+.ui-my-order-pend .ui-my-collection-list {
+  padding: 13px;
+  margin-bottom: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li {
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li:nth-child(odd) {
+  padding-right: 4px;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li:nth-child(even) {
+  padding-left: 4px;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li a {
+  display: block;
+  background-color: #fff;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li a img {
+  width: 100%;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li a p.name {
+  height: 32px;
+  padding: 0 8px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li a p.price {
+  padding: 7px 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li a span.now {
+  color: #e98300;
+  margin-right: 5px;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li .ui-btn {
+  background-color: #fff;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid #cccedb;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  height: 28px;
+  width: 100%;
+  line-height: 28px;
+  background-color: #0d679f;
+  color: #fff;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li .ui-my-collection-delete {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  padding: 5px;
+}
+.ui-my-order-pend .ui-my-collection-list ul > li .ui-my-collection-delete .icon-delete-circle {
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: -160px -150px;
+}
+.ui-com-pop {
+  display: none;
+  width: 100%;
+  padding: 0 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 1111;
+}
+.ui-com-pop .ui-com-pop-con {
+  width: 100%;
+  background-color: #fff;
+  padding: 18px;
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-com-pop .ui-com-pop-con .ui-pop-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+.ui-com-pop .ui-com-pop-con .ui-pop-close .icon-pop-close {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: -120px -60px;
+}
+.ui-com-pop .ui-com-pop-con h3.title {
+  padding-bottom: 12px;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+}
+.ui-com-pop .ui-com-pop-con p.text {
+  line-height: 18px;
+  text-align: center;
+}
+.ui-com-pop .ui-com-pop-con .ui-btn-row {
+  padding-top: 20px;
+}
+.ui-com-pop .ui-com-pop-con .ui-btn-row.on li {
+  width: 100%;
+}
+.ui-com-pop .ui-com-pop-con .ui-btn-row ul > li.cancle {
+  display: none;
+}
+.ui-com-pop .ui-com-pop-con .ui-btn-row .ui-btn {
+  background-color: #fff;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid #cccedb;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: none;
+  background-color: #0d679f;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}

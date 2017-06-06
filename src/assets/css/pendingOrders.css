@@ -1,0 +1,260 @@
+@charset 'utf-8';
+.ui-my-order-pend h3 {
+  padding: 15px 13px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f5f6f7;
+  font-size: 18px;
+  text-align: center;
+  font-weight: normal;
+  position: relative;
+}
+.ui-my-order-pend .icon-back {
+  position: absolute;
+  top: 21px;
+  left: 13px;
+  width: 9px;
+  height: 16px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: 0 -150px;
+}
+.ui-my-order-pend .ui-order-search {
+  padding: 9px 13px;
+  background-color: #dfe0e6;
+}
+.ui-my-order-pend .ui-order-search div {
+  position: relative;
+  padding-right: 34px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-my-order-pend .ui-order-search div:first-child {
+  margin-bottom: 9px;
+}
+.ui-my-order-pend .ui-order-search .ui-slt {
+  background-color: #fff;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid #cccedb;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  height: 38px;
+  line-height: 38px;
+  width: 100%;
+}
+.ui-my-order-pend .ui-order-search .ui-slt p {
+  height: 37px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #b9bbc7;
+}
+.ui-my-order-pend .ui-order-search .ui-slt select {
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+}
+.ui-my-order-pend .ui-order-search .ui-slt:after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 9px;
+  width: 10px;
+  height: 6px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: -120px -120px;
+}
+.ui-my-order-pend .ui-order-search .ui-order-search-btn {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  width: 34px;
+  background: #0d679f;
+  text-align: center;
+  border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #cccedb;
+  border-left: 0;
+}
+.ui-my-order-pend .ui-order-search .ui-order-search-btn .icon-order-search {
+  width: 15px;
+  height: 15px;
+  margin-bottom: -3px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: -160px -120px;
+}
+.ui-my-order-pend .ui-order-search .ui-order-input {
+  height: 38px;
+  width: 100%;
+  line-height: 38px;
+  border: 1px solid #cccedb;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  padding: 0 10px;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-btn {
+  padding: 30px 13px 15px 13px;
+  background-color: #f0f1f2;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-btn ul {
+  border: 1px solid #cccedb;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-btn ul li {
+  width: 25%;
+  padding: 10px 0;
+  font-size: 12px;
+  text-align: center;
+  border-right: 1px solid #cccedb;
+  color: #888b9c;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-btn ul li:last-child {
+  border: none;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-btn ul li.active {
+  background-color: #0d679f;
+  color: #fff;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con {
+  background-color: #f0f1f2;
+  border-top: 1px solid #e3e3e3;
+  padding-bottom: 23px;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-listitem {
+  background-color: #fff;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con ul > li {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 15px 13px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con ul > li a {
+  display: table-cell;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-tit {
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
+  padding-left: 10px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-tit ul > li {
+  border-bottom: none;
+  padding: 0;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-tit ul > li:nth-child(2) {
+  margin-bottom: 12px;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-tit p {
+  width: 72%;
+  float: left;
+  color: #888b9c;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-tit p span {
+  margin-left: 11px;
+  display: inline-block;
+  color: #000;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-tit span.right {
+  width: 28%;
+  float: right;
+  display: block;
+  text-align: right;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-tit .ui-order-detail-btn {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-tit .ui-order-detail-btn a {
+  color: #39c;
+  display: inline-block;
+  padding: 10px 5px;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-no {
+  text-align: center;
+  padding: 76px 13px 5px 13px;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-no p {
+  font-size: 14px;
+  color: #b9bbc7;
+  padding: 22px 0 86px 0;
+}
+.ui-my-order-pend .ui-order-list .ui-order-list-con .ui-order-no input {
+  height: 38px;
+  line-height: 38px;
+  background-color: #fff;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid #cccedb;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #0d679f;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}

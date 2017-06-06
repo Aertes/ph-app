@@ -16,11 +16,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>我的账户</title>
+    <title>历史订单</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/PHILIPSICON.ico">
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../../libs/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/info.css">
+    <link rel="stylesheet" href="../../assets/css/pendingOrders.css">
 </head>
 
 <body>
@@ -151,46 +151,162 @@
 
     <!--concent-->
     <section>
-        <div class="ui-my-account">
-            <h3>用户登录</h3>
-            <div class="ui-my-account-list e-my-account-list">
-                <ul>
-                    <li>
-                        <h4>账户设置<i class="icon-arrow-left"></i></h4>
-                        <div class="ui-my-account-listitem">
-                            <ul>
-                                <li class="active"><a href="./personalDate.html">编辑个人档案</a></li>
-                                <li class="active"><a href="./updatepassword.html">修改登录密码</a></li>
-                                <li class="active"><a href="./intoPasswordProtection.html">设置密码保护</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <h4>我的订单<i class="icon-arrow-left"></i></h4>
-                        <div class="ui-my-account-listitem">
-                            <ul>
-                                <li class="active"><a href="../cart/pendingOrders.html">待处理订单</a></li>
-                                <li class="active"><a href="../cart/historyOrders.html">历史订单</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <h4>收货地址<i class="icon-arrow-left"></i></h4>
-                        <div class="ui-my-account-listitem">
-                            <ul>
-                                <li class="active"><a href="./addressList.html">管理收货地址簿</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <h4>我的收藏<i class="icon-arrow-left"></i></h4>
-                        <div class="ui-my-account-listitem">
-                            <ul>
-                                <li class="active"><a href="./myFavorites.html">我的收藏</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+        <div class="ui-my-order-pend">
+            <h3>
+                <a href="../user/info.html"><i class="icon-back"></i></a>待处理订单
+            </h3>
+            <!-- 订单搜索 -->
+            <div class="ui-order-search">
+                <div>
+                    <div class="ui-slt e-slt-control">
+                        <p>最近1个月内的订单</p>
+                        <select id="timeType">
+								<option value="1">最近1个月内的订单</option>
+								<option value="3">最近3个月内的订单</option>
+								<option value="6">半年内的订单</option>
+								<option value="0" selected="selected">全部订单</option>
+							</select>
+                    </div>
+                    <span class="ui-order-search-btn" id="dateSearchButton"><i class="icon-order-search"></i></span>
+                </div>
+                <div>
+                    <input type="text" placeholder="订单号/商品名称" class="ui-input ui-order-input" value="" id="keywords">
+                    <span class="ui-order-search-btn" id="keyWordsSearchButton"><i class="icon-order-search"></i></span>
+                </div>
+            </div>
+            <!-- 订单状态 -->
+            <div class="ui-order-list">
+                <div class="ui-order-list-btn e-order-list-btn">
+                    <ul class="">
+                        <li id="orderStatus" style='width:33.33%' class="active" val="1">全部</li>
+                        <li id="orderStatus" style='width:33.33%' val="2">已取消</li>
+                        <li id="orderStatus" style='width:33.33%' val="3">已完成</li>
+                    </ul>
+                    <input type="hidden" id="orderType" value="1">
+                    <input type="hidden" id="orderStatusSel" value="1">
+                </div>
+
+                <div class="ui-order-list-con e-order-list-con">
+                    <div class="ui-order-listitem" style="display: block;">
+                        <ul>
+                            <li>
+                                <a href="#"> <img src="../../assets/images/hot1.jpg" width="65"></a>
+                                <div class="ui-order-tit">
+                                    <ul>
+                                        <li class="clearfix">
+                                            <p class="left">
+                                                付款状态 <span class="payd"> <span class="red">未付款</span>
+                                                </span>
+                                            </p> <span class="right">￥254.75</span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <p class="left">
+                                                订单状态 <span> 在途</span>
+                                            </p> <span class="right">共1件</span>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                2017-05-25</p>
+                                        </li>
+                                        <li>
+                                            <p class="left">订单号 PM12241018</p>
+                                        </li>
+                                        <li class="ui-order-detail-btn"><a href="javascript:void(0)" ordercode="PM12241018" class="ml5 order-detail-btn">详情</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"> <img src="../../assets/images/hot1.jpg" width="65"></a>
+                                <div class="ui-order-tit">
+                                    <ul>
+                                        <li class="clearfix">
+                                            <p class="left">
+                                                付款状态 <span class="payd"> <span class="red">未付款</span>
+                                                </span>
+                                            </p> <span class="right">￥254.75</span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <p class="left">
+                                                订单状态 <span> 在途</span>
+                                            </p> <span class="right">共1件</span>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                2017-05-25</p>
+                                        </li>
+                                        <li>
+                                            <p class="left">订单号 PM12241018</p>
+                                        </li>
+                                        <li class="ui-order-detail-btn"><a href="javascript:void(0)" ordercode="PM12241018" class="ml5 order-detail-btn">详情</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"> <img src="../../assets/images/hot1.jpg" width="65"></a>
+                                <div class="ui-order-tit">
+                                    <ul>
+                                        <li class="clearfix">
+                                            <p class="left">
+                                                付款状态 <span class="payd"> <span class="red">未付款</span>
+                                                </span>
+                                            </p> <span class="right">￥254.75</span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <p class="left">
+                                                订单状态 <span> 在途</span>
+                                            </p> <span class="right">共1件</span>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                2017-05-25</p>
+                                        </li>
+                                        <li>
+                                            <p class="left">订单号 PM12241018</p>
+                                        </li>
+                                        <li class="ui-order-detail-btn"><a href="javascript:void(0)" ordercode="PM12241018" class="ml5 order-detail-btn">详情</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"> <img src="../../assets/images/hot1.jpg" width="65"></a>
+                                <div class="ui-order-tit">
+                                    <ul>
+                                        <li class="clearfix">
+                                            <p class="left">
+                                                付款状态 <span class="payd"> <span class="red">未付款</span>
+                                                </span>
+                                            </p> <span class="right">￥254.75</span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <p class="left">
+                                                订单状态 <span> 在途</span>
+                                            </p> <span class="right">共1件</span>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                2017-05-25</p>
+                                        </li>
+                                        <li>
+                                            <p class="left">订单号 PM12241018</p>
+                                        </li>
+                                        <li class="ui-order-detail-btn"><a href="javascript:void(0)" ordercode="PM12241018" class="ml5 order-detail-btn">详情</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--无货-->
+                    <div class="ui-order-listitem" style="display: block;">
+                        <ul>
+                            <div class="ui-order-no">
+                                <img src="../../assets/images/book.png" width="45">
+                                <p>您还未创建订单！</p>
+                                <input type="button" value="去看看" class="ui-btn">
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -243,14 +359,15 @@
         </div>
     </footer>
 
-    <div id="module" class="ui-png-mask e-png-mask"></div>
-
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/js/aes/aes.js"></script>
     <script src="../../assets/js/aes/pdk.js"></script>
     <script src="../../assets/js/aes/util.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/myaccount-passwordprotection.js"></script>
+    <script src="../../assets/js/myaccount-dealorder.js"></script>
     <script src="../../assets/js/comment.js"></script>
+
 </body>
 
 </html>

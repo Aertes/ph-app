@@ -16,11 +16,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>我的账户</title>
+    <title>管理我的地址簿</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/PHILIPSICON.ico">
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../../libs/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/info.css">
+    <link rel="stylesheet" href="../../assets/css/addressList.css">
 </head>
 
 <body>
@@ -151,48 +151,74 @@
 
     <!--concent-->
     <section>
-        <div class="ui-my-account">
-            <h3>用户登录</h3>
-            <div class="ui-my-account-list e-my-account-list">
+
+        <div class="ui-my-order-pend ui-personal-data ui-address-manage ">
+            <h3>
+                <a href="./info.html"><i class="icon-back"></i></a> 管理收货地址<a href="/account/address/toCheckout-address">新增</a>
+            </h3>
+            <div class="ui-address-list e-address-list">
                 <ul>
                     <li>
-                        <h4>账户设置<i class="icon-arrow-left"></i></h4>
-                        <div class="ui-my-account-listitem">
-                            <ul>
-                                <li class="active"><a href="./personalDate.html">编辑个人档案</a></li>
-                                <li class="active"><a href="./updatepassword.html">修改登录密码</a></li>
-                                <li class="active"><a href="./intoPasswordProtection.html">设置密码保护</a></li>
-                            </ul>
+                        <div class="ui-address-tit">
+                            <h4>ff<span> 13100642590<br></span>
+                            </h4>
+                            <p>&nbsp;北京&nbsp; 北京市&nbsp;东城区&nbsp;驾驶鲁大师
+                            </p>
+                        </div>
+                        <div class="ui-address-btn clearfix">
+                            <p class="e-address-checked active">
+                                <i class="icon-large-circle"></i>
+                                <span class="default-address red">默认地址</span>
+                            </p>
+                            <p>
+                                <a href="#">编辑</a>
+                                <a href="javascript:void(0);" class="e-address-delete">删除</a>
+                                <input type="hidden" value="256750" class="currentId">
+                            </p>
                         </div>
                     </li>
                     <li>
-                        <h4>我的订单<i class="icon-arrow-left"></i></h4>
-                        <div class="ui-my-account-listitem">
-                            <ul>
-                                <li class="active"><a href="../cart/pendingOrders.html">待处理订单</a></li>
-                                <li class="active"><a href="../cart/historyOrders.html">历史订单</a></li>
-                            </ul>
+                        <div class="ui-address-tit">
+                            <h4>ddfg<span> 15625635648<br></span>
+                            </h4>
+                            <p>&nbsp;北京&nbsp; 北京市&nbsp;东城区&nbsp;卡瑞特让他
+                            </p>
+                        </div>
+                        <div class="ui-address-btn clearfix">
+                            <p class="e-address-checked ">
+                                <i class="icon-large-circle"></i>
+                                <a href="javascript:void(0);" class="func-button-default">设为默认地址</a>
+                            </p>
+                            <p>
+                                <a href="">编辑</a>
+                                <a href="javascript:void(0);" class="e-address-delete">删除</a>
+                                <input type="hidden" value="256786" class="currentId">
+                            </p>
                         </div>
                     </li>
                     <li>
-                        <h4>收货地址<i class="icon-arrow-left"></i></h4>
-                        <div class="ui-my-account-listitem">
-                            <ul>
-                                <li class="active"><a href="./addressList.html">管理收货地址簿</a></li>
-                            </ul>
+                        <div class="ui-address-tit">
+                            <h4>也切<span> 18645824852<br></span>
+                            </h4>
+                            <p>&nbsp;河北省&nbsp; 石家庄市&nbsp;长安区&nbsp;发生的舒服
+                            </p>
                         </div>
-                    </li>
-                    <li>
-                        <h4>我的收藏<i class="icon-arrow-left"></i></h4>
-                        <div class="ui-my-account-listitem">
-                            <ul>
-                                <li class="active"><a href="./myFavorites.html">我的收藏</a></li>
-                            </ul>
+                        <div class="ui-address-btn clearfix">
+                            <p class="e-address-checked ">
+                                <i class="icon-large-circle"></i>
+                                <a href="javascript:void(0);" class="func-button-default">设为默认地址</a>
+                            </p>
+                            <p>
+                                <a href="/account/address/toCheckout-address?addressid=256754">编辑</a>
+                                <a href="javascript:void(0);" class="e-address-delete">删除</a>
+                                <input type="hidden" value="256754" class="currentId">
+                            </p>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
+
     </section>
 
     <!--footer-->
@@ -243,14 +269,37 @@
         </div>
     </footer>
 
-    <div id="module" class="ui-png-mask e-png-mask"></div>
+    <!-- 模态框 -->
+    <!--updataAddress-->
+    <div class="ui-com-pop e-com-pop">
+        <div class="ui-com-pop-con">
+            <span class="ui-pop-close e-pop-close"><i class="icon-pop-close"></i></span>
+            <h3 class="title">温馨提示</h3>
+            <p class="text">设置成功!</p>
+            <div class="ui-btn-row one">
+                <ul class="clearfix">
+                    <li class="e-btn-pop-sure"><input type="button" class="ui-btn" value="确定"></li>
+                    <li class="e-btn-pop-cancel cancle"><input type="button" class="ui-btn gray" value="取消"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-pop-mask e-pop-mask"></div>
+    <!-- 模态框 -->
+
+
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/js/aes/aes.js"></script>
     <script src="../../assets/js/aes/pdk.js"></script>
     <script src="../../assets/js/aes/util.js"></script>
+    <script src="../../../libs/jquery/jquery.date-plug.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/address/address.js"></script>
+    <script src="../../assets/js/forgetPassword.js"></script>
     <script src="../../assets/js/comment.js"></script>
+
 </body>
 
 </html>
