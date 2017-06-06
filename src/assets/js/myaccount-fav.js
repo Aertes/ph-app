@@ -99,7 +99,7 @@ function refreshListData() {
     if (parseInt(curPage) + 1 > totalPage) {
         return
     }
-    var a = pagebase + "/favorite/list/" + (parseInt(curPage) + 1);
+    var a = pagebase + "" + (parseInt(curPage) + 1);
     $.post(a, function(b) {
         $.each(b.paginationFavoritesList.items, function(d, c) {
             var f = $("#cloneid li").clone();
