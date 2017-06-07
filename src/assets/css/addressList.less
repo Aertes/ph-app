@@ -106,3 +106,65 @@
         }
     }
 }
+
+// 模态框
+.ui-com-pop{
+    display: none;
+    width: 100%;
+    padding: 0 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .box();
+    z-index: 1111;
+    .ui-com-pop-con{
+        width: 100%;
+        background-color: @white;
+        padding: @font14 + 4;
+        position: relative;
+        .borderRadius(5px);
+        .box();
+        .ui-pop-close{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            .icon-pop-close{
+                width: 16px;
+                height: 16px;
+                .icon();
+                background-position: -120px -60px;
+            }
+        }
+        h3.title{
+            padding-bottom: 12px;
+            font-weight: normal;
+            font-size: @font14;
+            text-align: center;
+        }
+        p.text{
+            line-height: 18px;
+            text-align: center;
+        }
+        .ui-btn-row{
+            padding-top: 20px;
+            &.on li{
+                width: 100%;
+            }
+            ul>li{
+                &.cancle{
+                    display: none;
+                }
+            }
+            .ui-btn{
+                .input();
+                background-color: @color;
+                color: @white;
+                font-size: @font14 + 2;
+                border: none;
+                border-radius: 3px;
+                .btnAppearance();
+            }
+        }
+    }
+}

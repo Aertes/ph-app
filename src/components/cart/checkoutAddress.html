@@ -32,7 +32,7 @@
         <!--nav-->
         <div class="ui-header clearfix">
             <div class="ui-header-nav clearfix">
-                <h1 class="fl"><a href="../../../index.html">
+                <h1 class="fl"><a href="http://www.philips.com.cn">
                     <img src="../../assets/images/logo.png" height="14">
                 </a></h1>
                 <ul>
@@ -151,6 +151,9 @@
 
     <!--concent-->
     <section>
+        <div id="overlay">
+            <img src="../../assets/images/loading2.gif">
+        </div>
         <form id="addressform">
             <div class="ui-my-address-con">
                 <h3 class="title">添加地址</h3>
@@ -158,9 +161,9 @@
                     <ul>
                         <li class="error">
                             <input type="text" class="ui-input" value="" id="name" placeholder="名字" maxlength="25">
-                            <p class="hint">
+                            <p class="hint" style="display: block;">
                                 <i class="icon-form-error"></i>
-                                <myattr></myattr>
+                                <span>收件人姓名不能为空</span>
                             </p>
                         </li>
                         <li>
@@ -168,6 +171,36 @@
                             <div class=" e-slt-control">
                                 <select class="ui-slt" id="provience">
 								    <option value="110000">北京</option>
+                                    <option value="120000">天津</option>
+                                    <option value="130000">河北省</option>
+                                    <option value="140000">山西省</option>
+                                    <option value="150000">内蒙古自治区</option>
+                                    <option value="210000">辽宁省</option>
+                                    <option value="220000">吉林省</option>
+                                    <option value="230000">黑龙江省</option>
+                                    <option value="310000">上海</option>
+                                    <option value="320000">江苏省</option>
+                                    <option value="330000">浙江省</option>
+                                    <option value="340000">安徽省</option>
+                                    <option value="350000">福建省</option>
+                                    <option value="360000">江西省</option>
+                                    <option value="370000">山东省</option>
+                                    <option value="410000">河南省</option>
+                                    <option value="420000">湖北省</option>
+                                    <option value="430000">湖南省</option>
+                                    <option value="440000">广东省</option>
+                                    <option value="450000">广西壮族自治区</option>
+                                    <option value="460000">海南省</option>
+                                    <option value="500000">重庆</option>
+                                    <option value="510000">四川省</option>
+                                    <option value="520000">贵州省</option>
+                                    <option value="530000">云南省</option>
+                                    <option value="540000">西藏自治区</option>
+                                    <option value="610000">陕西省</option>
+                                    <option value="620000">甘肃省</option>
+                                    <option value="630000">青海省</option>
+                                    <option value="640000">宁夏回族自治区</option>
+                                    <option value="650000">新疆维吾尔自治区</option>
                                 </select>
                                 <i class="fa fa-angle-down"></i>
                             </div>
@@ -180,34 +213,52 @@
                             <div class="e-slt-control">
                                 <select  class="ui-slt"  id="area">
                                     <option value="110101">东城区</option>
+                                    <option value="110102">西城区</option>
+                                    <option value="110103">崇文区</option>
+                                    <option value="110104">宣武区</option>
+                                    <option value="110105">朝阳区</option>
+                                    <option value="110106">丰台区</option>
+                                    <option value="110107">石景山区</option>
+                                    <option value="110108">海淀区</option>
+                                    <option value="110109">门头沟区</option>
+                                    <option value="110111">房山区</option>
+                                    <option value="110112">通州区</option>
+                                    <option value="110113">顺义区</option>
+                                    <option value="110114">昌平区</option>
+                                    <option value="110115">大兴区</option>
+                                    <option value="110116">怀柔区</option>
+                                    <option value="110117">平谷区</option>
+                                    <option value="110228">密云县</option>
+                                    <option value="110229">延庆县</option>
+                                    <option value="110230">其它区</option>
                                 </select>
                                 <i class="fa fa-angle-down"></i>
                             </div>
                         </li>
                         <li>
                             <input type="text" class="ui-input" value="" placeholder="收货地址" id="address">
-                            <p class="hint"><i class="icon-form-error"></i>
-                                <myattr></myattr>
+                            <p class="hint" style="display: none;"><i class="icon-form-error"></i>
+                                <span>收货地址位数不能小于5</span>
                             </p>
                         </li>
                         <li>
                             <input type="text" class="ui-input" value="" id="postcode" maxlength="6" placeholder="邮政编码">
-                            <p class="hint"><i class="icon-form-error"></i>
-                                <myattr></myattr>
+                            <p class="hint" style="display: block;"><i class="icon-form-error"></i>
+                                <span>邮编不符合规定格式</span>
                             </p>
                         </li>
                         <li>
                             <input type="text" class="ui-input" value="" placeholder="手机号码(手机号码和固定电话,两者必填一项)" id="mobile">
                             <p class="hint">
-                                <i class="icon-form-error"></i>
-                                <myattr></myattr>
+                                <!--<i class="icon-form-error"></i>-->
+                                <span></span>
                             </p>
                         </li>
                         <li>
                             <input type="text" class="ui-input" value="" placeholder="固定电话" id="telphone">
                             <p class="hint">
-                                <i class="icon-form-error"></i>
-                                <myattr></myattr>
+                                <!--<i class="icon-form-error"></i>-->
+                                <span></span>
                             </p>
                         </li>
                     </ul>
@@ -273,32 +324,14 @@
         </div>
     </footer>
 
-    <!-- 模态框 -->
-    <!--updataAddress-->
-    <div class="ui-com-pop e-com-pop">
-        <div class="ui-com-pop-con">
-            <span class="ui-pop-close e-pop-close"><i class="icon-pop-close"></i></span>
-            <h3 class="title">温馨提示</h3>
-            <p class="text">设置成功!</p>
-            <div class="ui-btn-row one">
-                <ul class="clearfix">
-                    <li class="e-btn-pop-sure"><input type="button" class="ui-btn" value="确定"></li>
-                    <li class="e-btn-pop-cancel cancle"><input type="button" class="ui-btn gray" value="取消"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="ui-pop-mask e-pop-mask"></div>
-    <!-- 模态框 -->
-
     <div id="module" class="ui-png-mask e-png-mask"></div>
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
-    <script src="../../assets/js/address/address.js"></script>
-    <script src="../../assets/js/checkout-address.js"></script>
-    <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/comment.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/aes/aes.js"></script>
+    <script src="../../assets/js/aes/util.js"></script>
+    <script src="../../assets/js/aes/pdk.js"></script>
 </body>
 
 </html>
