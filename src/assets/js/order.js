@@ -472,5 +472,186 @@ function trackCreateOrder() {
     } catch (a) {
         console.log(a)
     }
+};
+
+
+
+
+
+
+
+function isUseful() {
+    return typeof philips != "undefined" && typeof philips.analytics != "undefined"
 }
-;
+function carrouselBullet(b) {
+    var a = {
+        name: "interaction",
+        description: "carrousel_bullet_" + b
+    };
+    trackConversionOmi(a)
+}
+function userLoginOmi() {
+    var a = {
+        name: "user_login"
+    };
+    trackConversionOmi(a)
+}
+function userRegistrationOmi() {
+    var a = {
+        name: "user_registration"
+    };
+    trackConversionOmi(a)
+}
+function determineButtonOmi(b, c) {
+    var a = {
+        name: "interaction",
+        description: b + ":" + c + ":determine_button"
+    };
+    trackConversionOmi(a)
+}
+function navChatOmi() {
+    var a = {
+        name: "chat"
+    };
+    trackConversionOmi(a)
+}
+function sortBtnOmi(b, d, c) {
+    var a = {
+        name: "interaction",
+        description: b + ":" + d + ":" + c + ":ok_button"
+    };
+    trackConversionOmi(a)
+}
+function videoStartOmi(c, b) {
+    var a = {
+        name: "video_start",
+        videoname: c,
+        url: b
+    };
+    trackConversionOmi(a)
+}
+function videoCompletedOmi(c, b) {
+    var a = {
+        name: "video_end",
+        videoname: c,
+        url: b
+    };
+    trackConversionOmi(a)
+}
+function addToCartOmi(a) {
+    var b = {
+        events: "scOpen,scAdd",
+        products: ";" + a
+    };
+    var c = $("#cartnumber").html();
+    if (undefined == c || null == c || c.length == 0) {
+        trackAjaxOmi(b)
+    } else {
+        if (parseInt(c) > 0) {
+            addToExsitsCartOmi(a)
+        } else {
+            trackAjaxOmi(b)
+        }
+    }
+}
+function addToWishListOmi(a) {
+    var b = {
+        name: "interaction",
+        description: a + ":add_to_wishlist_button"
+    };
+    trackConversionOmi(b)
+}
+function checkOutOmi() {
+    var a = {
+        name: "interaction",
+        description: "check_out_button"
+    };
+    trackConversionOmi(a)
+}
+function addToExsitsCartOmi(a) {
+    var b = {
+        events: "scAdd",
+        products: ";" + a
+    };
+    trackAjaxOmi(b)
+}
+function shareSocialOmi(b) {
+    var a = {
+        name: "share",
+        servicename: b
+    };
+    trackConversionOmi(a)
+}
+function productTabOmi(b) {
+    var a = {
+        pagename: s.pageName + "_" + b,
+        type: "o"
+    };
+    trackAjaxOmi(a)
+}
+function productEvaluatOmi() {
+    var a = {
+        name: "interaction",
+        description: "evaluation_of_commodities_button"
+    };
+    trackConversionOmi(a)
+}
+function trackConversion(b) {
+    var a = {
+        name: "buy_at_philips",
+        product: b
+    };
+    trackConversionOmi(a)
+}
+function trackConversionOmi(a) {
+    if (isUseful()) {
+        philips.analytics.trackConversion(a)
+    }
+}
+function trackAjaxOmi(a) {
+    if (typeof _page != "undefined" && typeof _page.metrics != "undefined") {
+        _page.metrics.trackAjax(a)
+    }
+}
+function initOmi() {
+    if (typeof document.getElementsByTagName("video")[0] !== "undefined") {
+        _page.metrics.trackHTML5Video()
+    }
+    var a = $(".flex-control-nav.flex-control-paging").find("a");
+    $(a).each(function() {
+        $(this).bind("click.omi", function() {
+            var b = $(this).html();
+            carrouselBullet(b)
+        })
+    });
+    $("#lc5_0link").bind("click.omi", function() {
+        navChatOmi()
+    });
+    $("#pdp-tag-change li").bind("click.omi", function(c) {
+        var b = $("#pdp-tag-change li").index($("#pdp-tag-change li.active")[0]);
+        if (0 == b) {
+            productTabOmi("product_description")
+        } else {
+            if (1 == b) {
+                productTabOmi("faq")
+            }
+        }
+    })
+}
+function initSocalShare() {
+    var a = $("a.in-share-icon1");
+    var b = {
+        "1": "sina_weibo",
+        "2": "renren",
+        "3": "qq_weibo",
+        "4": "kaixin"
+    };
+    $(a).bind("click.omi", function() {
+        var c = $(this).attr("platform");
+        shareSocialOmi(b[c + ""])
+    })
+}
+$(document).ready(function() {
+    initOmi();
+    setTimeout(initSocalShare, 500)
+});

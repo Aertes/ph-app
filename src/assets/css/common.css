@@ -1,1 +1,82 @@
 @charset 'utf-8';
+/*模态框*/
+.ui-com-pop {
+  display: none;
+  width: 100%;
+  padding: 0 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 1111;
+}
+.ui-com-pop .ui-com-pop-con {
+  width: 100%;
+  background-color: #fff;
+  padding: 18px;
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-com-pop .ui-com-pop-con .ui-pop-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+.ui-com-pop .ui-com-pop-con .ui-pop-close .icon-pop-close {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: -120px -60px;
+}
+.ui-com-pop .ui-com-pop-con h3.title {
+  padding-bottom: 12px;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+}
+.ui-com-pop .ui-com-pop-con p.text {
+  line-height: 18px;
+  text-align: center;
+}
+.ui-com-pop .ui-com-pop-con .ui-btn-row {
+  padding-top: 20px;
+}
+.ui-com-pop .ui-com-pop-con .ui-btn-row.on li {
+  width: 100%;
+}
+.ui-com-pop .ui-com-pop-con .ui-btn-row ul > li.cancle {
+  display: none;
+}
+.ui-com-pop .ui-com-pop-con .ui-btn-row .ui-btn {
+  background-color: #fff;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid #cccedb;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: none;
+  background-color: #0d679f;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}

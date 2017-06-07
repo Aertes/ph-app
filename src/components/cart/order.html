@@ -32,7 +32,7 @@
         <!--nav-->
         <div class="ui-header clearfix">
             <div class="ui-header-nav clearfix">
-                <h1 class="fl"><a href="http://www.philips.com.cn">
+                <h1 class="fl"><a href="../../../index.html">
                     <img src="../../assets/images/logo.png" height="14">
                 </a></h1>
                 <ul>
@@ -112,7 +112,7 @@
                         <li><a href=""> 健康护理<i class='icon-arrow-white'></i></a></li>
                     </ul>
                 </div>
-                
+
                 <div class="item">
                     <h3>附件<i class="ui-add"></i></h3>
                     <ul>
@@ -162,10 +162,10 @@
                 <div class="ui-checkout-address e-checkout-address">
                     <h4 class="subtitle">
                         <span>确认收货地址</span>
-                        <a href="#">添加地址</a>
+                        <a href="../user/checkoutAddress.html">添加地址</a>
                     </h4>
                     <ul id="addressposition">
-                        <li>
+                        <li class="active">
                             <div>
                                 <i class="icon-large-circle active"></i>
                                 <span id="detailaddress">北京北京市东城区卡瑞特让他</span>
@@ -198,104 +198,107 @@
                 <div class="ui-checkout-coupon">
                     <h4 class="subtitle">使用优惠券</h4>
                     <ul class="clearfix">
-                        <li><input type="text" placeholder="请输入您的优惠券码" id="coupons" name = "coupons" class="ui-input"></li>
-                        <li class="use-btn"><input type="button" value="使用"  class="ui-btn"></li>
+                        <li><input type="text" placeholder="请输入您的优惠券码" id="coupons" name="coupons" class="ui-input"></li>
+                        <li class="use-btn"><input type="button" value="使用" class="ui-btn"></li>
                     </ul>
                 </div>
                 <!--pay-->
                 <div class="ui-checkout-payway">
-					<h4 class="subtitle">支付方式</h4>
-					<ul>
-						<input type="hidden" id="payment" name="payment" value="支付宝支付">
-						<li id="alipay" myflag="支付宝支付"><i class="icon-slt-circle active"></i><img src="../../assets/images/alipay.jpg" width="80"></li>
-						<li id="cod" myflag="货到付款"><i class="icon-slt-circle"></i><span>货到付款</span></li>
-					</ul>
-					<p class="hint">为了保证及时处理您的订单，请于45分钟内付款，逾期未付款订单将被取消，需要重新下单。</p>
+                    <h4 class="subtitle">支付方式</h4>
+                    <ul>
+                        <input type="hidden" id="payment" name="payment" value="支付宝支付">
+                        <li id="alipay" myflag="支付宝支付"><i class="icon-slt-circle active"></i><img src="../../assets/images/alipay.jpg" width="80"></li>
+                        <li id="cod" myflag="货到付款"><i class="icon-slt-circle"></i><span>货到付款</span></li>
+                    </ul>
+                    <p class="hint">为了保证及时处理您的订单，请于45分钟内付款，逾期未付款订单将被取消，需要重新下单。</p>
                 </div>
                 <!--orderinfo-->
                 <div class="ui-checkout-orderinfo">
-					<h4 class="subtitle">确认订单信息</h4>
-					<ul id="orderposition"><li class="clearfix">
-							<a href="#" class="clearfix">
+                    <h4 class="subtitle">确认订单信息</h4>
+                    <ul id="orderposition">
+                        <li class="clearfix">
+                            <a href="#" class="clearfix">
 								<img src="../../assets/images/cart1.jpg">
 							</a>
-							<div>
-								<p class="clearfix">
-									<span class="name">飞利浦 电吹风 BHC202/05</span>
-									<span class="totalprice">493.5</span>
-								</p>
-								<div class="price-num clearfix">
-									<p>
-										<span class="now">329</span>
-										<span class="used">329</span>
-									</p>
-									<span class="num">X2</span>
-								</div>
-							</div>
-						</li><li class="clearfix">
-							<a href="#" class="clearfix">
+                            <div>
+                                <p class="clearfix">
+                                    <span class="name">飞利浦 电吹风 BHC202/05</span>
+                                    <span class="totalprice">493.5</span>
+                                </p>
+                                <div class="price-num clearfix">
+                                    <p>
+                                        <span class="now">329</span>
+                                        <span class="used">329</span>
+                                    </p>
+                                    <span class="num">X2</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <a href="#" class="clearfix">
 								<img src="../../assets/images/cart2.jpg">
 							</a>
-							<div>
-								<p class="clearfix">
-									<span class="name">飞利浦 车载空气净化器 AC4030/10</span>
-									<span class="totalprice">1124.25</span>
-								</p>
-								<div class="price-num clearfix">
-									<p>
-										<span class="now">1499</span>
-										<span class="used">1499</span>
-									</p>
-									<span class="num">X1</span>
-								</div>
-							</div>
-						</li></ul>
-					<p class="more" id="ordermore"><i class="icon-ck-arrow-down active-down"></i></p>
+                            <div>
+                                <p class="clearfix">
+                                    <span class="name">飞利浦 车载空气净化器 AC4030/10</span>
+                                    <span class="totalprice">1124.25</span>
+                                </p>
+                                <div class="price-num clearfix">
+                                    <p>
+                                        <span class="now">1499</span>
+                                        <span class="used">1499</span>
+                                    </p>
+                                    <span class="num">X1</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="more" id="ordermore"><i class="icon-ck-arrow-down active-down"></i></p>
                 </div>
                 <!--order-total-->
                 <div class="ui-checkout-order-total">
-					<ul>
-						<li class="clearfix">
-							<span>商品总额</span>
-							<span id="subtotalCurrentPayAmount">￥2157</span>
-						</li>
-						<li class="clearfix">
-							<span>运费</span>
-							<span id="shippingfee">￥8</span>
-						</li>
-						<li class="clearfix">
-							<span>优惠总额</span>
-							<span id="offersTotal">￥539.25</span>
-						</li>
-						<li class="total clearfix">
-							<span>订单总额</span>
-							<span id="realPayAmount">￥1625.75</span>
-						</li>
-					</ul>
-					<!-- 发票 -->
-					<div class="invoice">
-						<p class="ui-com-terms-slt e-com-terms-slt"><i class="icon-slt-square active"></i>开具发票</p>
-						<ul>
-							<li>
-								<span>发票抬头</span>
-								<input type="text" class="ui-input" value="个人" id="receiptTitle">
-							</li>
-							<li>
-								<span>发票内容</span>
-								<div class="e-slt-control">
-									<!--<p>个人护理</p>-->
-									<select class="ui-slt" id="receiptContent">
+                    <ul>
+                        <li class="clearfix">
+                            <span>商品总额</span>
+                            <span id="subtotalCurrentPayAmount">￥2157</span>
+                        </li>
+                        <li class="clearfix">
+                            <span>运费</span>
+                            <span id="shippingfee">￥8</span>
+                        </li>
+                        <li class="clearfix">
+                            <span>优惠总额</span>
+                            <span id="offersTotal">￥539.25</span>
+                        </li>
+                        <li class="total clearfix">
+                            <span>订单总额</span>
+                            <span id="realPayAmount">￥1625.75</span>
+                        </li>
+                    </ul>
+                    <!-- 发票 -->
+                    <div class="invoice">
+                        <p class="ui-com-terms-slt e-com-terms-slt"><i class="icon-slt-square active"></i>开具发票</p>
+                        <ul>
+                            <li>
+                                <span>发票抬头</span>
+                                <input type="text" class="ui-input" value="个人" id="receiptTitle">
+                            </li>
+                            <li>
+                                <span>发票内容</span>
+                                <div class="e-slt-control">
+                                    <!--<p>个人护理</p>-->
+                                    <select class="ui-slt" id="receiptContent">
 		                                <option value="个人护理">个人护理</option>
 		                                <option value="家用电器">家用电器</option>
 		                                <option value="母婴系列">母婴系列</option>
 		                                <option value="附件">附件</option>
 		                            </select>
                                     <i class=" fa fa-angle-down"></i>
-                              	</div>
-							</li>
-						</ul>
-					</div>
-				</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <!-- btn -->
                 <div class="ui-checkout-btn">
                     <input class="ui-btn" value="结算" type="button" id="saveorder">
@@ -351,6 +354,16 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- 优惠券使用成功提示 -->
+    <div class="ui-com-hint-mini e-checkout-coupon-usedhint">
+        <div>
+            <i class="icon-success"></i>
+            <p class="text">优惠券码已使用</p>
+        </div>
+    </div>
+    <div class="ui-pop-mask e-pop-mask"></div>
 
     <div id="module" class="ui-png-mask e-png-mask"></div>
 
