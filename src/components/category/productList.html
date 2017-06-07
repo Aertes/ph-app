@@ -16,11 +16,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>我的收藏</title>
+    <title>产品列表</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/PHILIPSICON.ico">
+    <link rel="stylesheet" href="../../../libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/base.css">
-    <link rel="stylesheet" href="../../../libs/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/myFavorites.css">
+    <link rel="stylesheet" href="../../assets/css/productList.css">
 </head>
 
 <body>
@@ -32,9 +32,11 @@
         <!--nav-->
         <div class="ui-header clearfix">
             <div class="ui-header-nav clearfix">
-                <h1 class="fl"><a href="../../../index.html">
-                    <img src="../../assets/images/logo.png" height="14">
-                </a></h1>
+                <h1 class="fl">
+                    <a href="../../../index.html">
+                        <img src="../../assets/images/logo.png" height="14">
+                    </a>
+                </h1>
                 <ul>
                     <li class='cart'>
                         <a href="../cart/cart.html">
@@ -44,7 +46,7 @@
                         </a>
                     </li>
                     <li class='user'>
-                        <a href="../user/login.html">
+                        <a href="../user/info.html">
                             <i class="icon-user"></i>
                         </a>
                     </li>
@@ -81,12 +83,12 @@
                 <div class="item">
                     <h3>个人护理<i class="ui-add"></i></h3>
                     <ul>
-                        <li><a href=""> 男士剃须<i class='icon-arrow-white'></i></a></li>
-                        <li><a href=""> 男士造型<i class='icon-arrow-white'></i></a></li>
-                        <li><a href=""> 吹风美发<i class='icon-arrow-white'></i></a></li>
-                        <li><a href=""> 肌肤美容<i class='icon-arrow-white'></i></a></li>
-                        <li><a href=""> 电动牙刷<i class='icon-arrow-white'></i></a></li>
-                        <li><a href=""> 疼痛治疗<i class='icon-arrow-white'></i></a></li>
+                        <li><a href="./productList.html"> 男士剃须<i class='icon-arrow-white'></i></a></li>
+                        <li><a href="./productList.html"> 男士造型<i class='icon-arrow-white'></i></a></li>
+                        <li><a href="./productList.html"> 吹风美发<i class='icon-arrow-white'></i></a></li>
+                        <li><a href="./productList.html"> 肌肤美容<i class='icon-arrow-white'></i></a></li>
+                        <li><a href="./productList.html"> 电动牙刷<i class='icon-arrow-white'></i></a></li>
+                        <li><a href="./productList.html"> 疼痛治疗<i class='icon-arrow-white'></i></a></li>
                     </ul>
                 </div>
                 <div class="item">
@@ -151,76 +153,204 @@
 
     <!--concent-->
     <section>
-        <div class="ui-my-order-pend ui-personal-data ui-address-manage ">
-            <h3>
-                <a href="./info.html"><i class="icon-back"></i></a> 我的收藏<a class="e-collection-edit" href="javascript:void(0)">编辑</a>
-            </h3>
-            <div class="ui-product-wall ui-my-collection-list">
+        <!--Breadcrumb-->
+        <div class="ui-com-sub-nav">
+            <ol class="breadcrumb">
+                <li><a href="/mobile">首页</a></li>
+                <li class="selected"><a href="./productList.html">家用电器</a></li>
+            </ol>
+        </div>
+
+        <!-- product-banner -->
+        <div class="ui-product-banner">
+            <ul>
+                <li>
+                    <a href="./productList.html"><img src="../../assets/images/product-banner1.jpg"></a>
+                </li>
+            </ul>
+        </div>
+
+        <!--list-->
+        <div class="ui-product-con">
+            <div class="ui-product-content">
+                <div class="ui-product-conditions">
+                    <div class="ui-product-con-btn e-product-con-btn">
+                        <ul class="clearfix">
+                            <li>
+                                <p>排序<i class="icon-arrow-down"></i></p>
+                            </li>
+                            <li>
+                                <p>筛选<i class="icon-arrow-down"></i></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ui-sort-filter-con e-sort-filter-con">
+                        <div class="ui-product-sort e-product-sort" style="display : none">
+                            <ul id="sortid">
+                                <li value="0">按人气</li>
+                                <li value="1">按热卖</li>
+                                <li value="2">按价格从低到高</li>
+                                <li value="3">按价格从高到低</li>
+                            </ul>
+                        </div>
+                        <div class="ui-product-filter"  style="display : none">
+                            <ul class="clearfix">
+                                <li>价格区间</li>
+                                <li>
+                                    <input type="text" id="salePriceFrom"><span>-</span><input type="text" id="salePriceTo">
+                                </li>
+                            </ul>
+                            <ul class="clearfix key-word">
+                                <li>在结果中搜索</li>
+                                <li><input type="text" class="text" id="filterKey"></li>
+                            </ul>
+                            <p class="ui-confirm-btn my-salePrcieAreaBtn"><input type="button" id="submitBtn" value="确定"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-product-filter-con">
+                    <div class="ui-filter-con-btn">
+                        <div class="e-filter-con-btn ui-filter-btn-sec scroll">
+                            <ul class="clearfix" >
+                                <li>
+                                    <p>商品分类</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ui-filter-chose-all e-filter-chose-all">
+                        <div class="ui-filter-con-chose e-filter-con-chose">
+                            <ul class="clearfix">
+                                <li myattr="category">
+                                    <p code="coffee">咖啡机<i class="icon-chose"></i></p>
+                                </li>
+                                <li myattr="category">
+                                    <p code="kitchen-appliances">厨房电器<i class="icon-chose"></i></p>
+                                </li>
+                                <li myattr="category">
+                                    <p code="airpurifier">空气净化<i class="icon-chose"></i></p>
+                                </li>
+                                <li myattr="category">
+                                    <p code="floor-cleaning">地板清洁<i class="icon-chose"></i></p>
+                                </li>
+                                <li myattr="category">
+                                    <p code="water-purifier">净水器<i class="icon-chose"></i></p>
+                                </li>
+                                <li myattr="category">
+                                    <p code="fabric-treatment">织物处理<i class="icon-chose"></i></p>
+                                </li>
+                            </ul>
+                            <p class="ui-confirm-btn my-ScreeningConditions"><input type="button" value="确定"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui-product-wall">
+                <h3>共225件产品</h3>
                 <ul class="clearfix" id="position">
                     <li>
                         <a href="#">
                             <p class="lazyimg">
-                                <img src="../../assets/images/favorites1.jpg">
+                                <img class="lazyimg" src="../../assets/images/list1.jpg">
                             </p>
                             <p class="name">飞利浦 电水壶 HD9316/03</p>
 
-                            <p class="price"><span class="now">￥339.0</span>
-                            </p>
+
+                            <div class="ui-pdpwall-price-last">
+                                <p class="price-sale">市场售价：￥339.00</p>
+                                <p class="price-member">会员价：￥254.25</p>
+                            </div>
                         </a>
-                        <input type="button" class="ui-btn addBuyCart " lifecycle="1" value="加入购物车">
-                        <em class="ui-my-collection-delete e-my-collection-delete">
-							<i class="icon-delete-circle"></i>
-						</em>
                     </li>
                     <li>
                         <a href="#">
                             <p class="lazyimg">
-                                <img src="../../assets/images/favorites2.jpg">
+                                <img class="lazyimg" src="../../assets/images/list2.jpg">
                             </p>
-                            <p class="name">飞利浦 自动浓缩咖啡机 HD8753/15</p>
+                            <p class="name">飞利浦 衣物去毛球器 GC027/00</p>
 
-                            <p class="price"><span class="now">￥14988.0</span>
-                            </p>
+
+                            <div class="ui-pdpwall-price-last">
+                                <p class="price-sale">市场售价：￥149.00</p>
+                                <p class="price-member">会员价：￥111.75</p>
+                            </div>
                         </a>
-                        <input type="button" class="ui-btn addBuyCart " lifecycle="1" value="加入购物车">
-                        <em class="ui-my-collection-delete e-my-collection-delete">
-							<i class="icon-delete-circle"></i>
-						</em>
                     </li>
                     <li>
                         <a href="#">
                             <p class="lazyimg">
-                                <img src="../../assets/images/favorites2.jpg">
+                                <img class="lazyimg" src="../../assets/images/list3.jpg">
                             </p>
-                            <p class="name">飞利浦 意式浓缩咖啡机 HD8323/05</p>
+                            <p class="name">飞利浦 衣物去毛球器 GC026/30</p>
 
-                            <p class="price"><span class="now">￥1788.0</span>
-                            </p>
+
+                            <div class="ui-pdpwall-price-last">
+                                <p class="price-sale">市场售价：￥99.00</p>
+                                <p class="price-member">会员价：￥74.25</p>
+                            </div>
                         </a>
-                        <input type="button" class="ui-btn addBuyCart " lifecycle="1" value="加入购物车">
-                        <em class="ui-my-collection-delete e-my-collection-delete">
-							<i class="icon-delete-circle"></i>
-						</em>
                     </li>
                     <li>
                         <a href="#">
                             <p class="lazyimg">
-                                <img src="../../assets/images/favorites1.jpg">
+                                <img class="lazyimg" src="../../assets/images/list4.jpg">
                             </p>
-                            <p class="name">飞利浦 电水壶 HD9316/03</p>
+                            <p class="name">飞利浦 车载空气净化器 AC4030/10</p>
 
-                            <p class="price"><span class="now">￥339.0</span>
-                            </p>
+
+                            <div class="ui-pdpwall-price-last">
+                                <p class="price-sale">市场售价：￥1499.00</p>
+                                <p class="price-member">会员价：￥1124.25</p>
+                            </div>
                         </a>
-                        <input type="button" class="ui-btn addBuyCart " lifecycle="1" value="加入购物车">
-                        <em class="ui-my-collection-delete e-my-collection-delete">
-							<i class="icon-delete-circle"></i>
-						</em>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="lazyimg">
+                                <img class="lazyimg" src="../../assets/images/list1.jpg">
+                            </p>
+                            <p class="name">飞利浦 电水壶 HD9303/19</p>
+
+
+                            <div class="ui-pdpwall-price-last">
+                                <p class="price-sale">市场售价：￥159.00</p>
+                                <p class="price-member">会员价：￥119.25</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="lazyimg">
+                                <img class="lazyimg" src="../../assets/images/list2.jpg">
+                            </p>
+                            <p class="name">飞利浦 电水壶 HD9306/03</p>
+
+
+                            <div class="ui-pdpwall-price-last">
+                                <p class="price-sale">市场售价：￥199.00</p>
+                                <p class="price-member">会员价：￥149.25</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="lazyimg">
+                                <img class="lazyimg" src="../../assets/images/list3.jpg">
+                            </p>
+                            <p class="name">飞利浦 迷你电饭煲 HD3060/00</p>
+
+
+                            <div class="ui-pdpwall-price-last">
+                                <p class="price-sale">市场售价：￥499.00</p>
+                                <p class="price-member">会员价：￥374.25</p>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </div>
+            <div class="ui-product-bg"></div>
         </div>
-
     </section>
 
     <!--footer-->
@@ -271,30 +401,12 @@
         </div>
     </footer>
 
-    <!-- 模态框 -->
-    <!--updataAddress-->
-    <div class="ui-com-pop e-com-pop">
-        <div class="ui-com-pop-con">
-            <span class="ui-pop-close e-pop-close"><i class="icon-pop-close"></i></span>
-            <h3 class="title">温馨提示</h3>
-            <p class="text">设置成功!</p>
-            <div class="ui-btn-row one">
-                <ul class="clearfix">
-                    <li class="e-btn-pop-sure"><input type="button" class="ui-btn" value="确定"></li>
-                    <li class="e-btn-pop-cancel cancle"><input type="button" class="ui-btn gray" value="取消"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="ui-pop-mask e-pop-mask"></div>
-    <!-- 模态框 -->
+    <div id="module" class="ui-png-mask e-png-mask"></div>
 
 
     <script src="../../../libs/jquery/jquery-1.11.3.min.js"></script>
-    <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/myaccount-fav.js"></script>
     <script src="../../assets/js/comment.js"></script>
+    <script src="../../assets/js/main.js"></script>
 
 </body>
 
