@@ -34,6 +34,7 @@ $(document).ready(function() {
     addressCheck();
     accountEff()
 });
+// 显示隐藏动画效果
 function comPop(b, a, c) {
     $(b).click(function(h) {
         var g = $(window).height();
@@ -50,6 +51,7 @@ function comPop(b, a, c) {
         $(".e-pop-mask").hide()
     })
 }
+// 底部事件
 function footerQuestionEffect() {
     $(".e-footer-question>h3").click(function() {
         $(this).siblings("ul").slideToggle("fast");
@@ -64,6 +66,7 @@ function footerQuestionEffect() {
         $(this).siblings("div.list").slideToggle("fast")
     })
 }
+// 主导航
 function menu() {
     $(".e-menu-btn").click(function() {
         $(this).children("i").toggleClass("active");
@@ -79,6 +82,7 @@ function menu() {
         $(this).siblings("ul").slideToggle("fast")
     })
 }
+// 头部搜索事件
 function headerSearch() {
     $(".e-search-btn").click(function() {
         $(this).parents(".ui-header-nav").hide();
@@ -89,6 +93,7 @@ function headerSearch() {
         $(".ui-header-nav").show()
     })
 }
+// 收藏或取消事件
 function pdpCollect() {
     $(".e-pdp-collect").click(function() {
         $(this).parent().addClass("disabled");
@@ -112,6 +117,7 @@ function pdpCollect() {
         }, 2300)
     })
 }
+// table切换添加或移除active类名
 function RecTab(e, d) {
     var c = $(e);
     var f = $(d);
@@ -125,6 +131,7 @@ function RecTab(e, d) {
         f.eq(c.index(this)).show()
     })
 }
+
 function sltControl() {
     $(".e-slt-control select").each(function() {
         var a = $(this).find("option:selected").text();
@@ -136,6 +143,7 @@ function sltControl() {
         $(this).parent().removeClass("default")
     })
 }
+//滚动宽度
 function scrollWidthCtr(a) {
     $(".e-scroll-ctr").each(function() {
         var c = $(this).find("li").length;
@@ -186,6 +194,7 @@ function comHintPop(f, d, e, i) {
         }
     })
 }
+// 排序和过滤
 function SortandFilter() {
     $(".e-product-con-btn li").click(function() {
         $(this).toggleClass("active");
@@ -204,6 +213,7 @@ function SortandFilter() {
         $(this).siblings().removeClass("active")
     })
 }
+// 商品分类选择事件
 function Filtercon() {
     $(".e-filter-con-chose li").click(function() {
         $(this).addClass("active");
@@ -226,13 +236,17 @@ function Filtercon() {
         $(".e-filter-chose-all>div").eq(d).slideToggle("fast")
     });
     var c = $(".e-filter-con-btn li").length;
+    console.log(c)
     var b = $(".e-filter-con-btn li").outerWidth();
-    var a = c * (b + 9) + 13;
+    var a = c * (b + 1);
+    console.log(a)
+    
     $(".e-filter-con-btn ul").css({
         width: a + "px"
     });
     $(".e-filter-con-btn").addClass("scroll")
 }
+// 地址选择
 function addressCheck() {
     $(".e-address-list li .e-address-checked").click(function() {
         $(this).addClass("active");
@@ -241,6 +255,7 @@ function addressCheck() {
         $(this).parents("li").siblings().find(".e-address-checked span").text("设为默认地址")
     })
 }
+// 用户中心事件
 function accountEff() {
     $(".e-my-account-list li h4").click(function() {
         $(this).toggleClass("active");

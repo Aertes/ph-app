@@ -103,6 +103,11 @@
   padding: 0 4px;
   font-size: 11px;
 }
+.ui-com-sub-nav li > a:hover,
+.ui-com-sub-nav li > a:focus {
+  color: #333;
+  text-decoration: none;
+}
 .ui-product-banner ul > li > a {
   display: block;
 }
@@ -256,10 +261,8 @@
 }
 .ui-product-con .ui-product-filter-con .ui-filter-con-btn .ui-filter-btn-sec {
   width: 100%;
-  height: 36px;
   line-height: 36px;
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 .ui-product-con .ui-product-filter-con .ui-filter-con-btn .ui-filter-btn-sec ul {
   height: 36px;
@@ -308,6 +311,11 @@
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 0 5px;
+}
+.ui-product-con .ui-product-filter-con .ui-filter-con-btn .scroll {
+  height: 36px;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .ui-product-con .ui-product-filter-con .ui-filter-chose-all {
   position: absolute;
@@ -424,6 +432,11 @@
 .ui-product-con .ui-product-wall ul a img {
   width: 100%;
 }
+.ui-product-con .ui-product-wall ul a:hover,
+.ui-product-con .ui-product-wall ul a:focus {
+  color: #333;
+  text-decoration: none;
+}
 .ui-product-con .ui-product-wall p.name {
   height: 32px;
   padding: 0 8px;
@@ -444,9 +457,15 @@
   box-sizing: border-box;
 }
 .ui-product-con .ui-product-wall .ui-pdpwall-price-last .price-sale {
-  font-size: 8px;
+  padding: 7px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-product-con .ui-product-wall .ui-pdpwall-price-last .price-sale span {
+  font-size: 14px;
   color: #ea8405;
-  text-decoration: line-through;
+  margin-right: 5px;
 }
 .ui-product-con .ui-product-wall .ui-pdpwall-price-last .price-member {
   font-size: 12px;

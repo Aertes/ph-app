@@ -29,9 +29,9 @@ $(document).ready(function() {
         }
     });
     var a = new Swiper(".swiper-container",{
-        centeredSlides: true,
+        centeredSlides: false,
         slidesPerView: "auto",
-        initialSlide: 1
+        initialSlide: 2
     })
 });
 $(function() {

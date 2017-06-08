@@ -1,6 +1,6 @@
 @charset 'utf-8';
 @import './common.less';
-
+// 路径导航
 .ui-com-sub-nav{
     padding: 8px 13px;
     color: @c;
@@ -20,6 +20,7 @@
         display: inline;
         padding: 0 4px;
         font-size: @font14 - 3;
+        .a();
     }
      
 }
@@ -161,10 +162,8 @@
             z-index: 10;
             .ui-filter-btn-sec{
                 width: 100%;
-                height: 36px;
                 line-height: 36px;
-                overflow-x: scroll;
-                -webkit-overflow-scrolling: touch;
+                overflow: hidden;
                 ul{
                     height: 36px;
                     padding-left: 13px;
@@ -207,6 +206,11 @@
                         padding: 0 5px;
                     }
                 }
+            }
+            .scroll{
+                height: 36px;
+                overflow-x: scroll;
+                -webkit-overflow-scrolling: touch;
             }
         }
         .ui-filter-chose-all{
@@ -306,6 +310,7 @@
                 img{
                     width: 100%;
                 }
+                .a();
             }
         }
         p.name{
@@ -323,9 +328,13 @@
             padding: 0 8px;
             .box();
             .price-sale{
-                font-size: @font14 - 6;
-                color: #ea8405;
-                text-decoration: line-through;
+                padding: 7px 0;
+                .box();
+                span{
+                    font-size: @font14;
+                    color: #ea8405;
+                    margin-right: 5px;
+                }
             }
             .price-member{
                 font-size: @font14 - 2;
