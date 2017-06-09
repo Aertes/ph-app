@@ -71,7 +71,7 @@
                     <i class="icon-close"></i>
                 </span>
             </div>
-            <p>中国 官方商城</p>
+            <p id="homeURL">中国 官方商城</p>
         </div>
 
         <!--menu-->
@@ -285,13 +285,15 @@
                 </div>
                 <div class="ui-home-type-slt e-home-type-slt">
                     <h4>热卖商品类型选择</h4>
-                    <ul class="clearfix">
-                        <li><p class="active">系列剃须刀</p></li>
-                        <li><p>电动牙刷</p></li>
-                        <li><p>自然原生系列</p></li>
-                        <li><p>洁肤仪</p></li>
+                    <ul>
+                        <li><p ccode='series-shavers'  class="active">系列剃须刀</p></li>
+                        <li><p ccode='electrictoothbrush' >电动牙刷</p></li>
+                        <li><p ccode='natural-bottles' >自然原生系列</p></li>
+                        <li><p ccode='cleanser' >洁肤仪</p></li>
                     </ul>
-                    <input type="button" class="ui-btn" value="确  定">
+                    <p>
+                        <input type="button" id="searchCategoryBtn" class="ui-btn" value="确定">
+                    </p>
                 </div>
             </div>
             <!--hot-pro-->
@@ -351,12 +353,16 @@
             <!--video-->
             <div class="ui-home-video">
                 <div class="ui-top-video">
-                    <img src="./src/assets/images/video1.jpg" alt="">
-                    <p>飞利浦 净颜焕采洁肤仪 SC5275/00</p>
+                    <a href="./src/components/video.html">
+                        <img src="./src/assets/images/video1.jpg">
+                        <p>飞利浦 净颜焕采洁肤仪 SC5275/00</p>
+                    </a>
                 </div>
                 <div class="ui-bottom-video">
-                    <img src="./src/assets/images/video2.jpg" alt="">
-                    <p>飞利浦 车载和桌面空气净化器 AC4030/00 </p>
+                    <a href="./src/components/video2.html">
+                        <img src="./src/assets/images/video2.jpg">
+                        <p>飞利浦 车载和桌面空气净化器 AC4030/00 </p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -420,16 +426,15 @@
     <script src="./src/assets/js/index.js"></script>
     <script src="./src/assets/js/comment.js"></script>
     <script>
-            // 全局设置loading效果
-            $(document).ajaxStart(function(){
-                $('#overlay').show();
-            });
-            $(document).ajaxStop(function(){
-                setTimeout(function() {
-                    $('#overlay').hide();
-                    console.log(123);
-                }, 3000);
-            });
+        // 全局设置loading效果
+        $(document).ajaxStart(function(){
+            $('#overlay').show();
+        });
+        $(document).ajaxStop(function(){
+            setTimeout(function() {
+                $('#overlay').hide();
+            }, 3000);
+        });
     </script>
 </body>
 

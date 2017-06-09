@@ -1,5 +1,4 @@
 @charset 'utf-8';
-@import 'base.css';
 /*content*/
 .ui-home-con {
   background-color: #f0f1f2;
@@ -23,7 +22,7 @@
   align-items: flex-start;
 }
 .ui-home-con .e-scroll-ctr ul li {
-  margin-right: 30px;
+  margin: 0 15px;
 }
 .ui-home-con .e-scroll-ctr ul a {
   display: block;
@@ -229,7 +228,6 @@
 }
 .ui-home-con .ui-home-accurate-search .ui-home-type-slt ul li {
   font-size: 12px;
-  padding: 0 2px 8px;
   box-sizing: border-box;
 }
 .ui-home-con .ui-home-accurate-search .ui-home-type-slt ul p {
@@ -324,6 +322,9 @@
   text-align: center;
   background-color: #fff;
   font-size: 16px;
+}
+.ui-home-con .ui-home-video a {
+  display: block;
 }
 .ui-home-con .ui-home-video img {
   width: 72.5%;

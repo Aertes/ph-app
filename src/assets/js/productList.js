@@ -1,14 +1,15 @@
-var pagebase = '';
-var searchUrl = pagebase + "";
-var searchUrl = 'pagebase + ""';
+
+var pagebase = '/mobile/src/components/';
+var searchUrl = pagebase + "category/productList.html";
 
 var assignUrl = pagebase + "";
 var loginUrl = pagebase + "";
 var categoryPrefix = "";
+var AREA_CONNECTOR = "-";
+
 var SEARCH_JOINNER = "a";
 var SEARCH_EQUAL_CHAR = "e";
 var VALUE_CONNECTOR = "o";
-var AREA_CONNECTOR = "-";
 var SEARCH_ITEM_SELECT_TYPE_SINGLE = 1;
 var SEARCH_ITEM_SELECT_TYPE_MULTI = 2;
 var IS_SHOW_SEARCH_ITEM_WHEN_NO_COUNT = false;
@@ -21,6 +22,7 @@ var QUEERY_STRING_PRICE_CDT_ID = "priceCdtItemId";
 var QUEERY_STRING_SALEPRICE_AREA = "sp";
 var QUEERY_STRING_FILTER_KEY = "fk";
 var searchItemSelectType = SEARCH_ITEM_SELECT_TYPE_MULTI;
+
 var searchCdt = "";
 var searchCategoryId = -1;
 var sortTypeId = 0;
@@ -36,27 +38,41 @@ var refreshstatus = true;
 
 // 图片lazyload加载
 
-$(document).ready(function() {
+// $(function() {
+    
+// });
+
+$(function() {
+
     $("img.lazyimg").lazyload({
         effect: "fadeIn"
     })
-});
 
-$(function() {
     // initSearchValue();
     initsortdata();
     // showCurmbList();
     setscrollrefresh();
     $(".ui-confirm-btn.my-ScreeningConditions").on("click", function() {
         var a = $(this).prev().find("li.active");
+        // 若没选择，则关闭        
         if (a.length != 1) {
             closeConditionScreening();
             return
         }
         searchCategoryId = a.find("p").attr("code");
         curPage = 1;
-        var b = getSearchUrl();
-        window.location.href = b
+        // var b = getSearchUrl();
+        // window.location.href = b
+        $.ajax({
+            type:'post',
+            url:'',
+            data: searchCategoryId,
+            success:function () {
+                console.log(searchCategoryId);
+                closeConditionScreening();
+            }
+        })
+
     });
     $("li[myattr='category']").on("click", function() {
         var a = $(this).parent().find("li.active");
@@ -68,16 +84,29 @@ $(function() {
     $(".ui-confirm-btn.my-otherConditions").on("click", function() {
         var b = $(this).prev().find("li.active");
         var c = $(this).attr("searchcondition");
+        // 若没选择，则关闭
         if (b.length == 0) {
             closeConditionScreening();
             return
         }
+
         var a = new Array();
         $.each(b, function(d, e) {
             a[d] = $(e).attr("searchitem")
         });
-        updateParam(c, a);
-        window.location.href = getSearchUrl()
+
+        // updateParam(c, a);
+        // window.location.href = getSearchUrl()
+        
+        $.ajax({
+            type:'post',
+            url:'',
+            data: a,
+            success:function () {
+                console.log(a);
+                closeConditionScreening();
+            }
+        })
     });
     $("#submitBtn").on("click", function() {
         var c = $("#salePriceFrom").val();
@@ -103,15 +132,27 @@ $(function() {
         }
         if (isNotNull(a)) {
             salePriceArea = a
+            // 价格筛选区域
+            $.ajax({
+                type:'get',
+                url:'',
+                data: salePriceArea,
+                success:function () { 
+                    console.log(salePriceArea);
+                },
+            })
+
         } else {
             salePriceArea = null
         }
+        
         searchKey = $("#filterKey").val();
         curPage = 1;
-        window.location.href = getSearchUrl();
-        sortBtnOmi("", c + "-" + b, searchUrl)
+        // window.location.href = getSearchUrl();
+        // sortBtnOmi("", c + "-" + b, searchUrl)
     })
 });
+
 // 得到搜索链接
 function getSearchUrl() {
     var a = searchUrl + "?";
@@ -142,6 +183,7 @@ function getSearchUrl() {
     a = a.replace("?&", "?");
     return a
 }
+
 // 不为空
 function isNotNull(a) {
     if (a != null && a != "" && a.length > 0 && a != "null") {
@@ -150,6 +192,7 @@ function isNotNull(a) {
         return false
     }
 }
+
 // 更新参数
 function updateParam(j, h) {
     var f = getQueryString(QUEERY_STRING_SEARCH);
@@ -181,6 +224,7 @@ function updateParam(j, h) {
     }
     searchCdt = b
 }
+
 // 得到查找字符串
 function getQueryString(a) {
     var b = new RegExp("(^|&)" + a + "=([^&]*)(&|$)","i");
@@ -216,8 +260,18 @@ function initsortdata() {
     });
     $("#sortid li").click(function() {
         sortTypeId = $(this).val();
+        console.log(sortTypeId);
         curPage = 1;
-        window.location.href = getSearchUrl()
+        // window.location.href = getSearchUrl()
+        var data = ''
+        $.ajax({
+            type: 'post',
+            url: '',
+            data : data,
+            success: function(){
+
+            }
+        })
     })
 }
 // 显示Curmb列表
@@ -244,7 +298,7 @@ function showCurmbList() {
         }
         e += "<a class='selected'>搜索结果：" + curmbSearchKey + "</a>"
     }
-    e = "<a href='/'>首页 </a>>" + e;
+    e = "<a href='/'>首页 </a>" + e;
     $(".ui-com-sub-nav").append(e)
 }
 
@@ -273,7 +327,7 @@ function refreshListData() {
         //         var g = $("#cloneid li").clone();
         //         g.attr("id_page", b.curPage + "");
         //         g.find("a").attr("href", f.code);
-        //         // g.find("img").attr("data-original", formatImage(f.imgList[0], "287X274"));
+        //         g.find("img").attr("data-original", formatImage(f.imgList[0], "287X274"));
         //         g.find("img").attr("src",   "../images/hot4.jpg");
         //         g.find("p.name").text(f.title);
         //         g.find(".price-sale").text("市场售价：￥" + f.salePrice.toFixed(2));
@@ -284,7 +338,7 @@ function refreshListData() {
         // });
         
         curPage = b.curPage + "";
-        $("#position").append('<li><a href="./productDetails.html"><p class="lazyimg"><img class="lazyimg" src="../../assets/images/list2.jpg"></p><p class="name">飞利浦 电水壶 HD9306/03</p><div class="ui-pdpwall-price-last"><p class="price-sale"><span class="now">￥1999.00</span></p><!--<p class="price-member">会员价：￥149.25</p>--></div></a></li>')
+        $("#position").append('<li><a href="./productDetails.html"><p class="lazyimg"><img class="lazyimg" src="../../assets/images/list2.jpg"></p><p class="name">飞利浦 电水壶 HD9306/03</p><div class="ui-pdpwall-price-last"><p class="price"><span class="now">￥1999.00</span></p><!--<p class="price-member">会员价：￥149.25</p>--></div></a></li>')
         console.log(curPage);
 
         setscrollrefresh();

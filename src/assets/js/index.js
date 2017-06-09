@@ -5,12 +5,9 @@ var expiredays = 7;
 var beginPriceCookieKey = "i_s_b";
 var endPriceCookieKey = "i_s_e";
 var searchCategoryKey = "i_s_c";
-var defaultModuleImgSize = "330X330";
-var LITTELE_SIZE = "180X180";
-var searchUrl = "/search?&";
-var searchCateItemUrl = "/searchItem";
 var selectminValue;
 var selectmaxValue;
+
 $(document).ready(function() {
     $(".e-home-slider").flexslider({
         animation: "slide",
@@ -34,8 +31,11 @@ $(document).ready(function() {
         initialSlide: 2
     })
 });
+
 $(function() {
+
     scrollWidthCtr();
+    // 跳转视频
     $("img[myattr='starProduct'],img[myattr='homeVideo']").click(function() {
         var a = $(this).attr("myUrl");
         if (a.toLowerCase().concat("http")) {
@@ -44,6 +44,7 @@ $(function() {
             location.href = "http://" + pagebase + a
         }
     });
+    // 热门商品价格定位选择
     $("#searchCategoryBtn").on("click", function() {
         var b = $("p[cCode].active").attr("cCode");
         var c = selectminValue + "";
@@ -58,6 +59,8 @@ $(function() {
                     e = a
                 }
             }
+            console.log(c);
+            console.log(e);
             setCookie(beginPriceCookieKey, c, expiredays);
             setCookie(endPriceCookieKey, e, expiredays);
             setCookie(searchCategoryKey, b, expiredays);
@@ -67,10 +70,22 @@ $(function() {
             if (!isNotNullOrEmpty(e)) {
                 e = ""
             }
+
             var d = "c=" + b;
             d += "&sp=" + c + "-" + e;
-            window.location.href = searchUrl + d;
+            // 跳到商品列表页
+            // window.location.href = searchUrl + d;
             determineButtonOmi(e, b)
+            $.ajax({
+                type: 'post',
+                url: '',
+                data: d,
+                success:function () {
+                    console.log (d);
+                    window.location.href = './src/components/category/productList.html';
+
+                }
+            })
         }
     })
     

@@ -1,5 +1,6 @@
 var commonTokenUrl = "";
 var isShowDeciaml = true;
+
 function showPrice(b) {
     if (isShowDeciaml) {
         var a = b.toFixed(decimalCount);
@@ -7,6 +8,7 @@ function showPrice(b) {
     }
     return b
 }
+// 获取cookie
 function getCookie(a) {
     var b = a + "=";
     if (document.cookie.length > 0) {
@@ -23,30 +25,38 @@ function getCookie(a) {
         }
     }
 }
+// 删除Cookie报价
 function removeCookiequotes(a) {
     return a.replace(/\"/g, "")
 }
+// 删除cookies
 function delCookie(b) {
     var a = new Date();
     a.setTime(a.getTime() - 10000);
     document.cookie = b + "=a; expires=" + a.toGMTString()
 }
+// 设置cookies
 function setCookie(b, c, a) {
     var d = new Date();
     d.setDate(d.getDate() + a);
     document.cookie = b + "=" + escape(c) + ((a == null) ? "" : ";expires=" + d.toGMTString())
 }
+
 function forwardUrl(a) {
     window.location.href = makeRealVersionUrl(a)
 }
+
 function refresh() {
     window.location.reload(true)
 }
+
+// url
 function makeRealVersionUrl(a) {
     var b = (new Date()).getTime();
     a += (/\?/.test(a)) ? "&" : "?";
     return ( a + "rv=" + b.toString())
 }
+// 判断是否为空 或 undefined
 function isNotNullOrEmpty(a) {
     if (a != undefined && a != null && a != "" && a != "undefined") {
         return true
@@ -54,7 +64,7 @@ function isNotNullOrEmpty(a) {
         return false
     }
 }
-
+// 提交form表单
 function submitForm(b, a) {
     var e = _getForm(b)
       , g = a.mode || "sync";
@@ -73,6 +83,7 @@ function submitForm(b, a) {
         }
     } else {}
 }
+
 function hitch(a, b) {
     if (!b) {
         b = a;
@@ -91,6 +102,7 @@ function hitch(a, b) {
         return b.apply(a, arguments || [])
     }
 }
+// 异步
 function asyncXhr(b, c, a) {
     if (!a.success) {
         a = $.extend({}, a, {
@@ -150,18 +162,21 @@ function asyncXhr(b, c, a) {
     }
     $.ajax(this._ajaxOptions(b, c, a))
 }
+// 异步获取
 function asyncXhrGet(b, c, a) {
     a = $.extend({}, a, {
         type: "GET"
     });
     asyncXhr(b, c, a)
 }
+// 异步设置
 function asyncXhrPost(b, c, a) {
     a = $.extend({}, a, {
         type: "POST"
     });
     asyncXhr(b, c, a)
 }
+// 同步
 function syncXhr(c, e, b) {
     var d, a = this._ajaxOptions(c, e, b);
     $.extend(a, {
@@ -199,18 +214,21 @@ function syncXhr(c, e, b) {
     $.ajax(a);
     return d
 }
+// 同步获取
 function syncXhrGet(b, c, a) {
     a = $.extend({}, a, {
         type: "GET"
     });
     return syncXhr(b, c, a)
 }
+// 同步设置
 function syncXhrPost(b, c, a) {
     a = $.extend({}, a, {
         type: "POST"
     });
     return syncXhr(b, c, a)
 }
+// ajax选项
 function _ajaxOptions(d, e, c) {
 	var commonToken;
     if (!c.cache) {
@@ -238,15 +256,19 @@ function _ajaxOptions(d, e, c) {
     }
     return b
 }
+
+// 刷新
 function reloadToken() {
     if (commonToken != "") {
         var a = syncXhrGet(commonTokenUrl);
         commonToken = a
     }
 }
+// 判断字符串
 function isString(a) {
     return typeof a === "string" || a instanceof String
 }
+// ajax表单Obj对象
 function _ajaxFormToObj(c) {
     c = _getForm(c);
     if (!c) {
@@ -263,6 +285,7 @@ function _ajaxFormToObj(c) {
     });
     return b
 }
+// 获取表单
 function _getForm(a) {
     var b = a;
     if (this.isString(a)) {
@@ -273,6 +296,7 @@ function _getForm(a) {
     }
     return (b instanceof jQuery) ? b.get(0) : b
 }
+// ajax设定值
 function _ajaxSetValue(c, a, b) {
     if (b === null) {
         return
@@ -288,6 +312,7 @@ function _ajaxSetValue(c, a, b) {
         }
     }
 }
+// ajax选项值
 function _ajaxFieldValue(c) {
     var a = null
       , b = (c.type || "").toLowerCase();
@@ -311,6 +336,7 @@ function _ajaxFieldValue(c) {
     }
     return a
 }
+
 var map = {
     emailReg: "/^([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$/",
     telReg: "/^(([0\\+]\\d{2,3}-)?(0\\d{2,3})-)(\\d{7,8})(-(\\d{3,}))?$/",
@@ -321,6 +347,8 @@ var key = "";
 var errorMsg = ""
   , errorNums = 0
   , exclude = "email|tel|mobile|zipCode|";
+
+// 错误显示区域
 function errorShowForArea(b, a) {
     errorNums++;
     if (errorNums == 1) {
@@ -330,9 +358,11 @@ function errorShowForArea(b, a) {
         $("<div class='error_div' align='right'>" + a + "</div>").insertAfter($(b).parent())
     }
 }
+// 错误隐藏区域
 function errorHideForArea(a) {
     $(a).parent().siblings(".error_div").remove()
 }
+// 错误显示
 function errorShow(b, a) {
     errorNums++;
     if (errorNums == 1) {
@@ -342,9 +372,11 @@ function errorShow(b, a) {
         $("<div class='error_div'>" + a + "</div>").insertAfter($(b))
     }
 }
+// 错误隐藏
 function errorHide(a) {
     $(a).siblings(".error_div").remove()
 }
+// 验证表单
 function validateForm(form) {
     errorNums = 0;
     var context = document.body;
@@ -398,15 +430,18 @@ function validateForm(form) {
     }
     return true
 }
+// 显示一般错误信息
 function showGeneralErrorInfo(b, a) {
     $(".notice-title").html(a);
     $(".notice").parents("li").addClass("error")
 }
+// 清除一般错误信息
 function clearGeneralErrorInfo() {
     $(".notice").parent("li").removeClass("error");
     $(".notice-title").html("");
     $(".notice-body").html("")
 }
+// 匹配空或不存在
 function matchNull(a) {
     if (a == undefined || a == null || a == "") {
         return true
@@ -414,15 +449,19 @@ function matchNull(a) {
         return false
     }
 }
+// 匹配邮箱
 function matchEmail(email) {
     return eval(map.emailReg).test(email)
 }
+// 匹配电话
 function matchMobile(mobile) {
     return eval(map.mobileReg).test(mobile)
 }
+// 匹配手机
 function matchTelphone(phone) {
     return eval(map.telReg).test(phone)
 }
+// 一般验证
 function generalValidate(a, c, b) {
     if (b.isNotNull == true) {
         if (matchNull(c)) {
@@ -461,6 +500,7 @@ var region = "";
 function i18n(b, a) {
     return getLocaleMsg(b, a)
 }
+
 function getLocaleMsg(g, c) {
     var a = this.regional[this.region][g];
     if (a === undefined || a === null) {
@@ -486,12 +526,15 @@ function getLocaleMsg(g, c) {
     }
     return a
 }
+// 初始化
 function initRegion() {
     this.region = getLanguage()
 }
+// 获取语言
 function getLanguage() {
     return navigator.language || navigator.browserLanguage
 }
+// 输入空判断
 function isInputEmpty(a) {
     var b = $(a);
     var d = $.trim(b.val());
@@ -502,6 +545,7 @@ function isInputEmpty(a) {
         return false
     }
 }
+// 分页
 function fnGetPageHtml(h, j, k) {
     var a = "";
     var d = 1;
@@ -561,6 +605,7 @@ function fnGetPageHtml(h, j, k) {
     }
     return a
 }
+// 分页链接
 function fnMakeLink(e, d, b, a) {
     var c = "<a ";
     if (e == d) {
@@ -576,6 +621,7 @@ function fnMakeLink(e, d, b, a) {
     c += "</a>";
     return c
 }
+
 Date.prototype.format = function(b) {
     var c = {
         "M+": this.getMonth() + 1,
@@ -595,8 +641,8 @@ Date.prototype.format = function(b) {
         }
     }
     return b
-}
-;
+};
+
 function Base64() {
     _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
     this.encode = function(c) {
@@ -696,6 +742,36 @@ function Base64() {
         return b
     }
 }
+
+// 跳转用处
+function isUseful() {
+    return typeof philips != "undefined" && typeof philips.analytics != "undefined"
+}
+
+// 确定按钮
+function determineButtonOmi(b, c) {
+    var a = {
+        name: "interaction",
+        description: b + ":" + c + ":determine_button"
+    };
+    trackConversionOmi(a)
+}
+
+// 跟踪跳转
+function trackConversionOmi(a) {
+    if (isUseful()) {
+        philips.analytics.trackConversion(a)
+    }
+}
+// 跟踪转换
+function trackConversion(b) {
+    var a = {
+        name: "buy_at_philips",
+        product: b
+    };
+    trackConversionOmi(a)
+}
+
 // function processImgUrl(e, c) {
 //     if (null == e || "" == e) {
 //         return defaultImg
@@ -724,5 +800,6 @@ $('html').ajaxStop(function(){
         $('#overlay').hide();
     }, 2000)
 })
+
 
 

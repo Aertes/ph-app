@@ -1,0 +1,40 @@
+{
+    "totalPage":1,
+
+    "dataCmd":{
+        "items":{
+            "items":{
+                "itemCmdList":[
+                    {"curPage":1},
+                    {"itemCmdList":1},
+                    {"code":1},
+                    {"imgList":1},
+                    {"salePrice":1},
+                    {"listPrice":1},
+                    {"salePrice":12.02},
+                    {"imgList": [
+                        "../images/hot4.jpg"
+                    ]}
+                ]
+            }
+        },
+        "items1":{
+            "items":{
+                "itemCmdList":[
+                    {"curPage":1},
+                    {"itemCmdList":1},
+                    {"code":1},
+                    {"imgList":1},
+                    {"salePrice":1},
+                    {"listPrice":1},
+                    {"salePrice":12.02},
+                    {"imgList": [
+                        "../images/hot4.jpg"
+                    ]}
+                ]
+            }
+        }
+        
+    }
+
+}
