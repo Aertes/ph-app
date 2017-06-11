@@ -143,14 +143,14 @@ function sltControl() {
         $(this).parent().removeClass("default")
     })
 }
-//滚动宽度
-function scrollWidthCtr(a) {
-    $(".e-scroll-ctr").each(function () {
-        var c = $(this).find("li").length;
-        var b = $(this).find("li").outerWidth();
-        $(this).children("ul").width(c * b + "px")
-    })
-}
+// //滚动宽度
+// function scrollWidthCtr(a) {
+//     $(".e-scroll-ctr").each(function () {
+//         var c = $(this).find("li").length;
+//         var b = $(this).find("li").outerWidth();
+//         $(this).children("ul").width(c * b + "px")
+//     })
+// }
 
 // 弹窗（模态框）
 function comHintPop(f, d, e, i) {
@@ -235,13 +235,6 @@ function Filtercon() {
         $(".e-filter-chose-all>div").eq(d).siblings().hide();
         $(".e-filter-chose-all>div").eq(d).slideToggle("fast")
     });
-    var c = $(".e-filter-con-btn li").length;
-    var b = $(".e-filter-con-btn li").width();
-    var a = c * b;
-    $(".e-filter-con-btn ul").css({
-        width: a + "px"
-    });
-    $(".e-filter-con-btn").addClass("scroll")
 }
 // 地址选择
 function addressCheck() {
@@ -261,3 +254,5 @@ function accountEff() {
         $(this).parent().siblings().find("div").slideUp("fast")
     })
 };
+
+

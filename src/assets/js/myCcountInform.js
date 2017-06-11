@@ -6,9 +6,8 @@ var checkEmailUrl = pagebase + "";
 var refreshUrl = pagebase + "";
 var waitValue = 60;
 var wait = waitValue;
-function refresh() {
-    location.href = refreshUrl
-}
+
+// 邮箱验证
 function checkEmail() {
     var a = $("#email").val();
     var c = $("#oldEmail").val();
@@ -20,8 +19,8 @@ function checkEmail() {
     var b = syncXhr(checkEmailUrl, {
         email: a
     }, {
-        type: "POST"
-    });
+            type: "POST"
+        });
     if (b.isSuccess == false) {
         $("#email").siblings().html("<i class='icon-form-error'></i>该邮箱已被占用");
         $("#email").parent("li").addClass("error");
@@ -32,24 +31,17 @@ function checkEmail() {
         $("#email").parent("li").removeClass("error")
     }
 }
-function toBindMobile() {
-    var a = $("#mobile").val();
-    location.href = pagebase + "/member/toBindMobile.htm?mobile=" + a
-}
-function toBindEmail() {
-    var a = $("#email").val();
-    location.href = pagebase + "/member/toBindEmail.htm?email=" + a
-}
-$(document).ready(function() {
+
+$(document).ready(function () {
     $(".e-personal-sex").children(".active").find("input[name=sex]").attr("checked", "cheched");
-    $(".e-personal-sex").click(function() {
+    $(".e-personal-sex").click(function () {
         $(this).children().find("input[name=sex]").removeAttr("checked");
         $(this).children(".active").find("input[name=sex]").attr("checked", "cheched")
     });
-    $(".cancel").click(function() {
+    $(".cancel").click(function () {
         window.location.reload(true)
     });
-    $("#updateInfo").click(function() {
+    $("#updateInfo").click(function () {
         $(".ui-form-list").find("li").removeClass("error");
         $("#email").trigger("focus");
         $("#email").trigger("blur");
@@ -79,20 +71,21 @@ $(document).ready(function() {
         var g = $("#data-month").val();
         var d = $("#data-day").val();
         $("#idbirthday").val(f + "/" + g + "/" + d);
-        $.post("/account/personal-data", $("#personDataForm").serialize(), function(i) {
+        // 提交
+        $.post("", $("#personDataForm").serialize(), function (i) {
             if (i.isSuccess == true) {
-                comHintPop("更新成功!", function() {
-                    location.href = refreshUrl
+                comHintPop("更新成功!", function () {
+                    // location.href = refreshUrl
                 }, false)
             } else {
                 comHintPop("更新失败，请重试!", null, false)
             }
         })
     });
-    $("#securityImg").click(function() {
+    $("#securityImg").click(function () {
         changeCode($(this))
     });
-    $("#bindMobile").click(function() {
+    $("#bindMobile").click(function () {
         var g = $("#smsCode").val();
         var f = $("#randomCode").val();
         var d = $("#toBeBindMobile").val();
@@ -103,7 +96,7 @@ $(document).ready(function() {
         };
         asyncXhr(bindMobileUrl, e, {
             type: "POST",
-            success: function(h) {
+            success: function (h) {
                 if (h.isSuccess) {
                     comHintPop("手机绑定成功!", null, false);
                     $("#smsCode").val("");
@@ -115,14 +108,14 @@ $(document).ready(function() {
             }
         })
     });
-    $("#sendSmsCode").click(function() {
+    $("#sendSmsCode").click(function () {
         var d = $("#toBeBindMobile").val();
         var e = {
             mobile: d
         };
         asyncXhr(sendBindMobileCodeUrl, e, {
             type: "POST",
-            success: function(f) {
+            success: function (f) {
                 if (f.isSuccess) {
                     comHintPop("发送短信成功!", null, false)
                 } else {
@@ -131,14 +124,14 @@ $(document).ready(function() {
             }
         })
     });
-    $("#bindEmail").click(function() {
+    $("#bindEmail").click(function () {
         var d = $("#toBeBindEmail").val();
         var e = {
             email: d
         };
         asyncXhr(sendBindEmailUrl, e, {
             type: "POST",
-            success: function(f) {
+            success: function (f) {
                 if (f.isSuccess) {
                     comHintPop("发送邮件成功!", null, false)
                 } else {
@@ -147,11 +140,11 @@ $(document).ready(function() {
             }
         })
     });
-    $("#cryptoguardSubmit").click(function() {
+    $("#cryptoguardSubmit").click(function () {
         var g = $("#cryptoguardDiv").find("select").find("option:selected");
         var j = $("#cryptoguardDiv").find("input");
         var f = true;
-        $.each(j, function(k, l) {
+        $.each(j, function (k, l) {
             if ($.trim(l.value) == "" && f == true) {
                 comHintPop("密保答案不能为空", null, false);
                 f = false
@@ -161,7 +154,7 @@ $(document).ready(function() {
             return
         }
         var e = true;
-        $.each(g, function(k, l) {
+        $.each(g, function (k, l) {
             if ($.trim(l.value) == "" && e == true) {
                 comHintPop("请先选择问题", null, false);
                 e = false
@@ -173,7 +166,7 @@ $(document).ready(function() {
         var d = true;
         var i = "";
         var h = "";
-        $.each(g, function(k, l) {
+        $.each(g, function (k, l) {
             if (k == 0) {
                 i = $.trim(l.value)
             }
@@ -192,7 +185,7 @@ $(document).ready(function() {
         }
         submitForm("cryptoguardForm", {
             mode: "async",
-            successHandler: function(k) {
+            successHandler: function (k) {
                 if (k.isSuccess == true) {
                     comHintPop("密保设置成功!", null, false);
                     $(".spice-btn-stcenter").click(refresh)
@@ -202,10 +195,10 @@ $(document).ready(function() {
             }
         })
     });
-    $("#validateCryptoguardSubmit").click(function() {
+    $("#validateCryptoguardSubmit").click(function () {
         submitForm("validateCryptoguardForm", {
             mode: "async",
-            successHandler: function(d) {
+            successHandler: function (d) {
                 if (d.isSuccess == true) {
                     comHintPop("密保填写正确!", null, false);
                     $("#validateCryptoguardDiv").hide();
@@ -216,10 +209,10 @@ $(document).ready(function() {
             }
         })
     });
-    $("#updatePassWord").click(function() {
+    $("#updatePassWord").click(function () {
         submitForm("newPassWordForm", {
             mode: "async",
-            successHandler: function(e) {
+            successHandler: function (e) {
                 if (e.isSuccess == true) {
                     comHintPop("密码修改成功!", null, false)
                 } else {
@@ -241,8 +234,11 @@ $(document).ready(function() {
                 }
             }
         })
+
+
+
     });
-    $.each(districtJson["1"], function(d, e) {
+    $.each(districtJson["1"], function (d, e) {
         $("<option></option>").val(d).text(e).appendTo($("#provience"))
     });
     $("#provience").change(onProvienceChange);
@@ -258,19 +254,38 @@ $(document).ready(function() {
     $("#country option[value='" + a + "']").attr("selected", "selected");
     $("#country").change();
     initMyEvent()
+
+    // datepicker 时间
+    $('#data-year').mobiscroll().date({
+        theme: "ios light",
+        lang: "zh",
+        cancelText: "取消",
+        dateFormat: 'yy/mm', //返回结果格式化为年月格式  
+        // wheels:[], 设置此属性可以只显示年月，此处演示，就用下面的onBeforeShow方法,另外也可以用treelist去实现  
+        onBeforeShow: function (inst) { inst.settings.wheels[0].length > 2 ? inst.settings.wheels[0].pop() : null; }, //弹掉“日”滚轮  
+        headerText: function (valueText) { //自定义弹出框头部格式  
+            array = valueText.split('/');
+            return array[0] + "年" + array[1] + "月";
+        }
+    });
+
 });
+
+// 省份的变化
 function onProvienceChange(a) {
     onDistrictSelectionChange("provience", "city")
 }
+// 城市的变化
 function onCityChange(a) {
     onDistrictSelectionChange("city", "country")
 }
+// 市级变化
 function onDistrictSelectionChange(a, c) {
     $("#" + c).children().remove();
     var b = $("#" + a).val();
     if (districtJson[b] != null) {
         $("#" + c).show();
-        $.each(districtJson[b], function(d, e) {
+        $.each(districtJson[b], function (d, e) {
             $("<option></option>").val(d).text(e).appendTo($("#" + c))
         });
         $("#" + c).change()
@@ -278,14 +293,16 @@ function onDistrictSelectionChange(a, c) {
         $("#" + c).hide()
     }
 }
+// 初始化事件
 function initMyEvent() {
-    $("#editEmailbutton").click(function() {
+    $("#editEmailbutton").click(function () {
         comHintPop($("#checkEmailDialog").html(), sendEmail, true)
     });
-    $("#editMobilebutton").click(function() {
+    $("#editMobilebutton").click(function () {
         comHintPop($("#checkMobileDialog").html(), nextstep, true, mobileContentobjcallbackFun)
     })
 }
+// 下一步
 function nextstep() {
     $("#checkMobileError").hide();
     var d = $("#mobileNumberId").val();
@@ -313,10 +330,10 @@ function nextstep() {
     var a = pagebase + "/m/changeMobile";
     asyncXhr(a, c, {
         type: "post",
-        success: function(e) {
+        success: function (e) {
             if (e.isSuccess) {
-                setTimeout(function() {
-                    comHintPop(e.description, function() {
+                setTimeout(function () {
+                    comHintPop(e.description, function () {
                         window.location.reload()
                     }, false)
                 }, 500)
@@ -324,11 +341,12 @@ function nextstep() {
                 comHintPopagain("短信验证码无效，请重新获取！")
             }
         },
-        error: function(e) {
+        error: function (e) {
             comHintPopagain("操作失败，请重试！")
         }
     })
 }
+// 手机验证
 function mobileContentobjcallbackFun() {
     $("#checkMobileError").text("").hide();
     if ($("#mobileVerificationCodeHidden").val() != "") {
@@ -340,9 +358,11 @@ function mobileContentobjcallbackFun() {
         $("#mobileNumberId").val(a)
     }
 }
+// 设置错误显示
 function setErrorDesc(a) {
     $("#checkMobileError").text(a).show()
 }
+// 获取短信验证
 function getSmsCode() {
     var a = sendShortMessage();
     if (a == false) {
@@ -350,6 +370,7 @@ function getSmsCode() {
     }
     timeCountDown()
 }
+// 短信验证倒计时
 function timeCountDown() {
     var a = $("#verifyCodeId");
     if (wait == 0) {
@@ -365,13 +386,14 @@ function timeCountDown() {
             color: ""
         });
         a.attr("disabled", true);
-        a.val( wait + "秒后重新获取");
+        a.val(wait + "秒后重新获取");
         wait--;
-        setTimeout(function() {
+        setTimeout(function () {
             timeCountDown(a)
         }, 1000)
     }
 }
+// 发送短信验证
 function sendShortMessage() {
     var d = true;
     var a = pagebase + "/m/sendBindMobileCodeV";
@@ -393,18 +415,19 @@ function sendShortMessage() {
     };
     asyncXhr(a, b, {
         type: "post",
-        success: function(f) {
+        success: function (f) {
             if (!f.successStatus) {
                 setErrorDesc(f.errorCodeDesc);
                 wait = 0
             }
         },
-        error: function(f) {
+        error: function (f) {
             setErrorDesc("短信验证码发送失败，请重新获取！");
             wait = 0
         }
     })
 }
+// 发送邮箱验证
 function sendEmail() {
     var d = $("#emailAddress").val();
     var c = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(d);
@@ -420,16 +443,16 @@ function sendEmail() {
     $("#sendEmailSuccess").hide();
     asyncXhr(a, b, {
         type: "post",
-        success: function(e) {
+        success: function (e) {
             if (e.isSuccess) {
-                setTimeout(function() {
+                setTimeout(function () {
                     comHintPop(e.description)
                 }, 500)
             } else {
                 $("#checkEmailError").text(e.description).show()
             }
         },
-        error: function(e) {
+        error: function (e) {
             $("#checkEmailError").text("邮件发送失败，请重新发送！").show()
         }
     })

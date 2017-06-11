@@ -96,37 +96,38 @@ function setscrollrefresh() {
     })
 }
 function refreshListData() {
-    if (parseInt(curPage) + 1 > totalPage) {
-        return
-    }
-    var a = pagebase + "" + (parseInt(curPage) + 1);
-    $.post(a, function(b) {
-        $.each(b.paginationFavoritesList.items, function(d, c) {
-            var f = $("#cloneid li").clone();
-            f.attr("id_page", b.paginationFavoritesList.currentPage + "");
-            f.find("a").attr("href", staticbase + "/item/" + c.itemCode);
-            f.find("img").attr("src", formatImage(c.itemImageList[0].picUrl, "287X274"));
-            f.find("p.name").text(c.itemName);
-            f.find(".price now").text("￥" + c.salePrice);
-            if (c.salePrice != c.listPrice) {
-                f.find(".price used").text("￥" + c.listPrice)
-            }
-            if (c.lifecycle != 1) {
-                f.find(".addBuyCart").addClass("disabled");
-                f.find(".addBuyCart").val("该商品已下架")
-            } else {
-                f.find(".addBuyCart").val("加入购物车")
-            }
-            f.find(".addBuyCart").attr("lifecycle", c.lifecycle);
-            f.find(".addBuyCart").attr("name", c.itemId);
-            f.find("i").attr("id", c.itemId);
-            var e = $(".ui-my-collection-list").find(".e-my-collection-delete");
-            if (e.attr("style") == "display: inline;") {
-                f.find(".e-my-collection-delete").show()
-            }
-            $("#position").append(f)
-        });
-        curPage = b.paginationFavoritesList.currentPage + "";
+    // if (parseInt(curPage) + 1 > totalPage) {
+    //     return
+    // }
+    // var a = pagebase + "" + (parseInt(curPage) + 1);
+    $.post('../../assets/js/json.json', function(b) {
+        // $.each(b.paginationFavoritesList.items, function(d, c) {
+        //     var f = $("#cloneid li").clone();
+        //     f.attr("id_page", b.paginationFavoritesList.currentPage + "");
+        //     f.find("a").attr("href", staticbase + "/item/" + c.itemCode);
+        //     f.find("img").attr("src", formatImage(c.itemImageList[0].picUrl, "287X274"));
+        //     f.find("p.name").text(c.itemName);
+        //     f.find(".price now").text("￥" + c.salePrice);
+        //     if (c.salePrice != c.listPrice) {
+        //         f.find(".price used").text("￥" + c.listPrice)
+        //     }
+        //     if (c.lifecycle != 1) {
+        //         f.find(".addBuyCart").addClass("disabled");
+        //         f.find(".addBuyCart").val("该商品已下架")
+        //     } else {
+        //         f.find(".addBuyCart").val("加入购物车")
+        //     }
+        //     f.find(".addBuyCart").attr("lifecycle", c.lifecycle);
+        //     f.find(".addBuyCart").attr("name", c.itemId);
+        //     f.find("i").attr("id", c.itemId);
+        //     var e = $(".ui-my-collection-list").find(".e-my-collection-delete");
+        //     if (e.attr("style") == "display: inline;") {
+        //         f.find(".e-my-collection-delete").show()
+        //     }
+        //     $("#position").append(f)
+        // });
+        // curPage = b.paginationFavoritesList.currentPage + "";
+        $("#position").append('<li><a href="#"><p class="lazyimg"><img src="../../assets/images/favorites1.jpg"></p><p class="name">飞利浦 电水壶 HD9316/03</p><p class="price"><span class="now">￥339.0</span></p></a><input type="button" class="ui-btn addBuyCart " lifecycle="1" value="加入购物车"><em class="ui-my-collection-delete e-my-collection-delete"><i class="icon-delete-circle"></i></em></li>')
         setscrollrefresh();
         refreshstatus = true
     })

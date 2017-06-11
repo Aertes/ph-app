@@ -22,13 +22,16 @@
 
     .e-scroll-ctr{
         width: 100%;
-        overflow: scroll;
-        
+        // overflow: scroll;
+        overflow: hidden;
         ul{
-            display: flex;
-            align-items: flex-start;
+            width: 800px;
+            &.transitionAll{
+                -webkit-transition: all 0.5s;
+            }
             li{
                 margin: 0 15px;
+                float: left;
             }
             a{
                 display: block;
@@ -120,13 +123,13 @@
             height: 235px;
             overflow: hidden;
             .swiper-wrapper{
-                display: flex;
-                align-items: center;
+                width: 735px;
                 img{
                     height: 235px;
                 }
                 .swiper-slide{
                     margin: 0 10px;
+                    float: left;
                 }
             }
         }

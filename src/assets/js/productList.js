@@ -36,14 +36,9 @@ var filterKey = "";
 var currentselectdomobj = "";
 var refreshstatus = true;
 
-// 图片lazyload加载
-
-// $(function() {
-    
-// });
 
 $(function() {
-
+    // 图片lazyload加载
     $("img.lazyimg").lazyload({
         effect: "fadeIn"
     })
@@ -69,6 +64,7 @@ $(function() {
             data: searchCategoryId,
             success:function () {
                 console.log(searchCategoryId);
+                
                 closeConditionScreening();
             }
         })
@@ -151,6 +147,8 @@ $(function() {
         // window.location.href = getSearchUrl();
         // sortBtnOmi("", c + "-" + b, searchUrl)
     })
+
+    horizontalSlidingEvent();
 });
 
 // 得到搜索链接
@@ -398,3 +396,42 @@ function initSelectdCondition() {
 function closeConditionScreening() {
     $("ul.border-bottom li.active").click()
 };
+
+// 水平滑动事件
+function horizontalSlidingEvent() {
+    var startX = 0, dx = 0, currentX = 0, maxValue = 200;
+    var box = document.querySelector('.e-filter-con-btn');
+    var ul = box.querySelector('ul');
+    var lis = ul.querySelectorAll('li');
+    var ulWidth = ul.offsetWidth + maxValue;
+    var boxWidth = box.offsetWidth;
+    var init = ulWidth - boxWidth;
+
+    //手势滑动
+    ul.addEventListener('touchstart', touchstartHandler);
+    ul.addEventListener('touchmove', touchmoveHandler);
+    ul.addEventListener('touchend', touchendHandler);
+
+    function touchstartHandler(e) {
+        startX = e.touches[0].pageX;
+        ul.classList.remove('transitionAll');
+    }
+    function touchmoveHandler(e) {
+        dx = e.touches[0].pageX - startX;
+        ul.style.webkitTransform = 'translateX(' + (currentX + dx) + 'px)';
+    }
+
+    function touchendHandler(e) {
+        currentX = currentX + dx;
+        if (currentX < -init / 2) {
+            currentX = -init / 2;
+            ul.classList.add('transitionAll');
+            ul.style.webkitTransform = 'translateX(' + currentX + 'px)';
+        } else if (currentX > 0) {
+            ul.classList.add('transitionAll');
+            currentX = 0;
+            ul.style.webkitTransform = 'translateX(' + currentX + 'px)';
+        }
+    }
+
+}
