@@ -504,6 +504,68 @@
   font-weight: bold;
   padding-bottom: 8px;
 }
+/* 搜索 */
+.ui-search-empty {
+  background-color: #f0f1f2;
+}
+.ui-search-empty .ui-com-sub-nav {
+  padding: 8px 13px;
+  color: #ccc;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-search-empty .ui-com-sub-nav a {
+  font-size: 11px;
+  display: inline-block;
+  padding: 0 4px;
+}
+.ui-search-empty .ui-com-sub-nav a:first-child {
+  padding-left: 0;
+}
+.ui-search-empty .con {
+  padding: 60px 25px 48px;
+  text-align: center;
+}
+.ui-search-empty .con p.text {
+  padding-top: 20px;
+  padding-bottom: 60px;
+  color: #b9bbc7;
+  font-size: 16px;
+}
+.ui-search-empty .con .input {
+  position: relative;
+}
+.ui-search-empty .con .input .ui-input {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  border: 1px solid #cccedb;
+  background-color: #fff;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.ui-search-empty .con .input span {
+  padding: 11px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.ui-search-empty .con .input .icon-search-btn {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: 0 -180px;
+}
 body .ui-product-bg {
   height: 100%;
   width: 100%;

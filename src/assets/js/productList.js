@@ -315,28 +315,29 @@ function setscrollrefresh() {
 
 // 刷新列表数据,添加商品列表
 function refreshListData() {
-    // if (parseInt(curPage) + 1 > totalPage) {
-    //     return
-    // }
+    if (parseInt(curPage) + 1 > 10) {
+        return
+    }
     // var a = pagebase + "./json.json" + queryString + "&p=" + (parseInt(curPage) + 1);
     $.post('../../assets/js/json.json', function(b) {
-        // $.each(b.dataCmd.items, function(c, d) {
-        //     $.each(d.itemCmdList, function(e, f) {
-        //         var g = $("#cloneid li").clone();
-        //         g.attr("id_page", b.curPage + "");
-        //         g.find("a").attr("href", f.code);
-        //         g.find("img").attr("data-original", formatImage(f.imgList[0], "287X274"));
-        //         g.find("img").attr("src",   "../images/hot4.jpg");
-        //         g.find("p.name").text(f.title);
-        //         g.find(".price-sale").text("市场售价：￥" + f.salePrice.toFixed(2));
-        //         g.find(".price-member").text("会员价：￥" + f.listPrice.toFixed(2));
-        //         g.find("span.now").text("￥" + f.salePrice.toFixed(2));
-        //         $("#position").append(g)
-        //     })
-        // });
+        $.each(b.dataCmd.items, function(c, d) {
+            $.each(d.itemCmdList, function(e, f) {
+                var g = $("#cloneid li").clone();
+                console.log(g)
+                g.attr("id_page", b.curPage + "");
+                g.find("a").attr("href", f.code);
+                g.find("img").attr("data-original", formatImage(f.imgList[0], "287X274"));
+                g.find("img").attr("src",   "../images/hot4.jpg");
+                g.find("p.name").text(f.title);
+                g.find(".price-sale").text("市场售价：￥" + f.salePrice.toFixed(2));
+                g.find(".price-member").text("会员价：￥" + f.listPrice.toFixed(2));
+                g.find("span.now").text("￥" + f.salePrice.toFixed(2));
+                $("#position").append(g)
+            })
+        });
         
         curPage = b.curPage + "";
-        $("#position").append('<li><a href="./productDetails.html"><p class="lazyimg"><img class="lazyimg" src="../../assets/images/list2.jpg"></p><p class="name">飞利浦 电水壶 HD9306/03</p><div class="ui-pdpwall-price-last"><p class="price"><span class="now">￥1999.00</span></p><!--<p class="price-member">会员价：￥149.25</p>--></div></a></li>')
+        //$("#position").append('<li><a href="./productDetails.html"><p class="lazyimg"><img class="lazyimg" src="../../assets/images/list2.jpg"></p><p class="name">飞利浦 电水壶 HD9306/03</p><div class="ui-pdpwall-price-last"><p class="price"><span class="now">￥1999.00</span></p><!--<p class="price-member">会员价：￥149.25</p>--></div></a></li>')
         console.log(curPage);
 
         setscrollrefresh();
@@ -344,6 +345,7 @@ function refreshListData() {
         $("li[id_page='" + b.curPage + "'] img.lazyimg").lazyload({
             effect: "fadeIn"
         })
+        
     })
 }
 // 初始化搜索值

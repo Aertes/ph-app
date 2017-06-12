@@ -105,4 +105,34 @@
             }
         }
     }
+
+     /* 无地址栏 */ 
+    .ui-order-listitem{
+         background-color: @white;
+         .ui-order-no{
+            text-align: center;
+            padding: 76px 13px 5px 13px;
+         }
+         p{
+            font-size: @font14;
+            color: #b9bbc7;
+            padding: 22px 0 86px 0;
+         }
+         a{
+             display: block;
+         }
+         .ui-btn{
+             height: 40px;
+             line-height: 40px;
+             width: 100%;
+             padding: 0 10px;
+             color: @white;
+             .btnAppearance();
+             .box();
+             .borderRadius(3px);
+             background-color: @color;
+             box-shadow: none;
+             border: none;
+         }
+    }
 }

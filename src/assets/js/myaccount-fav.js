@@ -84,6 +84,7 @@ $(document).ready(function() {
         })
     })
 });
+
 function setscrollrefresh() {
     $(window).scroll(function() {
         var b = $(this).scrollTop();
@@ -95,6 +96,7 @@ function setscrollrefresh() {
         }
     })
 }
+
 function refreshListData() {
     // if (parseInt(curPage) + 1 > totalPage) {
     //     return
@@ -127,7 +129,7 @@ function refreshListData() {
         //     $("#position").append(f)
         // });
         // curPage = b.paginationFavoritesList.currentPage + "";
-        $("#position").append('<li><a href="#"><p class="lazyimg"><img src="../../assets/images/favorites1.jpg"></p><p class="name">飞利浦 电水壶 HD9316/03</p><p class="price"><span class="now">￥339.0</span></p></a><input type="button" class="ui-btn addBuyCart " lifecycle="1" value="加入购物车"><em class="ui-my-collection-delete e-my-collection-delete"><i class="icon-delete-circle"></i></em></li>')
+        //$("#position").append('<li><a href="#"><p class="lazyimg"><img src="../../assets/images/favorites1.jpg"></p><p class="name">飞利浦 电水壶 HD9316/03</p><p class="price"><span class="now">￥339.0</span></p></a><input type="button" class="ui-btn addBuyCart " lifecycle="1" value="加入购物车"><em class="ui-my-collection-delete e-my-collection-delete"><i class="icon-delete-circle"></i></em></li>')
         setscrollrefresh();
         refreshstatus = true
     })

@@ -1,0 +1,331 @@
+@charset 'utf-8';
+@white: #fff;
+@font14: 14px;
+@color: #0d679f;
+
+.box(){
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btnAppearance(){
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+.borderRadius(@px){
+    -webkit-border-radius: @px;
+    -moz-border-radius: @px;
+    border-radius: @px; 
+}
+
+/*title */ 
+h3{
+    font-size: @font14 + 1;
+    padding: 13px 0 11px;
+    background-color: #f7f7f7;
+    text-align: center;
+    font-weight: 700;
+}
+.h3(){
+    font-size: @font14;
+    padding: 0 13px 12px;
+    text-align: left;
+    background: @white;
+}
+
+/* 常见问题 */ 
+.ui-help-faq{
+
+    ul{
+        background-color: @white;
+        padding: 14px 13px 30px;
+        .box();
+        li{
+            padding-bottom: 24px;
+            h4{
+                font-size: @font14;
+                margin-bottom: 8px;
+                font-weight: 700;
+                position: relative;
+                padding-left: 20px;                
+                span{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            p{
+                position: relative;
+                padding-left: 20px;
+                font-size: @font14 - 2;
+                .box();
+            }
+            span{
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* 订单说明 */
+.ui-help-order-ins{
+    div{
+        background: @white;
+    }
+    .ui-help-order-list{
+        padding: 18px 13px;
+        .box();
+        ul{
+            display: flex;
+            justify-content: center;
+            li{
+                border: 1px solid #cccedb;
+                padding: 10px 0;
+                background: #f7f7f7;
+                color: #888b9c;
+                width: 33.333%;
+                text-align: center;
+                &:nth-child(2){
+                    border-right: 0;
+                    border-left: 0;
+                }
+            }
+        }
+    }
+    .ui-help-order-news{
+        padding: 0 13px;
+        margin-bottom: 30px;
+        .box();
+        h4{
+            font-size: @font14;
+            padding: 0 0 20px;
+            font-weight: 700;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            li{
+                width: 33.33%;
+                padding: 7px;
+                &:first-child{
+                    padding-left: 0;
+                }
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+            a{
+                display: block;
+                text-align: center;
+                background-color: #f5f6f7;
+                color: #3c3c3c;
+                padding: 8px 0;
+            }
+        }
+    }
+    .ui-help-order-method{
+        h3{
+            .h3();
+        }
+        ul>li{
+            margin-bottom: 40px;
+            h4{
+                font-size: @font14 + 1;
+                font-weight: 700;
+                padding: 0 13px 12px;
+                .box();
+            }
+            p{
+                font-size: @font14 - 2;
+                padding: 0 13px;
+                .box();
+            }
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .ui-help-status-list{
+        padding: 0 13px;
+        margin-bottom: 30px;
+        .box();
+        h4{
+            font-size: @font14 + 1;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+        p{
+            font-size: @font14 - 2;
+            padding-bottom: 9px;
+        }
+        p.tip{
+            color: #f00;
+        }
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+    .ui-help-order-query{
+        padding: 0 13px;
+        margin-bottom: 25px;
+        .ui-help-order-account{
+            margin-bottom: 40px;
+            h3{
+                font-size: @font14 + 1;
+                background: @white;
+                text-align: left;
+                padding-top: 0;
+                padding-bottom: 15px;
+            }
+            P{
+                font-size: @font14 - 2;
+                padding-bottom: 19px;
+            }
+            ul>li{
+                margin-bottom: 15px;
+                h4{
+                    padding-bottom: 6px;
+                    font-weight: 700;
+                }
+                p{
+                    padding: 0;
+                    font-size: @font14;
+                }
+                .ui-help-order-tip{
+                    padding-top: 9px;
+                    p{
+                        padding-bottom: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 支付方式 */
+.ui-help-payway{
+    .con{
+        padding: 23px 10px 0;
+        div{
+            padding-bottom: 38px;
+            color: #3c3c3c;
+        }
+        h4{
+            padding-bottom: 10px;
+            font-size: @font14 + 1;
+            color: #333;
+            font-weight: 700;
+        }
+        ul>li{
+            padding-bottom: 10px;
+            font-size: @font14 - 2;
+        }
+        .link{
+            padding: 0;
+            p{
+                padding-bottom: 12px;
+            }
+            a{
+                color: @color;
+            }
+        }
+    }
+}
+
+/* 售后服务 */
+.ui-help-after{
+    padding-bottom: 10px;
+    .con{
+        padding: 0 10px 13px;
+        font-size: @font14 - 2;
+        color: #3c3c3c;
+        h4{
+            padding: 17px 0 14px;
+            font-size: @font14 + 1;
+            font-weight: 700;
+        }
+        p{
+            padding-bottom: 15px;
+        }
+        &>div{
+            p{
+                line-height: 18px;
+                padding-bottom: 11px;
+            }
+            ul>li{
+                padding-bottom: 10px;
+                display: table;
+                width: 100%;
+                span{
+                    display: table-cell;
+                    vertical-align: top;
+                    &:first-child{
+                        width: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 联系我们 */
+.ui-content-inner{
+    padding: 10px;
+    p{
+        font-size: @font14 - 2;
+        line-height: 2;
+    }
+    .ui-section{
+        padding-bottom: 20px;
+        h4{
+            font-size: @font14 + 1;
+            font-weight: 700;
+            padding: 10px 0;
+        }
+        img{
+            width: 100%;
+            display: block;
+        }
+        .p-grid-item{
+            h5{
+                font-size: @font14;
+                font-weight: 700;
+                padding: 4px 0;
+            }
+            a{
+                color: @color;
+            }
+            p{
+                font-size: @font14;
+                padding: 5px 0;
+            }
+            ul{
+                display: flex;
+                justify-content: center;
+                padding: 5px 0;
+                li{
+                    width: 33.33%;
+                    padding: 5px 10px;
+                    text-align: center;
+                }
+                a{
+                    position: relative;
+                }
+                i{
+                    position: absolute;
+                    top: 3px;
+                    left: -17px;
+                }
+            }
+        }
+    }
+}
+
+

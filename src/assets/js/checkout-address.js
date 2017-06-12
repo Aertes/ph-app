@@ -3,8 +3,9 @@ var checkoutUrl = pagebase + "../../components/user/addressList.html";
 $(function() {
     initaddress();
     otherclickset();
-    filladdressdata()
+    // filladdressdata()
 });
+
 function filladdressdata() {
     if (isNotNullOrEmpty(addressid)) {
         var a = pagebase + "";

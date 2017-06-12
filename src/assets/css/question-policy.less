@@ -1,0 +1,46 @@
+@charset 'utf-8';
+@import './common.less';
+
+.ui-help-after{
+    padding-bottom: 10px;
+    h3{
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: @font14 + 1;
+        background-color: #f7f7f7;
+        font-weight: 700;
+    }
+    .con{
+        padding: 0 10px 13px;
+        font-size: @font14 - 2;
+        color: #3c3c3c;
+        h4{
+            padding: 17px 0 14px;
+            font-size: @font14 + 1;
+            font-weight: 700;
+        }
+        a{
+            color: @color;
+        }
+        p{
+            padding-bottom: 15px;
+        }
+        &>div>p{
+            padding-bottom: 11px;
+            line-height: 18px;
+        }
+        &>div>ul>li{
+            padding-bottom: 10px;
+            display: table;
+            width: 100%;
+            span{
+                display: table-cell;
+                vertical-align: top;
+                &:first-child{
+                    width: 22px;
+                }
+            }
+        }
+    }
+}

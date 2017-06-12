@@ -163,7 +163,7 @@
     <!--concent-->
     <section>
         <div id="youkuplayer" style="width:100%; height: 360px; margin:0 auto;">
-            
+            <!--<video id="mp4" src="../assets/images/mp1.mp4" controls ="controls" width="100%" height="320px"></video>-->
         </div>
     </section>
 
@@ -218,7 +218,9 @@
     <script src="../../libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/comment.js"></script>
+    <script type="text/javascript" src="http://qzs.qq.com/tencentvideo_v1/js/tvp/tvp.player.js" charset='utf-8'></script>
     <script type="text/javascript" src="http://player.youku.com/jsapi">
+    
         player = new YKU.Player('youkuplayer', {
             styleid: '0',
             client_id: '568e74f71ab557dc',
@@ -232,7 +234,9 @@
                         url: "/vedio/vedio-show?vId=XNjQ1Nzk4NDA0&vName=飞利浦净颜焕采洁面仪"
                     });
                     /*-- 飞利浦track视频播放开始代码结束-- */
+
                 },
+                
                 onPlayEnd: function () {
                     /*-- 飞利浦track视频播放完成代码 -- */
                     philips.analytics.trackConversion({
@@ -245,6 +249,24 @@
             }
         });
     </script>
+    <!--<script>
+
+        var video = new tvp.VideoInfo();    //初始化视频对象
+        video.setVid("#mp4");                //向视频对象传入视频vid ，这个是点播的时候使用
+        /*点播跟直播的区别主要是：
+        1. 点播是通过video.setVid(vid); 而直播是通过video.setChannelId(cnlid); 设置直播id
+        2. 点播需要player.addParam('type','2');或者省略，因为默认播放器为点播状态;直播必须通过player.addParam('type','1');设置播放器为直播状态，。
+        */
+         var player = new tvp.Player('100%', '320px');  //初始化播放器对象并设置宽、高
+         player.addParam('type','2');                 //设置播放器为直播状态，1表示直播，2表示点播，默认为2
+        //  player.addParam("wmode","transparent");      //设置透明化，不设置时，视频为最高级，总是处于页面的最上面，此时设置z-index无效
+         player.addParam('autoplay',false);           //是否自动播放
+         player.addParam('pic','');                   //播放器默认图，当autoplay=0时有效；不传入则使用视频截图                                  
+         player.addParam('showend',0)                 //结束时是否有广告
+         player.addParam("flashskin", "http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf"); //flash播放器皮肤；不传入则使用默认皮肤；点播状态下可选值（注意仅限点播，直播无效）,这里是使视频窗口为小窗口
+         player.addParam("loadingswf", "http://imgcache.qq.com/minivideo_v1/vd/res/skins/web_small_loading.swf");   //加载视频时的swf动画; 不传入则使用默认样式
+         player.write('#youkuplayer');                         //输出播放器
+    </script>-->
 
 </body>
 

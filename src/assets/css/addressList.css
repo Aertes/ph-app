@@ -1,4 +1,5 @@
 @charset 'utf-8';
+/*模态框*/
 .ui-com-pop {
   display: none;
   width: 100%;
@@ -81,6 +82,7 @@
 }
 .ui-personal-data {
   background-color: #f0f1f2;
+  /* 无地址栏 */
 }
 .ui-personal-data h3 {
   background: #fff;
@@ -190,4 +192,38 @@
   background: url('../images/icons-base.png') no-repeat;
   background-size: 200px 300px;
   background-position: -80px -150px;
+}
+.ui-personal-data .ui-order-listitem {
+  background-color: #fff;
+}
+.ui-personal-data .ui-order-listitem .ui-order-no {
+  text-align: center;
+  padding: 76px 13px 5px 13px;
+}
+.ui-personal-data .ui-order-listitem p {
+  font-size: 14px;
+  color: #b9bbc7;
+  padding: 22px 0 86px 0;
+}
+.ui-personal-data .ui-order-listitem a {
+  display: block;
+}
+.ui-personal-data .ui-order-listitem .ui-btn {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  padding: 0 10px;
+  color: #fff;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #0d679f;
+  box-shadow: none;
+  border: none;
 }
