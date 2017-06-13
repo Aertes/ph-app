@@ -21,6 +21,7 @@ $(function() {
     refreshData();
     checkoutEffect()
 });
+// 订单数据更新
 function refreshData() {
     var c = {
         coupons: $.trim($("#coupons").val()),
@@ -87,6 +88,7 @@ function refreshData() {
     }
     loadorderinfo(d)
 }
+// 加载订单信息
 function loadorderinfo(d) {
     if (d == null) {
         var a = {
@@ -132,6 +134,7 @@ function loadorderinfo(d) {
     $("#offersTotal").text("￥" + c.offersTotal);
     $("#realPayAmount").text("￥" + c.realPayAmount)
 }
+// 添加移除active类名效果
 function addressEffect() {
     $(".e-checkout-address>ul>li>div").click(function() {
         $(this).parent().siblings().removeClass("active");
@@ -146,6 +149,7 @@ function addressEffect() {
         addressothereffect()
     })
 }
+// 点击更多按钮
 function morebuttonclick() {
     $(".e-checkout-orderinfo p.more").unbind("click");
     $(".e-checkout-orderinfo p.more").click(function() {
@@ -154,6 +158,7 @@ function morebuttonclick() {
         addressothereffect()
     })
 }
+// 添加active类名
 function addressothereffect() {
     var c = $("#addressposition li").eq(0);
     var d = c.clone(true);
@@ -164,6 +169,7 @@ function addressothereffect() {
         $("#addressposition").append(d)
     }
 }
+// 提交验证
 function checkoutEffect() {
     $(".e-checkout-coupon .ui-input").blur(function() {
         var a = $(this).val();
@@ -369,10 +375,12 @@ function checkoutEffect() {
         $("#coupons").val($("#vipcouponcodelist option:selected").val())
     })
 }
+// 匹配中文
 function CheckChinese(b) {
     var a = new RegExp("[\\u4E00-\\u9FFF]+","g");
     return a.test(b)
 }
+// 匹配中文
 function CheckChineseFull(b) {
     for (var a = 0; a < b.length; a++) {
         if (b.charCodeAt(a) <= 255) {
@@ -381,10 +389,12 @@ function CheckChineseFull(b) {
     }
     return true
 }
+// 匹配英文
 function checkEnglish(b) {
     var a = /^[A-Za-z]+$/;
     return a.test(b)
 }
+// json对象
 function tojsonobj(c) {
     c = decodeURIComponent(c);
     var b = new Map();
@@ -397,6 +407,7 @@ function tojsonobj(c) {
     });
     return b.container
 }
+// 验证生日数据
 function checkxaydata() {
     var a = true;
     var b = $("#babyState").val();
@@ -434,6 +445,7 @@ function checkxaydata() {
     }
     return a
 }
+// 生日期时间事件
 function timeclick() {
     $("#birthday,#dueDate").mobiscroll().date({
         invalid: {
@@ -447,6 +459,7 @@ function timeclick() {
         dateFormat: "yy/mm/dd",
     })
 }
+// 地址跟踪编辑
 function trackAddressEdit() {
     if (cancalltrackcode == false) {
         return
@@ -460,6 +473,7 @@ function trackAddressEdit() {
         console.log(a)
     }
 }
+// 订单创建跟踪
 function trackCreateOrder() {
     if (cancalltrackcode == false) {
         return
@@ -473,11 +487,6 @@ function trackCreateOrder() {
         console.log(a)
     }
 };
-
-
-
-
-
 
 
 function isUseful() {
@@ -638,6 +647,7 @@ function initOmi() {
         }
     })
 }
+// 分享
 function initSocalShare() {
     var a = $("a.in-share-icon1");
     var b = {

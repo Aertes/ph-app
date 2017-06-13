@@ -33,10 +33,12 @@ $(document).ready(function() {
         })
     })
 });
+
 function toSetErrorInfo(b, a) {
     $(b).parent().addClass("error");
     $(b).parent().find("errorInfo").html(a)
 }
+
 function toClearErrorInfo(a) {
     $(a).parent().removeClass("error")
 };

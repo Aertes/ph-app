@@ -9,9 +9,11 @@ var deleteMemberContactUrl = "";
 var refreshMemberContactUrl = "";
 var searchMemberContactUrl = "";
 var setDefaultMemberContactUrl = "";
+
 function getErrspan(a) {
     return $(a).next(".error-word")
 }
+// 有效设置
 function setValid(d, a, c) {
     $(d).data("checked", a);
     var b = getErrspan(d);
@@ -22,6 +24,7 @@ function setValid(d, a, c) {
         b.show()
     }
 }
+// 验证是否为空
 function checkStrIsNotNull(a) {
     if (a == null || a.length == 0 || a == "") {
         return false
@@ -29,29 +32,23 @@ function checkStrIsNotNull(a) {
         return true
     }
 }
+
 function getErrspan(a) {
     return $(a).next(".error-word")
 }
-function setValid(d, a, c) {
-    $(d).data("checked", a);
-    var b = getErrspan(d);
-    b.html(c);
-    if (a) {
-        b.hide()
-    } else {
-        b.show()
-    }
-}
+// 验证手机号
 function checkMobile(b) {
     var a = /^1[3|4|5|8][0-9]\d{8}$/;
     return a.test(b)
 }
+// 添加错误信息
 function addError() {
     $("#address").addClass("msg_error");
     $("#mobile").addClass("msg_error");
     $("#telphone").addClass("msg_error");
     $("#postcode").addClass("msg_error")
 }
+// 更新默认
 function updateDefault() {
     var a = $(".func-button-default").siblings('input[class="currentId"]').val();
     var b = {
@@ -68,12 +65,15 @@ function updateDefault() {
         comHintPop("修改失败", null, false)
     }
 }
+// 切换省
 function onProvienceChange(a) {
     onDistrictSelectionChange("provience", "city")
 }
+// 切换城市
 function onCityChange(a) {
     onDistrictSelectionChange("city", "area")
 }
+// 地区选择
 function onDistrictSelectionChange(a, c) {
     $("#" + c).children().remove();
     var b = $("#" + a).val();
@@ -89,10 +89,10 @@ function onDistrictSelectionChange(a, c) {
 }
 $(document).ready(function() {
     $("#cancel-button").click(function() {
-        window.location = refreshMemberContactUrl
+        // window.location = refreshMemberContactUrl
     });
     $(".ui-address-empty").on("click", "input", function() {
-        location.href = "/account/address/toCheckout-address"
+        // location.href = "/account/address/toCheckout-address"
     });
     $(".add-contact").click(function() {
         $("#old-address").html("");

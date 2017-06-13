@@ -66,6 +66,7 @@ $(document).ready(function() {
         })
     })
 });
+// 切换tab添加类名
 function RecTabType(e, d, f) {
     var c = $(e);
     var g = $(d);

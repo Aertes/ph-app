@@ -6,6 +6,7 @@ $(function() {
     // filladdressdata()
 });
 
+// 获取地址数据
 function filladdressdata() {
     if (isNotNullOrEmpty(addressid)) {
         var a = pagebase + "";
@@ -33,6 +34,7 @@ function filladdressdata() {
         }
     }
 }
+// 点击其他获取不同的地址
 function otherclickset() {
     var a = pagebase + "";
     $("#surebtn").click(function() {
@@ -52,19 +54,20 @@ function otherclickset() {
             };
             var b = ajaxsynpost(a, c);
             if (b.isSuccess) {
-                location.href = checkoutUrl
+                // location.href = checkoutUrl
             } else {
                 console.log(JSON.stringify(b))
             }
         }
     });
     $("#cancelbtn").click(function() {
-        location.href = checkoutUrl
+        // location.href = checkoutUrl
     });
     $(".e-com-terms-slt").click(function() {
         $(this).children("i").toggleClass("active")
     })
 }
+// 验证收货地址
 function checkaddressdata() {
     var d = $.trim($("#name").val());
     var a = $.trim($("#address").val());
@@ -136,6 +139,7 @@ function checkaddressdata() {
     }
     return true
 }
+// 初始化地址栏选中
 function initaddress() {
     $.each(districtJson["1"], function(a, b) {
         $("#provience").append("<option value=" + a + ">" + b + "</option>")
@@ -144,6 +148,7 @@ function initaddress() {
     $("#city").change(onCityChange);
     $("#provience").change()
 }
+// 切换城市
 function onprovienceChange() {
     var a = $("#provience option:selected").val();
     $("#city").empty();
@@ -152,6 +157,7 @@ function onprovienceChange() {
     });
     $("#city").change()
 }
+// 切换地区
 function onCityChange() {
     var a = $("#city option:selected").val();
     $("#area").empty();
@@ -160,6 +166,7 @@ function onCityChange() {
     });
     $("#area").change()
 };
+// 发送数据
 function ajaxsynpost(c, b) {
     var a;
     $.ajax({

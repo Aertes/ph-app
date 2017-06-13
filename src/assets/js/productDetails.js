@@ -55,7 +55,7 @@ $(window).ready(function() {
 });
 
 $(function() {
-    scrollWidthCtr();
+    // scrollWidthCtr();
     checkloginstatus();
     pdpCollect();
     numControl();

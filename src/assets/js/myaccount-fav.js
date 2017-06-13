@@ -85,6 +85,7 @@ $(document).ready(function() {
     })
 });
 
+// 设置滚动加载
 function setscrollrefresh() {
     $(window).scroll(function() {
         var b = $(this).scrollTop();
@@ -96,7 +97,7 @@ function setscrollrefresh() {
         }
     })
 }
-
+// 更新加载列表数据
 function refreshListData() {
     // if (parseInt(curPage) + 1 > totalPage) {
     //     return
@@ -133,5 +134,4 @@ function refreshListData() {
         setscrollrefresh();
         refreshstatus = true
     })
-}
-;
+};

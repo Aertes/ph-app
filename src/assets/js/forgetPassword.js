@@ -6,6 +6,7 @@ var updateResultUrl = pagebase + "";
 var validateLoginNameUrl = pagebase + "";
 var waitValue = 59;
 var wait = waitValue;
+// 验证输入是否为空
 function isInputEmpty(a) {
     var b = $(a);
     var d = $.trim(b.val());
@@ -16,6 +17,7 @@ function isInputEmpty(a) {
         return false
     }
 }
+// 清空错误信息
 function clearGeneralErrorInfo() {
     $(".notice").parent("li").removeClass("error");
     $(".notice-title").html("");
@@ -306,21 +308,26 @@ $(document).ready(function() {
         timeCountDown($(this));
     })
 });
+
 function changeCode(a) {
     var b = a.attr("src").split("?")[0];
     a.attr("src", b + "?" + Math.random())
 }
+// 设置错误提示
 function toSetErrorInfo(b, a) {
     $("" + b).parent().addClass("error");
     $("" + b).parent().find("span").html(a);
 }
+// 清空错误提示
 function toClearErrorInfo(a) {
     $("" + a).parent().removeClass("error")
 }
+// 获取短信验证码。倒计时
 function getSmsCode() {
     sendShortMessage();
     timeCountDown()
 }
+// 发送短信验证
 function sendShortMessage() {
     var e = $("#mobileNumber").val();
     var b = $("#randomCode").val();
@@ -370,6 +377,7 @@ function sendShortMessage() {
         }
     })
 }
+// 短信验证倒计时
 function timeCountDown(a) {
     if (wait == 0) {
         a.css({
@@ -391,6 +399,7 @@ function timeCountDown(a) {
         }, 1000)
     }
 }
+// 密保问题验证
 function showQuestions(a) {
     $("li[myattr='questionLine']").hide();
     toClearErrorInfo("#question_loginName");
@@ -409,7 +418,7 @@ function showQuestions(a) {
         }
     })
 };
-
+// 返回获取的数据
 function ajaxsynpost(c, b) {
     var a;
     $.ajax({

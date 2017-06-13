@@ -19,6 +19,7 @@ $(document).ready(function() {
     });
     validateLogin()
 });
+
 function validateLogin() {
     $("#loginName").blur(function() {
         var a = /^[A-Za-z][A-Za-z0-9_-]*$/;
@@ -77,7 +78,7 @@ function validateLogin() {
         })
     })
 }
-
+// 用户登录验证
 function userLogin() {
     $("#loginName,#loginPwd,#validateCode").trigger("focus");
     $("#loginName,#loginPwd,#validateCode").trigger("blur");
@@ -135,11 +136,12 @@ function userLogin() {
         })
     }
 }
-
+// 修改
 function changeCode(a) {
     var b = a.attr("src").split("?")[0];
     a.attr("src", b + "?" + Math.random())
 }
+// 检查是否为空
 function checkStrIsNotNull(a) {
     if (a == null || a.length == 0 || a == "") {
         return false
@@ -147,6 +149,7 @@ function checkStrIsNotNull(a) {
         return true
     }
 }
+// 设置有效时间
 function setValid(d, a, c) {
     $(d).data("checked", a);
     var b = getErrspan(d);
@@ -157,6 +160,7 @@ function setValid(d, a, c) {
         b.show()
     }
 }
+// 输入是否为空
 function isInputEmpty(a) {
     var b = $(a);
     var d = $.trim(b.val());
@@ -167,10 +171,11 @@ function isInputEmpty(a) {
         return false
     }
 }
+// 错误信息显示
 function setErrorDesc(a) {
     $("#checkMobileError").text(a).show()
 }
-
+// 手机号验证
 function nextstep() {
     $("#checkMobileError").hide();
     var b = $("#mobileNumberId").val();
@@ -192,6 +197,7 @@ function nextstep() {
     $("#mobileVerificationCodeHidden").val(a);
     $(".login-member").click()
 }
+// 手机号验证吗码验证
 function mobileContentobjcallbackFun() {
     $("#checkMobileError").text("").hide();
     if ($("#mobileVerificationCodeHidden").val() != "") {
@@ -204,6 +210,7 @@ function mobileContentobjcallbackFun() {
         $("#mobileNumberId").val(a)
     }
 }
+// 短信验证
 function getSmsCode() {
     if (needToSendShortMessage) {
         var a = sendShortMessage();
@@ -213,6 +220,7 @@ function getSmsCode() {
         timeCountDown()
     }
 }
+// 短信验证码倒计时
 function timeCountDown() {
     var a = $("#verifyCodeId");
     if (wait == 0) {
@@ -235,6 +243,7 @@ function timeCountDown() {
         }, 1000)
     }
 }
+// 加密密码设置
 function encryptedPassword(e) {
     var b = new Date().format("yyyyMMdd");
     console.log(b);
@@ -247,6 +256,7 @@ function encryptedPassword(e) {
     var e = h + c + g;
     return e
 }
+// 发送短信验证
 function sendShortMessage() {
     var d = true;
     var a = pagebase + "/m/sendBindMobileCodeV";
@@ -282,5 +292,4 @@ function sendShortMessage() {
             wait = 0
         }
     })
-}
-;
+};

@@ -321,16 +321,19 @@ $(document).ready(function() {
         timeCountDown($(this));
     })
 });
+
 function addError() {
     $("#loginName").parent().addClass("error");
     $("#password").parent().addClass("error");
     $("#repassword").parent().addClass("error");
     $("#randomCode").parent().addClass("error")
 }
+
 function getSmsCode() {
     sendShortMessage();
     timeCountDown()
 }
+// 手机验证
 function sendShortMessage() {
     $("#randomCodeError").hide();
     $("#verifyCodeError").hide();
@@ -380,7 +383,7 @@ function sendShortMessage() {
         }
     })
 }
-
+// 短信验证倒计时
 function timeCountDown(a) {
     if (wait == 0) {
         a.css({
