@@ -30,6 +30,11 @@ $(document).ready(function () {
         slidesPerView: "auto",
         initialSlide: 2
     })
+
+    var bc = new Swiper(".e-scroll-ctr", {
+        slidesPerView : "auto"
+    })
+
 });
 
 $(function () {
@@ -90,13 +95,15 @@ $(function () {
     })
 
     // 精品商品的滑动事件
-    horizontalSlidingEvent();
+    // horizontalSlidingEvent();
 
-    _horizontalSlidingEvent();
+    // _horizontalSlidingEvent();
 
 });
 
 // 水平滑动事件1
+
+
 function horizontalSlidingEvent() {
     var startX = 0, dx = 0, currentX = 0, maxValue = 200;
     var box = document.querySelector('.e-scroll-ctr-top');

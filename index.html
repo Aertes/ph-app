@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./src/assets/css/idangerous.swiper.css">
     <link rel="stylesheet" href="./src/assets/css/base.css">
     <link rel="stylesheet" href="./src/assets/css/index.css">
+
 </head>
 
 <body>
@@ -112,7 +113,7 @@
                         <li><a href=""> 健康护理<i class='icon-arrow-white'></i></a></li>
                     </ul>
                 </div>
-                
+
                 <div class="item">
                     <h3>附件<i class="ui-add"></i></h3>
                     <ul>
@@ -171,28 +172,28 @@
                     <span>新科技改变您的生活</span>
                 </h3>
                 <div class="e-scroll-ctr e-scroll-ctr-top">
-                    <ul class="clearfix">
-                        <li><a href="">
+                    <ul class="clearfix swiper-wrapper">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/hot1.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
                             </a></li>
-                        <li><a href="">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/hot2.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
                             </a></li>
-                        <li><a href="">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/hot3.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
                             </a></li>
-                        <li><a href="">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/hot4.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
                             </a></li>
-                        <li><a href="">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/hot5.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
@@ -221,28 +222,28 @@
                     <span>推荐给您最值得拥有的精选商品</span>
                 </h3>
                 <div class="e-scroll-ctr e-scroll-ctr-bottom">
-                    <ul class="clearfix">
-                        <li><a href="">
+                    <ul class="clearfix swiper-wrapper">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/recommendation1.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
                             </a></li>
-                        <li><a href="">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/recommendation2.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
                             </a></li>
-                        <li><a href="">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/recommendation3.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
                             </a></li>
-                        <li><a href="">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/recommendation4.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
                             </a></li>
-                        <li><a href="">
+                        <li class="swiper-slide"><a href="">
                                 <img src="./src/assets/images/recommendation4.jpg" alt="" >
                                 <p class="name">飞利浦 干湿两用剃须刀 S7310/12</p>
                                 <p class="price">￥2899.00</p>
@@ -286,10 +287,18 @@
                 <div class="ui-home-type-slt e-home-type-slt">
                     <h4>热卖商品类型选择</h4>
                     <ul>
-                        <li><p ccode='series-shavers'  class="active">系列剃须刀</p></li>
-                        <li><p ccode='electrictoothbrush' >电动牙刷</p></li>
-                        <li><p ccode='natural-bottles' >自然原生系列</p></li>
-                        <li><p ccode='cleanser' >洁肤仪</p></li>
+                        <li>
+                            <p ccode='series-shavers' class="active">系列剃须刀</p>
+                        </li>
+                        <li>
+                            <p ccode='electrictoothbrush'>电动牙刷</p>
+                        </li>
+                        <li>
+                            <p ccode='natural-bottles'>自然原生系列</p>
+                        </li>
+                        <li>
+                            <p ccode='cleanser'>洁肤仪</p>
+                        </li>
                     </ul>
                     <p>
                         <input type="button" id="searchCategoryBtn" class="ui-btn" value="确定">
@@ -427,15 +436,17 @@
     <script src="./src/assets/js/comment.js"></script>
     <script>
         // 全局设置loading效果
-        $(document).ajaxStart(function(){
+        $(document).ajaxStart(function () {
             $('#overlay').show();
         });
-        $(document).ajaxStop(function(){
-            setTimeout(function() {
+        $(document).ajaxStop(function () {
+            setTimeout(function () {
                 $('#overlay').hide();
-            }, 3000);
+            }, 1000);
         });
+
     </script>
+
 </body>
 
 </html>

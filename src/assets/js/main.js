@@ -33,7 +33,37 @@ $(document).ready(function () {
     });
     addressCheck();
     accountEff()
+
+    // 根据屏幕大小跳转适配页面
+    browserRedirect();
+
 });
+// 根据屏幕大小跳转适配页面
+function browserRedirect() {
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    // var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+    var bIsNokia = sUserAgent.match(/nokia/i) == "nokia";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    /*document.writeln("您的浏览设备为：");*/
+    if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsNokia || bIsAndroid || bIsCE || bIsWM) {
+        /* 链接到不同的网址  这个是手机的 */
+        if (window.location !== location) {
+            window.location.href = 'http://127.0.0.1/mobile/index.html';
+        }
+    } else {
+        /* 链接到不同的网址  这个是PC的 */
+        if (window.location === location) {
+            window.location.href = 'http://www.baidu.com'
+        }
+    }
+}
+
 // 显示隐藏动画效果
 function comPop(b, a, c) {
     $(b).click(function (h) {
@@ -143,15 +173,7 @@ function sltControl() {
         $(this).parent().removeClass("default")
     })
 }
-// //滚动宽度
-// function scrollWidthCtr(a) {
-//     $(".e-scroll-ctr").each(function () {
-//         var c = $(this).find("li").length;
-//         var b = $(this).find("li").outerWidth();
-//         $(this).children("ul").width(c * b + "px")
-//     })
-// }
-
+    
 // 弹窗（模态框）
 function comHintPop(f, d, e, i) {
     var a = $(".e-pop-mask")

@@ -1,0 +1,103 @@
+@charset 'utf-8';
+.ui-order-detail {
+  background-color: #f0f1f2;
+  padding-bottom: 50px;
+}
+.ui-order-detail h3 {
+  padding: 15px 13px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: normal;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-order-detail h3 .icon-back {
+  width: 9px;
+  height: 16px;
+  position: absolute;
+  top: 21px;
+  left: 13px;
+  display: inline-block;
+  background: url('../images/icons-base.png') no-repeat;
+  background-size: 200px 300px;
+  background-position: 0 -150px;
+}
+.ui-order-detail .ui-order-detailitem {
+  margin-bottom: 10px;
+}
+.ui-order-detail .ui-order-detailitem ul {
+  background-color: #fff;
+  border-top: 1px solid #e3e3e3;
+}
+.ui-order-detail .ui-order-detailitem ul li {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 12px 13px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+}
+.ui-order-detail .ui-order-detailitem ul p:first-child {
+  width: 22%;
+  color: #888b9c;
+}
+.ui-order-detail .ui-checkout-orderinfo {
+  border-bottom: 0;
+  margin-bottom: 9px;
+  background-color: #fff;
+}
+.ui-order-detail .ui-checkout-orderinfo ul > li {
+  width: 100%;
+  padding: 12px 13px 22px;
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-order-detail .ui-checkout-orderinfo ul > li a {
+  width: 65px;
+  display: table-cell;
+  vertical-align: top;
+}
+.ui-order-detail .ui-checkout-orderinfo ul > li img {
+  width: 100%;
+}
+.ui-order-detail .ui-checkout-orderinfo ul > li div {
+  padding-left: 12px;
+  display: table-cell;
+  vertical-align: top;
+}
+.ui-order-detail .ui-checkout-orderinfo ul > li p {
+  display: flex;
+  justify-content: space-between;
+}
+.ui-order-detail .ui-checkout-orderinfo ul > li span.name {
+  width: 66%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-order-detail .ui-checkout-orderinfo ul > li div.price-num {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0 0 0;
+}
+.ui-order-detail .ui-checkout-order-total {
+  padding: 12px;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+  background-color: #fff;
+}
+.ui-order-detail .ui-checkout-order-total ul > li {
+  padding-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.ui-order-detail .ui-checkout-order-total ul > li.total {
+  font-size: 16px;
+  color: #0d679f;
+}

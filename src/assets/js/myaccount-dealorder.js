@@ -34,7 +34,7 @@ $(document).ready(function() {
     $(".order-detail-btn").click(function() {
         var c = $(this);
         var d = c.attr("orderCode");
-        location.href = orderDetailsUrl + "?orderCode=" + d
+        location.href = 'orderDetail.html' + "?orderCode=" + d
     });
     $(".ui-order-detail-btn").on("click", "#toPay", function(f) {
         var c = $(this).attr("orderCode");
